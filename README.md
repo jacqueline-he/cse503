@@ -1,1 +1,2 @@
-# datastore-compression
+# CSE503 course project 
+
