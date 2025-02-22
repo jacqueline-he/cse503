@@ -12,7 +12,7 @@ import pickle
 import time
 import glob
 import jsonlines
-
+import pdb
 import numpy as np
 import torch
 from FlagEmbedding import FlagModel
@@ -25,6 +25,7 @@ from src.evaluation import calculate_matches
 import src.normalize_text
 from generate_embeddings import chunkify_code_samples
 from datasets import load_dataset 
+
 
 
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
@@ -109,9 +110,11 @@ def validate(data, workers_num):
     return match_stats.questions_doc_hits
 
 def add_passages(data, passages, top_passages_and_scores):
-    print(len(passages))
+    new_data = []
+    print(f"{len(passages)} passages")
     assert len(data) == len(top_passages_and_scores), f"mismatch between {len(data)} and {len(top_passages_and_scores)}"
     for i, d in enumerate(data):
+        
         results_and_scores = top_passages_and_scores[i]
         docs = []
         for doc_id in results_and_scores[0]:
@@ -121,11 +124,13 @@ def add_passages(data, passages, top_passages_and_scores):
         d["ctxs"] = [
             {
                 "id": results_and_scores[0][c],
-                "text": docs[c],
+                "text": docs[c]['text'],
                 "score": scores[c],
             }
             for c in range(ctxs_num)
         ]
+        new_data.append(d)
+    return new_data
 
 
 def add_hasanswer(data, hasanswer):
@@ -189,25 +194,42 @@ def main(args):
         passage_id_map[str(i)] = d
     assert len(passages) == len(passage_id_map)
 
+    if args.data is not None:
+        assert os.path.exists(args.data)
+        data = load_jsonlines(args.data)
+        filename = os.path.basename(args.data).replace(".jsonl", f"_{args.shard}.jsonl")
+        output_path = os.path.join(args.output_dir, filename)
+    elif args.dataset is not None:
+        if args.dataset == "mbpp":
+            ds = load_dataset("jacquelinehe/mbpp_processed")
+            data = ds['train']
+        else:
+            ds = load_dataset("jacquelinehe/humaneval_processed")
+            data = ds['train']
+        filename = f"{args.dataset}_{args.shard}.jsonl"
+        output_path = os.path.join(args.output_dir, filename)
+    else:
+        raise ValueError("Please provide either data or dataset")
 
-    assert os.path.exists(args.data)
 
-    data = load_jsonlines(args.data)
-    filename = os.path.basename(args.data).replace(".jsonl", f"_{args.shard}.jsonl")
-    output_path = os.path.join(args.output_dir, filename)
-    if not os.path.exists(output_path):
-        try:
-            queries = [ex["query"] for ex in data]
-        except:
-            queries = [ex["question"] for ex in data]
+    if not os.path.exists(output_path) or True: # JH force override
+        if args.data:
+            try:
+                queries = [ex["query"] for ex in data]
+            except:
+                queries = [ex["question"] for ex in data]
+        else:
+            # dataset 
+            queries = [ex["context"] for ex in data] # same for humaneval and mbpp
+        
         questions_embedding = embed_queries(args, queries, model)
 
         # get top k results
         start_time_retrieval = time.time()
         top_ids_and_scores = index.search_knn(questions_embedding, args.n_docs)
         print(f"Search time: {time.time()-start_time_retrieval:.1f} s.")
-        add_passages(data, passage_id_map, top_ids_and_scores)
-
+        data =add_passages(data, passage_id_map, top_ids_and_scores)
+        
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         if not output_path.endswith(".jsonl"):
             output_path = output_path.replace(".json", ".jsonl")
@@ -226,11 +248,12 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--data",
-        required=True,
         type=str,
         default=None,
         help=".jsonl file containing question and answers, similar format to reader data",
     )
+
+    parser.add_argument("--dataset", type=str, choices=['mbpp', 'humaneval'], default=None, help='Coding dataset to use')
 
     parser.add_argument("--passages_embeddings", type=str, default=None, help="Glob path to encoded passages")
     parser.add_argument(
@@ -264,5 +287,6 @@ if __name__ == "__main__":
 
 
     args = parser.parse_args()
+    assert args.data or args.dataset # one must be true
     src.slurm.init_distributed_mode(args)
     main(args)

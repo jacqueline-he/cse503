@@ -1,11 +1,11 @@
 
 EMB_DIR=/gscratch/scrubbed/jyyh/code-doc-embs
-DATA=test.jsonl
+DATASET="mbpp" # or "mbpp"
 OUT_DIR=out
 
  python retrieval.py \
   --passages_embeddings $EMB_DIR \
-  --data $DATA  \
+  --dataset $DATASET \
   --output_dir $OUT_DIR \
   --n_docs 5 \
   --projection_size 1024 \
