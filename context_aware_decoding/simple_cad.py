@@ -12,7 +12,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name, token = test_token)
 device = "cuda:1" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=1, top_p=0.9):
+def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=50, top_p=0.9):
     output_ids = model.generate(
         input_ids,
         max_length=max_length,
@@ -21,7 +21,7 @@ def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=1, top_p
         top_p=top_p,
         do_sample=True,
     )
-    return tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    return tokenizer.decode(output_ids[0][len(input_ids):], skip_special_tokens=True)
 
 def context_aware_sampling(model, tokenizer, input_ids, context_ids, alpha=0.9, max_length=128, temperature=1.0):
     generated_tokens = input_ids.clone()
@@ -45,14 +45,23 @@ def context_aware_sampling(model, tokenizer, input_ids, context_ids, alpha=0.9, 
         if next_token.item() == tokenizer.eos_token_id:
             break
 
-    return generated_tokens
+    return generated_tokens[0][len(input_ids):]
 
 
 
 
-context = "Here is is the method signature=def remove_Occ(s,ch):"
+# context = "Here is some context regarding the method signature. Use this strictly for your answer: 'def remove_Occ(s,ch):'"
 
-question = "Output only code for the following question: Write a python function to remove first and last occurrence of a given character from the string."
+# question = " Output only code for this question. Please do not provide any other instruction or example. Write a python function to remove first and last occurrence of a given character from the string."
+
+context = """You are a code-generater. Given a code-generation task, you are expected to generate code that satisfies the task requirements. You are given a method signature and a context. Use the context strictly for your answer. Do not provide any other instruction or example. 
+Here is the method signature: def remove_Occ(s,ch)
+"""
+
+question = """"
+Write a python function to remove first and last occurrence of a given character from the string.
+"""
+
 
 context_input = tokenizer(context, return_tensors="pt").input_ids.to(device)
 question_input = tokenizer(question, return_tensors="pt").input_ids.to(device)
@@ -71,7 +80,7 @@ output_tokens = context_aware_sampling(
                                         temperature=1.0,
                                     )
 
-context_aware_output = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+context_aware_output = tokenizer.decode(output_tokens, skip_special_tokens=True)
 
 print("__" * 50)
 print("Standard Decoding Output:\n", standard_output)
