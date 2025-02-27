@@ -18,8 +18,10 @@ from transformers import (
     AutoModelForSeq2SeqLM,
     AutoTokenizer,
     SchedulerType,
+    DynamicCache,
 )
 
+from huggingface_hub import whoami, login
 import numpy as np
 from termcolor import colored
 import json
@@ -80,6 +82,7 @@ def decode(args, batch_input_ids, dec_depth, model, tokenizer):
     history_decode_ids = None
 
     past_key_values = None # necessary for causal models
+    past_key_values = DynamicCache()
     if args.model_category == 'seq2seq':
         model_kwargs = model._prepare_encoder_decoder_kwargs_for_generation(
             batch_input_ids[:, :args.context_size].clone(), dict(), None
@@ -94,8 +97,19 @@ def decode(args, batch_input_ids, dec_depth, model, tokenizer):
 
     for _i in range(dec_depth):
         if args.model_category == 'causal':
-            model_inputs = model.prepare_inputs_for_generation(unit_context_input_ids, past_key_values=past_key_values)
-            outputs = model(**model_inputs, output_hidden_states=False)
+            # print('-------------------')
+            # print(unit_context_input_ids)
+            # print(past_key_values)
+            # print('-------------------')
+            # model_inputs = model.prepare_inputs_for_generation(unit_context_input_ids, past_key_values=past_key_values)
+            model_inputs = model.prepare_inputs_for_generation(unit_context_input_ids)
+            # print(model_inputs)
+            outputs = model(**model_inputs, output_hidden_states=False, use_cache=True)
+
+            # print('---- Outputs ----')
+            # print(outputs)
+            # print('---- End: Outputs ----')
+
         elif args.model_category == 'seq2seq':
             model_inputs = model.prepare_inputs_for_generation(history_decode_ids, **model_kwargs) # this incorporates past_key_values
             outputs = model(**model_inputs, output_hidden_states=False)
@@ -128,6 +142,8 @@ def decode(args, batch_input_ids, dec_depth, model, tokenizer):
             history_decode_ids = real_token_ids_list
         else:
             history_decode_ids = torch.cat((history_decode_ids, real_token_ids_list), dim=1)
+
+        # history_decode_ids = real_token_ids_list
 
         if args.model_category == 'causal':
             past_key_values = outputs.past_key_values
@@ -228,6 +244,7 @@ def parse_args():
 
 
 def main():
+
     args = parse_args()
 
     accelerator = Accelerator(kwargs_handlers=[InitProcessGroupKwargs(timeout=datetime.timedelta(seconds=259200))])
@@ -298,7 +315,7 @@ def main():
     elif args.model_name_or_path:
         if 'llama' in args.model_name_or_path.lower():
             from transformers import LlamaConfig
-            config = LlamaConfig.from_pretrained(args.model_name_or_path)
+            config = LlamaConfig.from_pretrained(args.model_name_or_path, )
         else:
             config = AutoConfig.from_pretrained(args.model_name_or_path)
     else:
@@ -308,11 +325,12 @@ def main():
     if 'neox' in args.model_name_or_path.lower(): # Han: gpt-neox doesn't have a slow tokenizer, use GPTNeoXTokenizerFast
         from transformers import GPTNeoXTokenizerFast
         tokenizer = GPTNeoXTokenizerFast.from_pretrained(args.model_name_or_path)
-    elif 'llama' in args.model_name_or_path.lower():
-        from transformers import LlamaTokenizer
-        tokenizer = LlamaTokenizer.from_pretrained(args.model_name_or_path)
+    # elif 'llama' in args.model_name_or_path.lower():
+    #     from transformers import LlamaTokenizer
+    #     print(">>>>>>>>>", args.model_name_or_path)
+    #     tokenizer = LlamaTokenizer.from_pretrained(args.model_name_or_path)
     else:
-        assert args.use_slow_tokenizer == True 
+        # assert args.use_slow_tokenizer == True 
         if args.tokenizer_name:
             tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name, use_fast=not args.use_slow_tokenizer)
         elif args.model_name_or_path:
@@ -508,13 +526,14 @@ def main():
 
                 repeat_sample = 1 # change here manually if necessary
                 for _r in range(repeat_sample):
-                    history_decode_ids, _, _, sampled_sequences, _, _ = \
+                    history_decode_ids, _, _, sampled_sequences, context, _ = \
                         decode(args, input_ids, args.decode_depth, model, tokenizer)
                     if _r == 0: # first sample
                         # export to jsonl
                         for _i in range(args.per_device_eval_batch_size):
                             export_dict = dict()
                             export_dict['tokens'] = [history_decode_ids.tolist()[_i]]
+                            export_dict['context'] = context
                             export_dict['string'] = [sampled_sequences[_i]]
                             export_dict['assigned_process'] = _fd['assigned_process']
                             export_dict['assigned_model'] = args.model_name_or_path

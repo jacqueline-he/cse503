@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 # trap "kill 0" EXIT
 
-hf_cache="/private/home/xhan77/.cache/huggingface" # CHANGE THIS TO YOUR OWN CACHE PATH
+hf_cache="/root/.cache/huggingface/" # CHANGE THIS TO YOUR OWN CACHE PATH
 
-numgpu=1 # should match the number of processes in the input jsonl file, default to 2 for context-aware decoding
+numgpu=2 # should match the number of processes in the input jsonl file, default to 2 for context-aware decoding
 available_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 global_seed=$1 
 multi_device_cuda=$2 # "0,1,2,3", "0", etc

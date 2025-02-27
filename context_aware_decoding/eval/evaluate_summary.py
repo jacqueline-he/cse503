@@ -15,7 +15,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from datasets import load_dataset
 
 # evaluate fackKB: Put your huggingface access tokens
-access_token = 
+access_token = ""
 tokenizer = AutoTokenizer.from_pretrained("roberta-base", padding="max_length", truncation=True)
 factkb = AutoModelForSequenceClassification.from_pretrained("bunsenfeng/FactKB", num_labels = 2, use_auth_token=access_token)
 

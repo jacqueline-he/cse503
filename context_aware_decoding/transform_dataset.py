@@ -4,7 +4,6 @@ from datasets import load_dataset
 # Login using e.g. `huggingface-cli login` to access this dataset
 ds = load_dataset("jacquelinehe/mbpp_processed")
 
-
 rows = ds['train'].iter(batch_size=1)
 
 """
@@ -29,7 +28,7 @@ rows = ds['train'].iter(batch_size=1)
 }
 ...
 """
-assigned_model = "model"
+assigned_model = "meta-llama/Llama-3.2-1B-Instruct"
 assigned_weight_one_plus_alpha = 2
 assigned_weight_minus_alpha = -1 
 filter_p = 1.0 
@@ -48,7 +47,7 @@ for i, row in enumerate(rows):
         "input_index": i,
         "assigned_model": assigned_model,
         "assigned_process": 0,
-        "context_string": context,
+        "context_string": "Output only code for the following question: %s" % context,
         "assigned_weight": assigned_weight_one_plus_alpha,
         "filter_p": 1.0
     }
@@ -57,7 +56,7 @@ for i, row in enumerate(rows):
         "input_index": i,
         "assigned_model": assigned_model,
         "assigned_process": 0,
-        "context_string": "Question=%s Here is is the method signature=%s" % (context, function_name),
+        "context_string": "Output only code for the following question: %s Here is is the method signature=%s" % (context, function_name),
         "assigned_weight": assigned_weight_one_plus_alpha,
         "filter_p": 1.0
     }
@@ -67,6 +66,9 @@ for i, row in enumerate(rows):
     # print(without_context)
     # print(with_context)
     # input()
+
+    if i > 10:
+        break
 
 with open('mbpp_cad.jsonl', 'w') as outfile:
     for entry in json_l:
