@@ -23,7 +23,8 @@ def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=0, top_p
     )
     return tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
-def context_aware_sampling(model, tokenizer, input_ids, context_ids, alpha=0.9, max_length=128, temperature=1.0):
+# context_aware_sampling(input_ids, context_input, model, tokenizer, alpha=0.5, max_length=max_len, temperature=0.8)
+def context_aware_sampling(input_ids, context_ids, model, tokenizer, alpha=0.9, max_length=128, temperature=1.0):
     generated_tokens = input_ids.clone()
     newline_tokens = tokenizer.encode("\n\n", add_special_tokens=False)
     for _ in range(max_length):
@@ -52,33 +53,33 @@ def context_aware_sampling(model, tokenizer, input_ids, context_ids, alpha=0.9, 
         if next_token.item() == tokenizer.eos_token_id or next_token.item() in newline_tokens:
             break
 
-    return generated_tokens
+    return generated_tokens, tokenizer.decode(generated_tokens[0], skip_special_tokens=True)
 
 
 
 
-context = "Write a python function to remove first and last occurrence of a given character from the string. Return only the function, with no other explanation, print statements, or unit tests.\n\n"
-question = "def remove_Occ(s,ch):\n"
-context_input = tokenizer(context, return_tensors="pt").input_ids.to(device)
-question_input = tokenizer(question, return_tensors="pt").input_ids.to(device)
+# context = "Write a python function to remove first and last occurrence of a given character from the string. Return only the function, with no other explanation, print statements, or unit tests.\n\n"
+# question = "def remove_Occ(s,ch):\n"
+# context_input = tokenizer(context, return_tensors="pt").input_ids.to(device)
+# question_input = tokenizer(question, return_tensors="pt").input_ids.to(device)
 
-input_ids = torch.cat([context_input, question_input], dim=-1)
+# input_ids = torch.cat([context_input, question_input], dim=-1)
 
-model.eval()
-standard_output = standard_decoding(input_ids)
-output_tokens = context_aware_sampling(
-                                        model,
-                                        tokenizer,
-                                        input_ids,
-                                        context_ids=context_input,
-                                        alpha=0.9,
-                                        max_length=512,
-                                        temperature=0.0,
-                                    )
+# model.eval()
+# standard_output = standard_decoding(input_ids)
+# output_tokens = context_aware_sampling(
+#                                         model,
+#                                         tokenizer,
+#                                         input_ids,
+#                                         context_ids=context_input,
+#                                         alpha=0.9,
+#                                         max_length=512,
+#                                         temperature=0.0,
+#                                     )
 
-context_aware_output = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+# context_aware_output = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
-print("__" * 50)
-print("Standard Decoding Output:\n", standard_output)
-print("__" * 50)
-print("Context-Aware Decoding Output:\n", context_aware_output)
+# print("__" * 50)
+# print("Standard Decoding Output:\n", standard_output)
+# print("__" * 50)
+# print("Context-Aware Decoding Output:\n", context_aware_output)
