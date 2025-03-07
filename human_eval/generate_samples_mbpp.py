@@ -1,7 +1,7 @@
 import pdb
 import os
-# from human_eval.data import write_jsonl, read_problems
-from context_aware_decoding.simple_cad import standard_decoding, context_aware_sampling
+from human_eval.human_eval.data import write_jsonl, read_problems
+from context_aware_decoding.simple_cad import standard_decoding, context_aware_sampling, context_aware_sampling_fast
 from transformers import AutoModelForCausalLM, AutoTokenizer, LogitsProcessorList, LogitsProcessor
 from torch.nn import functional as F
 import torch
@@ -44,17 +44,19 @@ def generate_one_completion(task, model, tokenizer, mode="regular", max_len=256,
     
     _prompt = task["prompt"] # the function signature
     _context = task["context"] # acts as doc string (code question in natural language)
-    
+    _tests = task["tests"] # test cases
+
     if benchmark:
         torch.cuda.synchronize()
         mem_before = torch.cuda.memory_allocated(device)
         start_time = time.time()
 
     if mode == "regular":
-        prompt = "Function signature: %s\n\nDocstring: %s" % (_prompt, _context)
+        prompt = "Docstring: %s Function signature: %s\n\n" % (_context, _prompt)
         formatted_prompt = FORMAT_STR.format(prompt=prompt)
         prompt_input_ids = tokenizer(formatted_prompt, return_tensors="pt").input_ids.to(device)
         completion_ids, output = standard_decoding(prompt_input_ids, model, tokenizer, max_length=max_len)
+        output = output[len(formatted_prompt):]
         print(output)
     elif mode == "cad":
         question, context = _prompt, _context
@@ -63,7 +65,8 @@ def generate_one_completion(task, model, tokenizer, mode="regular", max_len=256,
         question_input = tokenizer(question, return_tensors="pt").input_ids.to(device)
         input_ids = torch.cat([context_input, question_input], dim=-1)
         
-        completion_ids, output = context_aware_sampling(input_ids, context_input, model, tokenizer, alpha=0.5, max_length=max_len, temperature=0.8)
+        completion_ids, output = context_aware_sampling_fast(input_ids, context_input, model, tokenizer, alpha=0.5, max_length=max_len, temperature=0.8)
+        output = output[len(formatted_context):]
         print(f"CAD OUTPUT:\n\n{output}\n\n")
     elif mode == "rag":
         prompt = "Function signature: %s\n\nDocstring: %s" % (_prompt, _context)
@@ -132,10 +135,12 @@ if __name__ == "__main__":
     for i, row in enumerate(rows):
         _context = row["context"][0]
         _question = row['function_name'][0]
-        problems.append({"task_id": i, "prompt": _question, "context": _context})
+        _tests = row['test_list'][0]
+
+        problems.append({"task_id": i, "prompt": _question, "context": _context, "tests": _tests})
 
     if args.benchmark:
-        problems = dict(islice(problems, 10))
+        # problems = problems[:2]
         args.n = 1 # Only generate one sample per task for benchmarking
     if args.mode == "rag":
         args.max_len=2048 # longer window size
@@ -149,15 +154,19 @@ if __name__ == "__main__":
     num_samples_per_task = args.n
 
     samples = [
-        dict(task_id=problem["task_id"], completion=generate_one_completion(problem, model, tokenizer, args.mode, max_len=args.max_len, benchmark=args.benchmark, rag_ctx=ctxs[task_id] if args.mode == "rag" else None))
-        for problem in tqdm(problems, desc="Processing Tasks")
+        dict(task_id=problem["task_id"], completion=generate_one_completion(problem, model, tokenizer, args.mode, max_len=args.max_len, benchmark=args.benchmark, rag_ctx=ctxs[problem["task_id"]] if args.mode == "rag" else None),
+             function_name=problem["prompt"], tests=problem["tests"]
+             )
+        for problem in tqdm(problems[:2], desc="Processing Tasks")
         for _ in range(num_samples_per_task) 
     ]
-    tts = [sample['completion']['throughput_tokens_per_sec'] for sample in samples]
-    mos = [sample['completion']['memory_overhead_MB'] for sample in samples]
-    print(np.mean(tts))
-    print(np.mean(mos))
-    pdb.set_trace()
+    # print(samples[0])
+    # input()
+    # tts = [sample['completion']['throughput_tokens_per_sec'] for sample in samples]
+    # mos = [sample['completion']['memory_overhead_MB'] for sample in samples]
+    # print(np.mean(tts))
+    # print(np.mean(mos))
+    # pdb.set_trace()
     out_dir=f"human-eval/results/{model_name}"
     os.makedirs(out_dir, exist_ok=True) 
     write_jsonl(f"{out_dir}/{args.mode}_samples_{num_samples_per_task}_mbpp.jsonl", samples)
