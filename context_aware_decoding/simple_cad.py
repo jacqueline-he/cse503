@@ -12,7 +12,8 @@ model = AutoModelForCausalLM.from_pretrained(model_name, token = test_token)
 device = "cuda:1" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=50, top_p=0.9):
+def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=0, top_p=0.9):
+
     output_ids = model.generate(
         input_ids,
         max_length=max_length,
@@ -23,9 +24,10 @@ def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=50, top_
     )
     return tokenizer.decode(output_ids[0][len(input_ids):], skip_special_tokens=True)
 
-def context_aware_sampling(model, tokenizer, input_ids, context_ids, alpha=0.9, max_length=128, temperature=1.0):
+# context_aware_sampling(input_ids, context_input, model, tokenizer, alpha=0.5, max_length=max_len, temperature=0.8)
+def context_aware_sampling(input_ids, context_ids, model, tokenizer, alpha=0.9, max_length=128, temperature=1.0):
     generated_tokens = input_ids.clone()
-    
+    newline_tokens = tokenizer.encode("\n\n", add_special_tokens=False)
     for _ in range(max_length):
         with torch.no_grad():
             full_context_outputs = model(generated_tokens)
@@ -36,53 +38,50 @@ def context_aware_sampling(model, tokenizer, input_ids, context_ids, alpha=0.9, 
             question_only_logits = question_only_outputs.logits[:, -1, :] 
 
         adjusted_logits = (1 + alpha) * full_context_logits - alpha * question_only_logits
-        adjusted_probs = F.softmax(adjusted_logits / temperature, dim=-1)
 
-        next_token = torch.multinomial(adjusted_probs, num_samples=1)
+        if temperature == 0:
+            # Use argmax for greedy decoding
+            next_token = torch.argmax(adjusted_logits, dim=-1)
+            next_token = next_token.view(generated_tokens.shape[0], 1) # reshape for concatenation
+        else:
+            # Use sampling for non-zero temperature
+            probs = F.softmax(adjusted_logits / temperature, dim=-1)
+            next_token = torch.multinomial(probs, num_samples=1)
 
         generated_tokens = torch.cat([generated_tokens, next_token], dim=-1)
 
-        if next_token.item() == tokenizer.eos_token_id:
+        
+        if next_token.item() == tokenizer.eos_token_id or next_token.item() in newline_tokens:
             break
 
-    return generated_tokens[0][len(input_ids):]
+    return generated_tokens, tokenizer.decode(generated_tokens[0], skip_special_tokens=True)
 
 
 
 
-# context = "Here is some context regarding the method signature. Use this strictly for your answer: 'def remove_Occ(s,ch):'"
+# context = "Write a python function to remove first and last occurrence of a given character from the string. Return only the function, with no other explanation, print statements, or unit tests.\n\n"
+# question = "def remove_Occ(s,ch):\n"
+# context_input = tokenizer(context, return_tensors="pt").input_ids.to(device)
+# question_input = tokenizer(question, return_tensors="pt").input_ids.to(device)
 
-# question = " Output only code for this question. Please do not provide any other instruction or example. Write a python function to remove first and last occurrence of a given character from the string."
-
-context = """You are a code-generater. Given a code-generation task, you are expected to generate code that satisfies the task requirements. You are given a method signature and a context. Use the context strictly for your answer. Do not provide any other instruction or example. 
-Here is the method signature: def remove_Occ(s,ch)
-"""
-
-question = """"
-Write a python function to remove first and last occurrence of a given character from the string.
-"""
+# input_ids = torch.cat([context_input, question_input], dim=-1)
 
 
-context_input = tokenizer(context, return_tensors="pt").input_ids.to(device)
-question_input = tokenizer(question, return_tensors="pt").input_ids.to(device)
+# model.eval()
+# standard_output = standard_decoding(input_ids)
+# output_tokens = context_aware_sampling(
+#                                         model,
+#                                         tokenizer,
+#                                         input_ids,
+#                                         context_ids=context_input,
+#                                         alpha=0.9,
+#                                         max_length=512,
+#                                         temperature=0.0,
+#                                     )
 
-input_ids = torch.cat([context_input, question_input], dim=-1)
+# context_aware_output = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+# print("__" * 50)
+# print("Standard Decoding Output:\n", standard_output)
+# print("__" * 50)
+# print("Context-Aware Decoding Output:\n", context_aware_output)
 
-model.eval()
-standard_output = standard_decoding(input_ids)
-output_tokens = context_aware_sampling(
-                                        model,
-                                        tokenizer,
-                                        input_ids,
-                                        context_ids=context_input,
-                                        alpha=0.5,
-                                        max_length=128,
-                                        temperature=1.0,
-                                    )
-
-context_aware_output = tokenizer.decode(output_tokens, skip_special_tokens=True)
-
-print("__" * 50)
-print("Standard Decoding Output:\n", standard_output)
-print("__" * 50)
-print("Context-Aware Decoding Output:\n", context_aware_output)
