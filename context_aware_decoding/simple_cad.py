@@ -13,6 +13,7 @@ device = "cuda:1" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
 def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=0, top_p=0.9):
+
     output_ids = model.generate(
         input_ids,
         max_length=max_length,
@@ -21,7 +22,7 @@ def standard_decoding(input_ids, max_length=128, temperature=1.0, top_k=0, top_p
         top_p=top_p,
         do_sample=True,
     )
-    return tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    return tokenizer.decode(output_ids[0][len(input_ids):], skip_special_tokens=True)
 
 # context_aware_sampling(input_ids, context_input, model, tokenizer, alpha=0.5, max_length=max_len, temperature=0.8)
 def context_aware_sampling(input_ids, context_ids, model, tokenizer, alpha=0.9, max_length=128, temperature=1.0):
@@ -65,6 +66,7 @@ def context_aware_sampling(input_ids, context_ids, model, tokenizer, alpha=0.9, 
 
 # input_ids = torch.cat([context_input, question_input], dim=-1)
 
+
 # model.eval()
 # standard_output = standard_decoding(input_ids)
 # output_tokens = context_aware_sampling(
@@ -78,8 +80,8 @@ def context_aware_sampling(input_ids, context_ids, model, tokenizer, alpha=0.9, 
 #                                     )
 
 # context_aware_output = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
-
 # print("__" * 50)
 # print("Standard Decoding Output:\n", standard_output)
 # print("__" * 50)
 # print("Context-Aware Decoding Output:\n", context_aware_output)
+
