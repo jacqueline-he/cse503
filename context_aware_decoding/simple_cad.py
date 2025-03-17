@@ -7,8 +7,10 @@ from torch.nn import functional as F
 
 
 def standard_decoding(input_ids, model, tokenizer, max_length=128, temperature=0.5, top_p=0.9):
+    attention_mask = (input_ids != tokenizer.pad_token_id).long()  
     output_ids = model.generate(
         input_ids,
+        attention_mask=attention_mask,
         max_length=max_length,
         temperature=temperature,
         top_p=top_p,
