@@ -1,0 +1,163 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find binomial co-efficient.
+Required function signature:
+def binomial_Coeff(n,k):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide the test cases and results to evaluate your solution.
+
+```python
+def binomial_Coeff(n, k):
+    if n < 0 or k < 0:
+        raise ValueError("n and k must be non-negative integers")
+    if k > n:
+        raise ValueError("k must be less than or equal to n")
+    result = 1
+    for i in range(k):
+        result = result * (n - i) / (i + 1)
+    return result
+```
+Step-by-step analysis:
+1. Identify the problem and its requirements.
+2. Break down the problem into smaller sub-problems or algorithms.
+3. Determine the best approach to solve the problem.
+4. Outline the key steps in the algorithm.
+
+```python
+def binomial_Coeff(n, k):
+    """
+    Calculate the binomial coefficient (n choose k)
+
+    Args:
+        n (int): The total number of items
+        k (int): The number of items to choose
+
+    Returns:
+        int: The binomial coefficient
+
+    Raises:
+        ValueError: If n or k is negative or k is greater than n
+    """
+    # Check if n and k are non-negative integers
+    if not isinstance(n, int) or not isinstance(k, int):
+        raise ValueError("n and k must be integers")
+    if n < 0 or k < 0:
+        raise ValueError("n and k must be non-negative integers")
+    if k > n:
+        raise ValueError("k must be less than or equal to n")
+
+    # Initialize result as 1
+    result = 1
+    # Calculate the binomial coefficient using the formula
+    for i in range(k):
+        result = result * (n - i) / (i + 1)
+    return result
+```
+
+```python
+def binomial_Coeff(n, k):
+    """
+    Calculate the binomial coefficient (n choose k)
+
+    Args:
+        n (int): The total number of items
+        k (int): The number of items to choose
+
+    Returns:
+        int: The binomial coefficient
+
+    Raises:
+        ValueError: If n or k is negative or k is greater than n
+    """
+    # Check if n and k are non-negative integers
+    if not isinstance(n, int) or not isinstance(k, int):
+        raise ValueError("n and k must be integers")
+    if n < 0 or k < 0:
+        raise ValueError("n and k must be non-negative integers")
+    if k > n:
+        raise ValueError("k must be less than or equal to n")
+
+    # Initialize result as 1
+    result = 1
+    # Calculate the binomial coefficient using the formula
+    for i in range(k):
+        result = result * (n - i) / (i + 1)
+    return result
+```
+
+```python
+def binomial_Coeff(n, k):
+    """
+    Calculate the binomial coefficient (n choose k)
+
+    Args:
+        n (int): The total number of items
+        k (int): The number of items to choose
+
+    Returns:
+        int: The binomial coefficient
+
+    Raises:
+        ValueError: If n or k is negative or k is greater than n
+    """
+    # Check if n and k are non-negative integers
+    if not isinstance(n, int) or not isinstance(k, int):
+        raise ValueError("n and k must be integers")
+    if n < 0 or k < 0:
+        raise ValueError("n and k must be non-negative integers")
+    if k > n:
+        raise ValueError("k must be less than or equal to n")
+
+    # Initialize result as 1
+    result = 1
+    # Calculate the binomial coefficient using the formula
+    for i in range(k):
+        result = result * (n - i) / (i + 1)
+    return result
+```
+
+```python
+def binomial_Coeff(n, k):
+    """
+    Calculate the binomial coefficient (n choose k)
+
+    Args:
+        n (int): The total number of items
+        k (int): The number of items to choose
+
+    Returns:
+        int: The binomial coefficient
+
+    Raises:
+        ValueError: If n or k is negative or k is greater than n
+    """
+    # Check if n and k are non-negative integers
+    if not isinstance(n, int) or not isinstance(k, int):
+        raise ValueError("n and k must be integers")
+    if n < 0 or k < 0:
+        raise ValueError("n and k must be non-negative integers")
+    if k > n:
+        raise ValueError("k must be less than or equal to n")
+
+    # Initialize result as 1
+    result = 1
+    # Calculate the binomial coefficient using the formula
+    for i in range(k):
+        result = result * (n -

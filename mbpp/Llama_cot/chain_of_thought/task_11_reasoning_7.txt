@@ -1,0 +1,156 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. This is the solution to this problem.
+
+```python
+def remove_Occ(s,ch):
+    n=len(s)
+    i=0
+    j=n-1
+    while i<=j:
+        if s[i]==ch:
+            s=s[:i] + s[i+1:j] + s[j+1:]
+            i=i+1
+            j=j-1
+        elif s[i]==ch and s[j]==ch:
+            s=s[:i] + s[j+1:]
+            i=i+1
+            j=j-1
+        else:
+            i=i+1
+            j=j-1
+    return s
+```
+
+```python
+def remove_Occ(s,ch):
+    n=len(s)
+    i=0
+    j=n-1
+    while i<=j:
+        if s[i]==ch:
+            s=s[:i] + s[i+1:j] + s[j+1:]
+            i=i+1
+            j=j-1
+        elif s[i]==ch and s[j]==ch:
+            s=s[:i] + s[j+1:]
+            i=i+1
+            j=j-1
+        else:
+            i=i+1
+            j=j-1
+    return s
+```
+
+## Step-by-Step Solution
+1. **Identify the problem**: This problem requires removing the first and last occurrence of a given character from a string.
+2. **Key steps and algorithms**: To solve this problem, we need to find the first occurrence of the character and then find the last occurrence. We can do this by using two pointers, one starting from the beginning of the string and one from the end.
+3. **Edge cases**: We need to consider two edge cases: removing the first occurrence of a character and removing the last occurrence of a character.
+4. **Implementation**:
+
+```python
+def remove_Occ(s,ch):
+    n=len(s)
+    i=0
+    j=n-1
+    while i<=j:
+        if s[i]==ch:
+            s=s[:i] + s[i+1:j] + s[j+1:]
+            i=i+1
+            j=j-1
+        elif s[i]==ch and s[j]==ch:
+            s=s[:i] + s[j+1:]
+            i=i+1
+            j=j-1
+        else:
+            i=i+1
+            j=j-1
+    return s
+````
+
+## Step-by-Step Solution (continued)
+5. **Test cases**: We need to test our function with different inputs to ensure it works correctly.
+6. **Edge cases**: We need to consider the edge cases where the character is not present in the string or the string is empty.
+7. **Implementation**:
+
+```python
+def remove_Occ(s,ch):
+    n=len(s)
+    i=0
+    j=n-1
+    while i<=j:
+        if s[i]==ch:
+            s=s[:i] + s[i+1:j] + s[j+1:]
+            i=i+1
+            j=j-1
+        elif s[i]==ch and s[j]==ch:
+            s=s[:i] + s[j+1:]
+            i=i+1
+            j=j-1
+        else:
+            i=i+1
+            j=j-1
+    return s
+````
+
+## Step-by-Step Solution (continued)
+8. **Test cases**: We need to test our function with different inputs to ensure it works correctly.
+9. **Edge cases**: We need to consider the edge cases where the character is not present in the string or the string is empty.
+10. **Implementation**:
+
+```python
+def remove_Occ(s,ch):
+    n=len(s)
+    i=0
+    j=n-1
+    while i<=j:
+        if s[i]==ch:
+            s=s[:i] + s[i+1:j] + s[j+1:]
+            i=i+1
+            j=j-1
+        elif s[i]==ch and s[j]==ch:
+            s=s[:i] + s[j+1:]
+            i=i+1
+            j=j-1
+        else:
+            i=i+1
+            j=j-1
+    return s
+````
+
+## Step-by-Step Solution (continued)
+11. **Test cases**: We need to test our function with different inputs to ensure it works correctly.
+12. **Edge cases**: We need to consider the edge cases where the character is not present in the string or the string is empty.
+13. **Implementation**:
+
+```python
+def remove_Occ(s,ch):
+    n=len(s)
+    i=0
+    j=n-1
+    while i<=j:
+        if s[i]==ch:
+            s=s[:i] + s[i+1:j] + s[j+1:]
+            i=i+1
+            j=j-

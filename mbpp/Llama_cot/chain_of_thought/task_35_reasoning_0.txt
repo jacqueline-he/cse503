@@ -1,0 +1,64 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the n-th rectangular number.
+Required function signature:
+def find_rect_num(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide the test cases and edge cases to verify your implementation.
+
+```python
+def find_rect_num(n):
+    i = 1
+    sum = 0
+    while True:
+        if i * (i + 1) / 2 > n:
+            break
+        sum += i * (i + 1) / 2
+        i += 1
+    return sum
+```
+
+## Step 1: Understand the problem
+The problem asks to find the n-th rectangular number. A rectangular number is a positive integer n such that it can be represented as the product of two integers in two different ways.
+
+## Step 2: Key steps and algorithms
+To find the n-th rectangular number, we need to find two integers a and b such that a * b = n and a!= b. We can use the fact that the sum of the first m positive integers is given by m * (m + 1) / 2. If we can find two integers a and b such that a * b = n, we can also find the n-th rectangular number.
+
+## Step 3: Edge cases
+We need to consider the case where n is 1, because the n-th rectangular number is 1. We also need to consider the case where n is 0, because the n-th rectangular number is 0.
+
+## Step 4: Implementation
+We can implement our solution using the following steps:
+- Calculate the sum of the first m positive integers, where m is the minimum value of i such that i * (i + 1) / 2 <= n.
+- If the sum is equal to n, return n. Otherwise, return the sum minus n.
+
+```python
+def find_rect_num(n):
+    i = 1
+    sum = 0
+    while True:
+        if i * (i + 1) / 2 <= n:
+            sum += i * (i + 1) / 2
+            if sum == n:
+                return n
+            i += 1
+        else:
+            return sum - n
+```

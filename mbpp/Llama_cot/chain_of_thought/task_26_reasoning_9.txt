@@ -1,0 +1,87 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the given tuple list has all k elements.
+Required function signature:
+def check_k_elements(test_list, K):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Since we're checking for k elements, we'll assume k = 1 for simplicity.
+
+```python
+def check_k_elements(test_list, K):
+    for element in test_list:
+        if element!= K:
+            return False
+    return True
+```
+5. Test the solution with a set of test cases.
+
+```python
+# Test cases
+test_cases = [
+    ([1, 2, 3], True),
+    ([1, 2], False),
+    ([1, 2, 3, 4], True),
+    ([1, 2, 3, 4], False)
+]
+```
+6. Since the problem is asking for a function that returns a boolean value, we can skip implementing a return statement and directly return the result of the function.
+
+```python
+def check_k_elements(test_list, K):
+    return len(test_list) == K
+```
+7. Test the function with the provided test cases.
+
+```python
+# Test the function
+for test_case in test_cases:
+    print(f"Test case: {test_case[0]} with K = {test_case[1]}")
+    print(f"Result: {check_k_elements(test_case[0], test_case[1])}")
+    print()
+```
+8. Run the test cases to verify the correctness of the function.
+
+```python
+# Run the test cases
+for test_case in test_cases:
+    print(f"Test case: {test_case[0]} with K = {test_case[1]}")
+    print(f"Result: {check_k_elements(test_case[0], test_case[1])}")
+    print()
+```
+Here's the implementation:
+
+```python
+def check_k_elements(test_list, K):
+    return len(test_list) == K
+
+# Test cases
+test_cases = [
+    ([1, 2, 3], True),
+    ([1, 2], False),
+    ([1, 2, 3, 4], True),
+    ([1, 2, 3, 4], False)
+]
+
+# Test the function
+for test_case in test_cases:
+    print(f"Test case: {test_case[0]} with K = {test_case[1]}")
+    print(f"Result: {check_k_elements(test_case[0], test_case[1])}")
+    print()
+```

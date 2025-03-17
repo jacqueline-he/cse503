@@ -1,0 +1,53 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the n-th rectangular number.
+Required function signature:
+def find_rect_num(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please include comments to explain the purpose of each segment.
+
+```python
+def find_rect_num(n):
+    # We know that a rectangle is defined as a set of 2D points.
+    # The length of a rectangle is the number of points on the x-axis,
+    # and the width is the number of points on the y-axis.
+    # We need to find the number of points on the y-axis.
+    # A rectangle can be represented as a rectangle of size m x n.
+    # The total number of points on the y-axis is m.
+    # Therefore, the n-th rectangular number can be calculated using the formula:
+    # n-th rectangular number = m * (m + 1) / 2
+    return n * (n + 1) // 2
+```
+
+```python
+# Test cases
+print(find_rect_num(1))  # Expected output: 1
+print(find_rect_num(2))  # Expected output: 3
+print(find_rect_num(3))  # Expected output: 6
+print(find_rect_num(4))  # Expected output: 10
+print(find_rect_num(5))  # Expected output: 15
+```
+
+```python
+# Edge cases
+print(find_rect_num(0))  # Expected output: 0
+print(find_rect_num(-1))  # Expected output: 0
+print(find_rect_num(1.5))  # Expected output: 3
+```

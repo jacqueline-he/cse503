@@ -1,0 +1,67 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the nth octagonal number.
+Required function signature:
+def is_octagonal(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+```python
+def is_octagonal(n):
+    #... implementation...
+```
+### Step 1: Understand the problem
+
+The nth octagonal number is the sum of the first n positive integers, multiplied by 2, minus the sum of the first n positive integers, multiplied by 4.
+
+### Step 2: Identify key steps or algorithms
+
+1. Recognize the formula for the nth octagonal number as 2n^2 - n.
+2. Derive a formula for the nth triangular number using the formula for the nth odd number: n^2.
+
+### Step 3: Identify edge cases
+
+* Handle n = 0, which is not possible for the octagonal number.
+* Handle n = 1, which is not possible for the octagonal number.
+
+### Step 4: Implement the solution
+
+```python
+def is_octagonal(n):
+    """
+    Checks if a number is an nth octagonal number.
+
+    Args:
+        n (int): The number of the octagonal number.
+
+    Returns:
+        bool: True if the number is an nth octagonal number, False otherwise.
+    """
+    # Edge cases
+    if n == 0:
+        return False
+    if n == 1:
+        return False
+
+    # Calculate the nth octagonal number using the derived formula
+    nth_octagonal = 2 * n**2 - n
+
+    # Check if the number is an nth octagonal number
+    return nth_octagonal == n**2
+```

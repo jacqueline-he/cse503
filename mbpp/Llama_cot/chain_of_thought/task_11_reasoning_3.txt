@@ -1,0 +1,176 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Here is the complete solution:
+
+```python
+def remove_Occ(s,ch):
+    """
+    Removes the first and last occurrence of a character from the string.
+
+    Parameters:
+    s (str): The input string.
+    ch (str): The character to be removed.
+
+    Returns:
+    str: The string with the first and last occurrence of the character removed.
+    """
+    # Initialize an empty string to store the result
+    result = ""
+
+    # Initialize a flag to track whether the character has been removed
+    removed = False
+
+    # Iterate over the characters in the string
+    for i in range(len(s)):
+        # If the character is not the one we want to remove
+        if s[i]!= ch:
+            # If the character is not the first or last occurrence
+            if not removed:
+                # Append it to the result string
+                result += s[i]
+            # Set the flag to True
+            removed = True
+        # If the character is the first or last occurrence
+        else:
+            # Append it to the result string
+            result += s[i]
+
+    # Return the result string
+    return result
+
+# Test the function
+print(remove_Occ("abcabcabc", 'b'))  # Expected output: "abcabc"
+```
+
+
+```python
+def remove_Occ(s,ch):
+    """
+    Removes the first and last occurrence of a character from the string.
+
+    Parameters:
+    s (str): The input string.
+    ch (str): The character to be removed.
+
+    Returns:
+    str: The string with the first and last occurrence of the character removed.
+    """
+    # Initialize an empty string to store the result
+    result = ""
+
+    # Initialize a flag to track whether the character has been removed
+    removed = False
+
+    # Iterate over the characters in the string
+    for i in range(len(s)):
+        # If the character is not the one we want to remove
+        if s[i]!= ch:
+            # If the character is not the first or last occurrence
+            if not removed:
+                # Append it to the result string
+                result += s[i]
+            # Set the flag to True
+            removed = True
+        # If the character is the first or last occurrence
+        else:
+            # Append it to the result string
+            result += s[i]
+
+    # Return the result string
+    return result
+
+# Test the function
+print(remove_Occ("abcabcabc", 'b'))  # Expected output: "abcabc"
+```
+
+
+```python
+def remove_Occ(s,ch):
+    """
+    Removes the first and last occurrence of a character from the string.
+
+    Parameters:
+    s (str): The input string.
+    ch (str): The character to be removed.
+
+    Returns:
+    str: The string with the first and last occurrence of the character removed.
+    """
+    # Initialize an empty string to store the result
+    result = ""
+
+    # Initialize two pointers, one at the start and one at the end of the string
+    left = 0
+    right = len(s) - 1
+
+    # Loop until the two pointers meet
+    while left <= right:
+        # If the character at the left pointer is not the one we want to remove
+        if s[left]!= ch:
+            # Append it to the result string
+            result += s[left]
+            # Move the left pointer to the right
+            left += 1
+        # If the character at the right pointer is not the one we want to remove
+        elif s[right]!= ch:
+            # Append it to the result string
+            result += s[right]
+            # Move the right pointer to the left
+            right -= 1
+        # If the characters at the two pointers are the same
+        else:
+            # If the character at the left pointer is not the first occurrence
+            if left!= 0:
+                # Move the left pointer to the right
+                left += 1
+            # If the character at the right pointer is not the last occurrence
+            elif right!= len(s) - 1:
+                # Move the right pointer to the left
+                right -= 1
+            # If the character at the left pointer is the first occurrence
+            else:
+                # Append it to the result string
+                result += s[left]
+                # Move the left pointer to the right
+                left += 1
+
+    # Return the result string
+    return result
+
+# Test the function
+print(remove_Occ("abcabcabc", 'b'))  # Expected output: "abcabc"
+```
+
+
+```python
+def remove_Occ(s,ch):
+    """
+    Removes the first and last occurrence of a character from the string.
+
+    Parameters:
+    s (str): The input string.
+    ch (str): The character to be removed.
+
+    Returns:
+    str: The string with the first and last occurrence of the character removed.

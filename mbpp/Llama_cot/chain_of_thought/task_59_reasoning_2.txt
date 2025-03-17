@@ -1,0 +1,58 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the nth octagonal number.
+Required function signature:
+def is_octagonal(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I don't need the function definition for now.
+
+## Step 1: Define the problem and understand what is being asked
+We need to find the nth octagonal number. An octagonal number is a number that can be represented as the sum of consecutive integers starting from 1.
+
+## Step 2: Identify the key steps or algorithms needed
+To find the nth octagonal number, we can use the formula for the nth octagonal number: $O_n = \frac{(n-1)(n+1)}{2} \cdot 2^{n-2}$.
+
+## Step 3: Consider edge cases
+We need to consider the case where n is less than or equal to 0, or n is a negative number.
+
+## Step 4: Implement the solution
+```
+def is_octagonal(n):
+    if n <= 0:
+        raise ValueError("Input must be a positive integer")
+    if n < 1:
+        raise ValueError("Input must be a positive integer")
+    return ((n-1)*(n+1))//2 * 2**(n-2)
+
+def nth_octagonal(n):
+    return is_octagonal(n)
+```
+
+The final answer is: ```python
+def is_octagonal(n):
+    if n <= 0:
+        raise ValueError("Input must be a positive integer")
+    if n < 1:
+        raise ValueError("Input must be a positive integer")
+    return ((n-1)*(n+1))//2 * 2**(n-2)
+
+def nth_octagonal(n):
+    return is_octagonal(n)
+```

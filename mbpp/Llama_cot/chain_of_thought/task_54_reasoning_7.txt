@@ -1,0 +1,185 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort the given array by using counting sort.
+Required function signature:
+def counting_sort(my_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    # Step 1: Find the maximum element in the list
+    max_element = max(my_list)
+```
+
+```python
+    # Step 2: Initialize count array with zeros
+    count = [0] * (max_element + 1)
+```
+
+```python
+    # Step 3: Count occurrences of each element
+    for num in my_list:
+        count[num] += 1
+```
+
+```python
+    # Step 4: Calculate cumulative sum
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+```
+
+```python
+    # Step 5: Build the sorted array
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+```
+
+```python
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+    # Step 1: Find the maximum element in the list
+    max_element = max(my_list)
+
+    # Step 2: Initialize count array with zeros
+    count = [0] * (max_element + 1)
+
+    # Step 3: Count occurrences of each element
+    for num in my_list:
+        count[num] += 1
+
+    # Step 4: Calculate cumulative sum
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+
+    # Step 5: Build the sorted array
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    max_element = max(my_list)
+    count = [0] * (max_element + 1)
+    for num in my_list:
+        count[num] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    max_element = max(my_list)
+    count = [0] * (max_element + 1)
+    for num in my_list:
+        count[num] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    max_element = max(my_list)
+    count = [0] * (max_element + 1)
+    for num in my_list:
+        count[num] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    max_element = max(my_list)
+    count = [0] * (max_element + 1)
+    for num in my_list:
+        count[num] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    max_element = max(my_list)
+    count = [0] * (max_element + 1)
+    for num in my_list:
+        count[num] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    sorted_list = [0] * len(my_list)
+    for num in reversed(my_list):
+        sorted_list[count[num] - 1] = num
+        count[num] -= 1
+    return sorted_list
+```
+
+```python

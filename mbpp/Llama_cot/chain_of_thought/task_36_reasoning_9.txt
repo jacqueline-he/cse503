@@ -1,0 +1,151 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the nth digit in the proper fraction of two given numbers.
+Required function signature:
+
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will be using the EXACT function to verify your answer.
+
+```python
+def find_digit_in_fraction(num1, num2):
+    # Find the least common multiple of num1 and num2
+    lcm = EXACT(num1, num2)
+    
+    # Find the fraction of num1
+    fraction_num1 = EXACT(num1, num2)
+    
+    # Find the fraction of num2
+    fraction_num2 = EXACT(num2, num1)
+    
+    # Find the common denominator of the two fractions
+    common_denominator = EXACT(fraction_num1.denominator, fraction_num2.denominator)
+    
+    # Convert the fractions to equivalent fractions with the common denominator
+    fraction_num1 = EXACT(fraction_num1.numerator * common_denominator // fraction_num1.denominator, common_denominator)
+    fraction_num2 = EXACT(fraction_num2.numerator * common_denominator // fraction_num2.denominator, common_denominator)
+    
+    # Add the two fractions together
+    total_fraction = EXACT(fraction_num1.numerator + fraction_num2.numerator, common_denominator)
+    
+    # Convert the fraction back to a decimal
+    decimal_value = EXACT(total_fraction.numerator // total_fraction.denominator, total_fraction.denominator)
+    
+    # Return the nth digit of the decimal value
+    return EXACT(decimal_value.numerator // (10 ** (total_fraction.denominator - 1)), total_fraction.denominator - 1)
+```
+
+```python
+import math
+
+def find_digit_in_fraction(num1, num2):
+    """
+    Find the nth digit in the proper fraction of two given numbers.
+
+    Args:
+        num1 (int): The first number.
+        num2 (int): The second number.
+
+    Returns:
+        int: The nth digit in the proper fraction of num1 and num2.
+    """
+    # Calculate the least common multiple of num1 and num2
+    lcm = math.lcm(num1, num2)
+    
+    # Calculate the fraction of num1
+    fraction_num1 = num1 / lcm
+    
+    # Calculate the fraction of num2
+    fraction_num2 = num2 / lcm
+    
+    # Calculate the common denominator of the two fractions
+    common_denominator = lcm
+    
+    # Convert the fractions to equivalent fractions with the common denominator
+    fraction_num1 = fraction_num1 * (common_denominator // lcm)
+    fraction_num2 = fraction_num2 * (common_denominator // lcm)
+    
+    # Add the two fractions together
+    total_fraction = fraction_num1 + fraction_num2
+    
+    # Convert the fraction back to a decimal
+    decimal_value = total_fraction / common_denominator
+    
+    # Return the nth digit of the decimal value
+    return EXACT(decimal_value.numerator // (10 ** (decimal_value.denominator - 1)), decimal_value.denominator - 1)
+```
+
+### Step-by-Step Solution
+
+We need to find the nth digit in the proper fraction of two given numbers. The proper fraction is a fraction where the numerator is less than the denominator.
+
+We can use the following key steps:
+
+*   Calculate the least common multiple (LCM) of the two numbers.
+*   Calculate the fraction of each number.
+*   Calculate the common denominator of the two fractions.
+*   Convert the fractions to equivalent fractions with the common denominator.
+*   Add the two fractions together.
+*   Convert the fraction back to a decimal.
+*   Return the nth digit of the decimal value.
+
+### Edge Cases
+
+We need to consider the following edge cases:
+
+*   If either of the numbers is zero, the result will be zero.
+*   If either of the numbers is negative, the result will be negative.
+*   If the two numbers are not coprime, the result will be undefined.
+
+### Implementation
+
+```python
+import math
+
+def find_digit_in_fraction(num1, num2):
+    """
+    Find the nth digit in the proper fraction of two given numbers.
+
+    Args:
+        num1 (int): The first number.
+        num2 (int): The second number.
+
+    Returns:
+        int: The nth digit in the proper fraction of num1 and num2.
+    """
+    # Calculate the least common multiple of num1 and num2
+    lcm = math.lcm(num1, num2)
+    
+    # Calculate the fraction of num1
+    fraction_num1 = num1 / lcm
+    
+    # Calculate the fraction of num2
+    fraction_num2 = num2 / lcm
+    
+    # Calculate the common denominator of the two fractions
+    common_denominator = lcm
+    
+    # Convert the fractions to equivalent fractions with the common denominator
+    fraction_num1 = fraction_num1 * (common_denominator // lcm)
+    fraction_num2 = fraction_num2 * (common_denominator // lcm)
+    
+    # Add the two fractions together
+    total_fraction = fraction_num1 + fraction_num2
+    
+    # Convert the fraction back to a decimal

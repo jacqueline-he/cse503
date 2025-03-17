@@ -1,0 +1,135 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort a given mixed list of integers and strings.
+Required function signature:
+def sort_mixed_list(mixed_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide feedback on the implementation.
+
+```python
+def sort_mixed_list(mixed_list):
+```
+```python
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate integers and strings
+    integers = [i for i in mixed_list if isinstance(i, int)]
+    strings = [i for i in mixed_list if isinstance(i, str)]
+
+    # Step 2: Sort integers and strings separately
+    integers.sort()
+    strings.sort()
+
+    # Step 3: Combine sorted integers and strings
+    sorted_list = integers + strings
+
+    return sorted_list
+```
+```python
+# Edge case 1: Empty list
+print(sort_mixed_list([]))  # Expected output: []
+
+# Edge case 2: List with only integers
+print(sort_mixed_list([1, 2, 3]))  # Expected output: [1, 2, 3]
+
+# Edge case 3: List with only strings
+print(sort_mixed_list(['a', 'b', 'c']))  # Expected output: ['a', 'b', 'c']
+
+# Edge case 4: List with mixed integers and strings
+print(sort_mixed_list([1, 'a', 3, 'b', 2]))  # Expected output: ['a', 'b', 1, 2, 3]
+```
+```python
+# Edge case 5: List with duplicate integers
+print(sort_mixed_list([1, 1, 2, 2, 3]))  # Expected output: [1, 1, 2, 2, 3]
+
+# Edge case 6: List with duplicate strings
+print(sort_mixed_list(['a', 'a', 'b', 'b', 'c']))  # Expected output: ['a', 'a', 'b', 'b', 'c']
+```
+```python
+# Edge case 7: List with negative integers
+print(sort_mixed_list([-1, 1, -2, 2]))  # Expected output: [-2, -1, 1, 2]
+````
+```python
+# Edge case 8: List with zero
+print(sort_mixed_list([0, 1, 0, 2]))  # Expected output: [0, 0, 1, 2]
+````
+```
+```python
+def sort_mixed_list(mixed_list):
+    """
+    Sort a given mixed list of integers and strings.
+
+    Args:
+        mixed_list (list): A list containing integers and strings.
+
+    Returns:
+        list: A sorted list containing integers and strings.
+
+    Raises:
+        TypeError: If the input list contains non-integer or non-string elements.
+    """
+    # Step 1: Separate integers and strings
+    integers = [i for i in mixed_list if isinstance(i, int)]
+    strings = [i for i in mixed_list if isinstance(i, str)]
+
+    # Step 2: Sort integers and strings separately
+    integers.sort()
+    strings.sort()
+
+    # Step 3: Combine sorted integers and strings
+    sorted_list = integers + strings
+
+    return sorted_list
+````
+
+```python
+def sort_mixed_list(mixed_list):
+    """
+    Sort a given mixed list of integers and strings.
+
+    Args:
+        mixed_list (list): A list containing integers and strings.
+
+    Returns:
+        list: A sorted list containing integers and strings.
+
+    Raises:
+        TypeError: If the input list contains non-integer or non-string elements.
+    """
+    # Step 1: Separate integers and strings
+    integers = [i for i in mixed_list if isinstance(i, int)]
+    strings = [i for i in mixed_list if isinstance(i, str)]
+
+    # Step 2: Sort integers and strings separately
+    integers.sort()
+    strings.sort()
+
+    # Step 3: Combine sorted integers and strings
+    sorted_list = integers + strings
+
+    return sorted_list
+
+# Test cases
+print(sort_mixed_list([]))  # Expected output: []
+print(sort_mixed_list([1, 2, 3]))  # Expected output: [1, 2, 3]
+print(sort_mixed_list(['a', 'b', 'c']))  # Expected output: ['a', 'b', 'c']
+print(sort_mixed_list([1, 'a', 3, 'b', 2]))  # Expected output: ['a', 'b', 1, 2, 3]
+print(sort_mixed_list([1, 1, 2, 2, 3]))  # Expected output: [1, 1, 2, 2, 3]
+print(sort_mixed_list([-1, 1, -2, 2]))  # Expected output: [-2, -1, 1, 2]
+print(sort_mixed_list([0, 1, 0, 2]))

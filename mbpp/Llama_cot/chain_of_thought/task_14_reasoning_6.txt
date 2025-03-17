@@ -1,0 +1,175 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the volume of a triangular prism.
+Required function signature:
+
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def calculate_triangular_prism_volume(base, height, width):
+    # Step 1: Calculate the area of the triangular base
+    base_area = 0.5 * base * base
+    
+    # Step 2: Calculate the volume of the triangular prism
+    # Step 3: Multiply the base area and height
+    volume = base_area * height
+    
+    return volume
+```
+
+
+```python
+def calculate_triangular_prism_volume(base, height, width):
+    """
+    Calculate the volume of a triangular prism.
+
+    Args:
+    base (float): The base of the triangular prism.
+    height (float): The height of the triangular prism.
+    width (float): The width of the triangular prism.
+
+    Returns:
+    float: The volume of the triangular prism.
+    """
+    # Step 1: Calculate the area of the triangular base
+    base_area = 0.5 * base * base
+    
+    # Step 2: Calculate the volume of the triangular prism
+    # Step 3: Multiply the base area and height
+    volume = base_area * height
+    
+    return volume
+````
+
+```python
+# Test the function with sample values
+base = 5
+height = 10
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 187.5
+````
+
+```python
+# Edge case: Base area is zero
+base = 0
+height = 10
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+
+
+```python
+# Edge case: Base area is negative
+base = -5
+height = 10
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+```python
+# Edge case: Height and width are zero
+base = 5
+height = 0
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+```python
+# Edge case: Width is negative
+base = 5
+height = 10
+width = -15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+```python
+# No other edge cases to consider
+````
+```
+def calculate_triangular_prism_volume(base, height, width):
+    """
+    Calculate the volume of a triangular prism.
+
+    Args:
+    base (float): The base of the triangular prism.
+    height (float): The height of the triangular prism.
+    width (float): The width of the triangular prism.
+
+    Returns:
+    float: The volume of the triangular prism.
+    """
+    # Step 1: Calculate the area of the triangular base
+    base_area = 0.5 * base * base
+    
+    # Step 2: Calculate the volume of the triangular prism
+    # Step 3: Multiply the base area and height
+    volume = base_area * height
+    
+    return volume
+````
+```python
+def calculate_triangular_prism_volume(base, height, width):
+    """
+    Calculate the volume of a triangular prism.
+
+    Args:
+    base (float): The base of the triangular prism.
+    height (float): The height of the triangular prism.
+    width (float): The width of the triangular prism.
+
+    Returns:
+    float: The volume of the triangular prism.
+    """
+    # Step 1: Calculate the area of the triangular base
+    base_area = 0.5 * base * base
+    
+    # Step 2: Calculate the volume of the triangular prism
+    # Step 3: Multiply the base area and height
+    volume = base_area * height
+    
+    return volume
+````
+```python
+# Test the function with sample values
+base = 5
+height = 10
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 187.5
+````
+```python
+# Edge case: Base area is zero
+base = 0
+height = 10
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+```python
+# Edge case: Base area is negative
+base = -5
+height = 10
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+```python
+# Edge case: Height and width are zero
+base = 5
+height = 0
+width = 15
+print(calculate_triangular_prism_volume(base, height, width))  # Output: 0.0
+````
+```python
+# Edge case: Width is negative
+base =

@@ -1,0 +1,183 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the top k integers that occur most frequently from given lists of sorted and distinct integers using heap queue algorithm.
+Required function signature:
+def func(nums, k):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Don't forget to include the EXACT function signature provided in the prompt.
+
+```python
+def find_top_k(nums, k):
+    if not nums:
+        return []
+    if k < 1 or k > len(nums):
+        raise ValueError("k is out of range")
+    return sorted(nums, key=lambda x: nums.count(x), reverse=True)[:k]
+```
+```python
+import heapq
+import math
+import itertools
+
+def find_top_k(nums, k):
+    if not nums:
+        return []
+    if k < 1 or k > len(nums):
+        raise ValueError("k is out of range")
+
+    # Step 1: Find the frequency of each number in the list
+    freq = {}
+    for num in nums:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+
+    # Step 2: Create a max heap to store the numbers
+    max_heap = []
+    for num in freq:
+        heapq.heappush(max_heap, (-freq[num], num))
+
+    # Step 3: Find the top k numbers
+    top_k = []
+    while max_heap:
+        freq_num, num = heapq.heappop(max_heap)
+        top_k.append(num)
+
+        # Step 4: Remove the frequency of the number from the max heap
+        if freq_num > 0:
+            heapq.heappush(max_heap, (freq_num - 1, num))
+
+    return top_k
+```
+```python
+import math
+import itertools
+
+def find_top_k(nums, k):
+    if not nums:
+        return []
+    if k < 1 or k > len(nums):
+        raise ValueError("k is out of range")
+
+    # Step 1: Find the frequency of each number in the list
+    freq = {}
+    for num in nums:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+
+    # Step 2: Create a max heap to store the numbers
+    max_heap = []
+    for num in freq:
+        heapq.heappush(max_heap, (-freq[num], num))
+
+    # Step 3: Find the top k numbers
+    top_k = []
+    while max_heap:
+        freq_num, num = heapq.heappop(max_heap)
+        top_k.append(num)
+
+        # Step 4: Remove the frequency of the number from the max heap
+        if freq_num > 0:
+            heapq.heappush(max_heap, (freq_num - 1, num))
+
+    return top_k
+```
+```python
+import math
+import itertools
+
+def find_top_k(nums, k):
+    if not nums:
+        return []
+    if k < 1 or k > len(nums):
+        raise ValueError("k is out of range")
+
+    # Step 1: Find the frequency of each number in the list
+    freq = {}
+    for num in nums:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+
+    # Step 2: Create a max heap to store the numbers
+    max_heap = []
+    for num in freq:
+        heapq.heappush(max_heap, (-freq[num], num))
+
+    # Step 3: Find the top k numbers
+    top_k = []
+    while max_heap:
+        freq_num, num = heapq.heappop(max_heap)
+        top_k.append(num)
+
+        # Step 4: Remove the frequency of the number from the max heap
+        if freq_num > 0:
+            heapq.heappush(max_heap, (freq_num - 1, num))
+
+    return top_k
+```
+```python
+import math
+import itertools
+
+def find_top_k(nums, k):
+    if not nums:
+        return []
+    if k < 1 or k > len(nums):
+        raise ValueError("k is out of range")
+
+    # Step 1: Find the frequency of each number in the list
+    freq = {}
+    for num in nums:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+
+    # Step 2: Create a max heap to store the numbers
+    max_heap = []
+    for num in freq:
+        heapq.heappush(max_heap, (-freq[num], num))
+
+    # Step 3: Find the top k numbers
+    top_k = []
+    while max_heap:
+        freq_num, num = heapq.heappop(max_heap)
+        top_k.append(num)
+
+        # Step 4: Remove the frequency of the number from the max heap
+        if freq_num > 0:
+            heapq.heappush(max_heap, (freq_num - 1, num))
+
+    return top_k
+```
+```python
+import math
+import heapq
+import itertools
+
+def find_top_k(nums, k):
+    if not nums:
+        return []
+    if k < 

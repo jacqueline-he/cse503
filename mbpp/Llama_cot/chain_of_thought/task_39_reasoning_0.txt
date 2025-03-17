@@ -1,0 +1,163 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the letters of a given string can be rearranged so that two characters that are adjacent to each other are different.
+Required function signature:
+def rearange_string(S):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Don't forget to include a docstring explaining the purpose of the function.
+
+```python
+def rearange_string(S):
+    """
+    Rearranges the letters of a given string so that two characters that are adjacent to each other are different.
+
+    Args:
+        S (str): The input string.
+
+    Returns:
+        bool: True if the string can be rearranged, False otherwise.
+    """
+
+    # Step 1: Count the frequency of each character in the string
+    char_freq = {}
+    for char in S:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+
+    # Step 2: Check for adjacent characters with the same frequency
+    for freq in char_freq.values():
+        if freq >= 2:
+            return False  # Not all characters have a different frequency
+
+    return True  # All characters have a different frequency
+```
+
+```python
+def rearange_string(S):
+    """
+    Rearranges the letters of a given string so that two characters that are adjacent to each other are different.
+
+    Args:
+        S (str): The input string.
+
+    Returns:
+        bool: True if the string can be rearranged, False otherwise.
+    """
+
+    # Step 1: Count the frequency of each character in the string
+    char_freq = {}
+    for char in S:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+
+    # Step 2: Check for adjacent characters with the same frequency
+    for freq in char_freq.values():
+        if freq >= 2:
+            return False  # Not all characters have a different frequency
+
+    # Step 3: Count the number of characters with frequency 1
+    unique_chars = 0
+    for freq in char_freq.values():
+        if freq == 1:
+            unique_chars += 1
+
+    # Step 4: Check if there are at least two adjacent characters with frequency 1
+    return unique_chars >= 2
+```
+
+```python
+def rearange_string(S):
+    """
+    Rearranges the letters of a given string so that two characters that are adjacent to each other are different.
+
+    Args:
+        S (str): The input string.
+
+    Returns:
+        bool: True if the string can be rearranged, False otherwise.
+    """
+
+    # Step 1: Count the frequency of each character in the string
+    char_freq = {}
+    for char in S:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+
+    # Step 2: Check for adjacent characters with the same frequency
+    for freq in char_freq.values():
+        if freq >= 2:
+            return False  # Not all characters have a different frequency
+
+    # Step 3: Count the number of characters with frequency 1
+    unique_chars = 0
+    for freq in char_freq.values():
+        if freq == 1:
+            unique_chars += 1
+
+    # Step 4: Check if there are at least two adjacent characters with frequency 1
+    return unique_chars >= 2
+```
+
+## Step 1: Count the frequency of each character in the string
+The function `rearange_string` counts the frequency of each character in the string `S`. It uses a dictionary `char_freq` to store the frequency of each character. The function iterates over each character in the string and increments the corresponding value in the dictionary.
+
+```python
+def rearange_string(S):
+    """
+    Rearranges the letters of a given string so that two characters that are adjacent to each other are different.
+
+    Args:
+        S (str): The input string.
+
+    Returns:
+        bool: True if the string can be rearranged, False otherwise.
+    """
+
+    # Step 1: Count the frequency of each character in the string
+    char_freq = {}
+    for char in S:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+
+    # Step 2: Check for adjacent characters with the same frequency
+    for freq in char_freq.values():
+        if freq >= 2:
+            return False  # Not all characters have a different frequency
+
+    # Step 3: Count the number of characters with frequency 1
+    unique_chars = 0
+    for freq in char_freq.values():
+        if freq == 1:
+            unique_chars += 1
+
+    # Step 4: Check if there are at least two adjacent characters with frequency 1
+    return unique_chars >= 2
+```
+
+## Step 2: Check for adjacent characters with the same frequency
+The function `rearange_string` checks for adjacent characters with the same frequency by iterating over the values in the dictionary `char_freq`. If a frequency is greater than or equal

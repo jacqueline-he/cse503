@@ -1,0 +1,101 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the largest number that can be formed with the given digits.
+Required function signature:
+
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks.```python
+def largest_number(num):
+    # Convert the number to a string
+    str_num = str(num)
+    # Initialize the result
+    res = ''
+    # Initialize the stack
+    stack = []
+    # Iterate through the digits
+    for i in range(len(str_num)):
+        # If the stack is empty or the current digit is larger than the top of the stack
+        # or the current digit is smaller than the top of the stack
+        # or the current digit is larger than the top of the stack and it is already at the end of the result
+        if not stack or (stack and str_num[i] > stack[-1]) or (stack and str_num[i] == stack[-1] and i < len(str_num) - 1):
+            # Push the current digit onto the stack
+            stack.append(str_num[i])
+        else:
+            # If the current digit is smaller than the top of the stack, append the top of the stack
+            # to the result and pop the top of the stack
+            if str_num[i] < stack[-1]:
+                res += stack.pop()
+            # If the current digit is equal to the top of the stack, append the top of the stack
+            # to the result and push the current digit onto the stack
+            elif str_num[i] == stack[-1]:
+                res += stack.pop()
+                stack.append(str_num[i])
+    # If the stack is not empty
+    if stack:
+        # Append the top of the stack to the result
+        res += stack.pop()
+    # Return the result
+    return res if res else '0'
+```
+
+Let's break down the problem into smaller steps:
+
+*   We can use a stack to store the digits.
+*   We can iterate through the digits and for each digit, we can check if it is larger than the top of the stack, or if it is smaller than the top of the stack and it is already at the end of the result.
+*   If the current digit is larger than the top of the stack, we can append the top of the stack to the result and pop the top of the stack.
+*   If the current digit is equal to the top of the stack, we can append the top of the stack to the result and push the current digit onto the stack.
+*   Finally, if the stack is not empty, we can append the top of the stack to the result.
+*   We can return the result as a string, or '0' if the stack is empty.
+
+Here is the implementation of the function in Python:
+
+```python
+def largest_number(num):
+    # Convert the number to a string
+    str_num = str(num)
+    # Initialize the result
+    res = ''
+    # Initialize the stack
+    stack = []
+    # Iterate through the digits
+    for i in range(len(str_num)):
+        # If the stack is empty or the current digit is larger than the top of the stack
+        # or the current digit is smaller than the top of the stack
+        # or the current digit is larger than the top of the stack and it is already at the end of the result
+        if not stack or (stack and str_num[i] > stack[-1]) or (stack and str_num[i] == stack[-1] and i < len(str_num) - 1):
+            # Push the current digit onto the stack
+            stack.append(str_num[i])
+        else:
+            # If the current digit is smaller than the top of the stack, append the top of the stack
+            # to the result and pop the top of the stack
+            if str_num[i] < stack[-1]:
+                res += stack.pop()
+            # If the current digit is equal to the top of the stack, append the top of the stack
+            # to the result and push the current digit onto the stack
+            elif str_num[i] == stack[-1]:
+                res += stack.pop()
+                stack.append(str_num[i])
+    # If the stack is not empty
+    if stack:
+        # Append the top of the stack to the result
+        res += stack.pop()
+    # Return the result
+    return res if res else '0'
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````

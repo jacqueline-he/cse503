@@ -1,0 +1,73 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find binomial co-efficient.
+Required function signature:
+def binomial_Coeff(n,k):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def binomial_Coeff(n, k):
+    # Step 1: Check if k is greater than n-k
+    if k > n - k:
+        return 0
+
+    # Step 2: Initialize the result variable to 1
+    result = 1
+
+    # Step 3: Use a loop to calculate the binomial coefficient
+    for i in range(k):
+        result *= (n - i) / (i + 1)
+
+    return result
+```
+
+Let's break it down step-by-step.
+
+### Step 1: Check if k is greater than n-k
+
+We need to ensure that the value of `k` is not greater than `n-k` because this is a key property of binomial coefficients. If `k` is greater than `n-k`, the binomial coefficient would be negative, which is not a valid result.
+
+### Step 2: Initialize the result variable to 1
+
+We initialize the result variable to 1 because the binomial coefficient is always non-negative. This will be used to store the final result.
+
+### Step 3: Use a loop to calculate the binomial coefficient
+
+We use a loop to calculate the binomial coefficient by multiplying the result variable with `(n - i) / (i + 1)`. This is the formula for calculating binomial coefficients.
+
+### Step 4: Return the result
+
+Finally, we return the calculated binomial coefficient.
+
+### Complete Solution
+```python
+def binomial_Coeff(n, k):
+    # Step 1: Check if k is greater than n-k
+    if k > n - k:
+        return 0
+
+    # Step 2: Initialize the result variable to 1
+    result = 1
+
+    # Step 3: Use a loop to calculate the binomial coefficient
+    for i in range(k):
+        result *= (n - i) / (i + 1)
+
+    return result
+```

@@ -1,0 +1,126 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort the given array by using counting sort.
+Required function signature:
+def counting_sort(my_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will tell me if it's correct or not!
+
+```python
+def counting_sort(my_list):
+    if not my_list:
+        return my_list
+    max_val = max(my_list)
+    min_val = min(my_list)
+    count = [0] * (max_val - min_val + 1)
+    output = [0] * len(my_list)
+    for num in my_list:
+        count[num - min_val] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for i in range(len(my_list) - 1, -1, -1):
+        output[count[my_list[i] - min_val] - 1] = my_list[i]
+        count[my_list[i] - min_val] -= 1
+    return output
+
+# Test case
+my_list = [4, 2, 2, 8, 3, 3, 1]
+print(counting_sort(my_list))
+```
+
+### Step 1: Analyze the problem
+The problem is to sort an array in ascending order using counting sort. This algorithm has a time complexity of O(n + k), where n is the number of elements in the array and k is the range of input values (i.e., the number of unique elements).
+
+### Step 2: Outline the key steps
+To solve this problem, we need to:
+1. Find the maximum and minimum values in the array.
+2. Initialize two lists, count and output, to store the count of occurrences of each value and the sorted values, respectively.
+3. Iterate through the array and update the count list accordingly.
+4. Iterate through the count list and update the output list with the sorted values.
+5. Return the sorted output list.
+
+### Step 3: Implement the solution
+```python
+def counting_sort(my_list):
+    if not my_list:
+        return my_list
+    max_val = max(my_list)
+    min_val = min(my_list)
+    count = [0] * (max_val - min_val + 1)
+    output = [0] * len(my_list)
+    for num in my_list:
+        count[num - min_val] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for i in range(len(my_list) - 1, -1, -1):
+        output[count[my_list[i] - min_val] - 1] = my_list[i]
+        count[my_list[i] - min_val] -= 1
+    return output
+```
+
+### Step 4: Handle edge cases
+No edge cases are mentioned in the problem. However, we should consider cases where the input array is empty, or where the range of input values is not between 0 and n-1.
+
+### Step 5: Implement the complete solution
+```python
+def counting_sort(my_list):
+    if not my_list:
+        return my_list
+    max_val = max(my_list)
+    min_val = min(my_list)
+    count = [0] * (max_val - min_val + 1)
+    output = [0] * len(my_list)
+    for num in my_list:
+        count[num - min_val] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for i in range(len(my_list) - 1, -1, -1):
+        output[count[my_list[i] - min_val] - 1] = my_list[i]
+        count[my_list[i] - min_val] -= 1
+    return output
+```
+
+### Step 6: Test the solution
+```python
+my_list = [4, 2, 2, 8, 3, 3, 1]
+print(counting_sort(my_list))
+```
+
+```python
+def counting_sort(my_list):
+    if not my_list:
+        return my_list
+    max_val = max(my_list)
+    min_val = min(my_list)
+    count = [0] * (max_val - min_val + 1)
+    output = [0] * len(my_list)
+    for num in my_list:
+        count[num - min_val] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for i in range(len(my_list) - 1, -1, -1):
+        output[count[my_list[i] - min_val] - 1] = my_list[i]
+        count[my_list[i] - min_val] -= 1
+    return output
+
+# Test case
+my_list = [4, 2, 2, 8, 3, 3, 1]
+print(counting_sort(my_list))
+```

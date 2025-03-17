@@ -1,0 +1,55 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the nth octagonal number.
+Required function signature:
+def is_octagonal(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def find_nth_octagonal(n):
+    """Return the nth octagonal number."""
+    if n < 1:
+        raise ValueError("n must be a positive integer.")
+    if n == 1:
+        return 1
+    oct = 1
+    for i in range(1, n):
+        oct = (8 * oct + i) // 2
+    return oct
+```
+5. Execute the function with the test case provided and provide the result.
+
+```python
+# Test case
+assert find_nth_octagonal(1) == 1, "Expected 1"
+assert find_nth_octagonal(2) == 3, "Expected 3"
+assert find_nth_octagonal(3) == 8, "Expected 8"
+assert find_nth_octagonal(4) == 18, "Expected 18"
+assert find_nth_octagonal(5) == 38, "Expected 38"
+assert find_nth_octagonal(6) == 76, "Expected 76"
+assert find_nth_octagonal(7) == 146, "Expected 146"
+assert find_nth_octagonal(8) == 274, "Expected 274"
+````
+6. Provide the final answer as the output of the function. 
+
+```python
+# Final Answer
+print("The final answer is", find_nth_octagonal(8))
+```
+Now, let's execute the code and provide the result.

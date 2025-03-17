@@ -1,0 +1,70 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to check whether the first and last characters of a given string are equal or not.
+Required function signature:
+def check_Equality(str):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I want to know the exact function signature.
+
+```python
+def check_Equality(str):
+```
+```python
+def check_Equality(str):
+```
+```python
+def check_Equality(str):
+```
+```python
+def check_Equality(str):
+```
+### Step 1: Problem Analysis
+The problem is asking to check whether the first and last characters of a given string are equal or not. This means we need to compare the first character and the last character of the string.
+
+### Step 2: Key Steps and Algorithms
+To solve this problem, we can use the modulus operator (%) in Python, which returns the remainder of a division operation. If the remainder of dividing the first character by 2 is equal to the remainder of dividing the last character by 2, then the first and last characters are equal.
+
+### Step 3: Edge Cases
+We need to consider the edge cases where the input string is empty or has only one character. In these cases, we should return False, as there are no characters to compare.
+
+### Step 4: Implementing the Solution
+```python
+def check_Equality(str):
+    """
+    Checks whether the first and last characters of a given string are equal.
+
+    Args:
+        str (str): The input string.
+
+    Returns:
+        bool: True if the first and last characters are equal, False otherwise.
+    """
+    # Check if the input string is empty
+    if not str:
+        return False
+    
+    # Check if the input string has only one character
+    if len(str) == 1:
+        return False
+    
+    # Compare the first and last characters using the modulus operator
+    return str[0] % 2 == str[-1] % 2
+```
+Note: The `check_Equality` function takes a string `str` as input and returns a boolean value indicating whether the first and last characters are equal. The function handles edge cases where the input string is empty or has only one character. It uses the modulus operator to compare the first and last characters. The function is implemented inside triple backticks, as required.

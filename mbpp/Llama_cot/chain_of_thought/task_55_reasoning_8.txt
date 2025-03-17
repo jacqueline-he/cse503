@@ -1,0 +1,61 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find t-nth term of geometric series.
+Required function signature:
+def tn_gp(a,n,r):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Don't forget to use the EXACT function signature.
+
+```python
+def tn_gp(a, n, r):
+    if r < 0:
+        return "Invalid input"
+    elif n == 0:
+        return "Invalid input"
+    else:
+        return EXACT(a, n, r)
+```
+## Step 1: Define the problem
+The problem is to find the t-nth term of a geometric series. A geometric series is a sequence of numbers where each term after the first is found by multiplying the previous one by a fixed, non-zero number called the common ratio (r).
+
+## Step 2: Determine the key steps or algorithms needed
+To find the t-nth term of a geometric series, we need to use the formula:
+an = ar^(t-1)
+
+Where:
+- an is the t-nth term
+- a is the first term
+- r is the common ratio
+- t is the term number (starting from 1)
+
+## Step 3: Identify edge cases
+There are no edge cases in this problem.
+
+## Step 4: Implement the solution
+```python
+def tn_gp(a, n, r):
+    if r < 0:
+        return "Invalid input"
+    elif n == 0:
+        return "Invalid input"
+    else:
+        return EXACT(a, n, r)
+````
+Note: The EXACT function is used to return the result exactly, without approximation. If the input values are invalid, the function will return an error message.

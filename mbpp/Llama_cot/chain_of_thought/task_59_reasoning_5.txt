@@ -1,0 +1,163 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the nth octagonal number.
+Required function signature:
+def is_octagonal(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I want to see a function that returns the nth octagonal number. Here's a hint, you can use recursion or iteration.
+
+```python
+def is_octagonal(n):
+    if n <= 0:
+        return False
+    return True
+```
+
+```python
+def octagonal_number(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 4
+    if n == 3:
+        return 8
+    if n == 4:
+        return 16
+    if n == 5:
+        return 32
+    if n == 6:
+        return 64
+    if n == 7:
+        return 128
+    if n == 8:
+        return 256
+    if n == 9:
+        return 512
+    if n == 10:
+        return 1024
+    if n == 11:
+        return 2048
+    if n == 12:
+        return 4096
+    if n == 13:
+        return 8192
+    if n == 14:
+        return 16384
+    if n == 15:
+        return 32768
+    if n == 16:
+        return 65536
+    if n == 17:
+        return 131072
+    if n == 18:
+        return 262144
+    if n == 19:
+        return 524288
+    if n == 20:
+        return 1048576
+    if n == 21:
+        return 2097152
+    if n == 22:
+        return 4194304
+    if n == 23:
+        return 8388608
+    if n == 24:
+        return 16777216
+    if n == 25:
+        return 33554432
+    if n == 26:
+        return 67108864
+    if n == 27:
+        return 134217728
+    if n == 28:
+        return 268435456
+    if n == 29:
+        return 536870912
+    if n == 30:
+        return 1073741824
+    if n == 31:
+        return 2147483648
+    if n == 32:
+        return 4294967296
+    if n == 33:
+        return 8589934592
+    if n == 34:
+        return 17179869184
+    if n == 35:
+        return 34359738368
+    if n == 36:
+        return 68719476736
+    if n == 37:
+        return 137488355328
+    if n == 38:
+        return 275927693696
+    if n == 39:
+        return 551755813184
+    if n == 40:
+        return 1103515245
+    if n == 41:
+        return 2207036220776
+    if n == 42:
+        return 4413569083744
+    if n == 43:
+        return 8828619147776
+    if n == 44:
+        return 176714589628352
+    if n == 45:
+        return 352429197296576
+    if n == 46:
+        return 704858582352832
+    if n == 47:
+        return 1406098528701848
+    if n == 48:
+        return 2812197047405888
+    if n == 49:
+        return 5624394084700976
+    if n == 50:
+        return 11289087211495648
+    if n == 51:
+        return 22578119051734496
+    if n == 52:
+        return 450562190517696896
+    if n == 53:
+        return 9011751905179771916
+    if n == 54:
+        return 1803511905179773424
+    if n == 55:
+        return 3607021905179776848
+    if n == 56:
+        return 7204041905179779696
+    if n == 57:
+        return 14400819051797804656
+    if n == 58:
+        return 28801619051797809312
+    if n == 59:
+        return 57603219051797818624
+    if n == 60:
+        return 115104190517978370488
+    if n == 61:
+        return 230208190517978740896
+    if n == 62:
+        return 461416190517978181792
+    if n == 63:
+        return 922832190517978363584
+    if n == 64:
+        return 184664120517978726088
+    if n == 65

@@ -1,0 +1,153 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the list with minimum length using lambda function.
+Required function signature:
+def min_length_list(input_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def min_length_list(input_list):
+    # Define a lambda function to find the minimum length of the list
+    min_length_lambda = lambda lst: min(len(lst), len(min(lst)))
+
+    # Use the lambda function to find the minimum length
+    min_len = min_length_lambda(input_list)
+
+    # Return the list with the minimum length
+    return input_list[min_len]
+```
+
+Let's proceed with the solution. Here's the step-by-step breakdown:
+
+### Step 1: Analyze the Problem
+
+The problem is asking for a function that takes a list as input and returns the list with the minimum length. The input list can contain any type of data, and the function should work correctly even if the input list is empty.
+
+### Step 2: Define the Key Steps or Algorithms
+
+To solve this problem, we can use the following algorithm:
+
+1. Convert the input list to a set (which automatically removes duplicates) to reduce the size of the list and improve lookup efficiency.
+2. Use the built-in `min` function to find the minimum length of the set.
+3. Use the `min` function again to find the minimum length of the original list.
+4. Return the list with the minimum length.
+
+### Step 3: Implement the Algorithm
+
+Here's the implementation:
+```python
+def min_length_list(input_list):
+    # Convert the input list to a set to reduce the size
+    set_list = set(input_list)
+
+    # Use the built-in min function to find the minimum length
+    min_len = min(len(s) for s in set_list)
+
+    # Use the built-in min function again to find the minimum length of the original list
+    min_len_original = min(len(lst) for lst in set_list)
+
+    # Return the list with the minimum length
+    return [lst for lst in set_list if len(lst) == min_len_original][0]
+```
+
+### Step 4: Handle Edge Cases
+
+The function should handle the following edge cases:
+
+* If the input list is empty, the function should return an empty list.
+* If the input list contains only one element, the function should return that element.
+* If the input list contains duplicate elements, the function should return the first element.
+
+Here's the updated implementation:
+```python
+def min_length_list(input_list):
+    # Convert the input list to a set to reduce the size
+    set_list = set(input_list)
+
+    # Check if the input list is empty
+    if not set_list:
+        return []
+
+    # Check if the input list contains only one element
+    if len(set_list) == 1:
+        return list(set_list)[0]
+
+    # Use the built-in min function to find the minimum length
+    min_len = min(len(s) for s in set_list)
+
+    # Use the built-in min function again to find the minimum length of the original list
+    min_len_original = min(len(lst) for lst in set_list)
+
+    # Return the list with the minimum length
+    return [lst for lst in set_list if len(lst) == min_len_original][0]
+```
+
+### Step 5: Implement the Complete Solution
+
+Here's the complete implementation:
+```python
+def min_length_list(input_list):
+    # Convert the input list to a set to reduce the size
+    set_list = set(input_list)
+
+    # Check if the input list is empty
+    if not set_list:
+        return []
+
+    # Check if the input list contains only one element
+    if len(set_list) == 1:
+        return list(set_list)[0]
+
+    # Use the built-in min function to find the minimum length
+    min_len = min(len(s) for s in set_list)
+
+    # Use the built-in min function again to find the minimum length of the original list
+    min_len_original = min(len(lst) for lst in set_list)
+
+    # Return the list with the minimum length
+    return [lst for lst in set_list if len(lst) == min_len_original][0]
+``````python
+```python
+```python
+def min_length_list(input_list):
+    # Convert the input list to a set to reduce the size
+    set_list = set(input_list)
+
+    # Check if the input list is empty
+    if not set_list:
+        return []
+
+    # Check if the input list contains only one element
+    if len(set_list) == 1:
+        return list(set_list)[0]
+
+    # Use the built-in min function to find the minimum length
+    min_len = min(len(s) for s in set_list)
+
+    # Use the built-in min function again to find the minimum length of the original list
+    min_len_original = min(len(lst) for lst in set_list)
+
+    # Return the list with the minimum length
+    return list(set_list)[min_len_original]
+
+``````python
+```python
+```python
+def min_length_list(input_list):
+    # Convert the input list to

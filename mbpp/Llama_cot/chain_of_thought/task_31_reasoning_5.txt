@@ -1,0 +1,163 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the top k integers that occur most frequently from given lists of sorted and distinct integers using heap queue algorithm.
+Required function signature:
+def func(nums, k):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Do not forget to include comments and docstrings to explain the purpose of each section.
+
+```python
+import heapq
+
+def find_top_k(nums, k):
+    # Step 1: Create a max heap to store the frequency of each number
+    max_heap = []
+    for num in nums:
+        # Step 2: Increment the frequency of each number in the max heap
+        heapq.heappush(max_heap, (nums.count(num), num))
+
+    # Step 3: Remove the least frequent number from the max heap k times
+    for _ in range(k):
+        heapq.heappop(max_heap)
+
+    # Step 4: Build a list of top k integers
+    top_k_integers = []
+    while max_heap:
+        top_k_integers.append(heapq.heappop(max_heap)[1])
+
+    return top_k_integers
+```
+
+```python
+import heapq
+import math
+
+def find_top_k(nums, k):
+    """
+    Find the top k integers that occur most frequently from given lists of sorted and distinct integers.
+
+    Args:
+    nums (list): A list of sorted and distinct integers.
+    k (int): The number of top integers to return.
+
+    Returns:
+    list: A list of the top k integers that occur most frequently.
+    """
+
+    # Step 1: Create a max heap to store the frequency of each number
+    max_heap = []
+    for num in nums:
+        # Step 2: Increment the frequency of each number in the max heap
+        heapq.heappush(max_heap, (nums.count(num), num))
+
+    # Step 3: Remove the least frequent number from the max heap k times
+    for _ in range(k):
+        heapq.heappop(max_heap)
+
+    # Step 4: Build a list of top k integers
+    top_k_integers = []
+    while max_heap:
+        top_k_integers.append(heapq.heappop(max_heap)[1])
+
+    return top_k_integers
+``````
+```python
+import heapq
+import math
+
+def find_top_k(nums, k):
+    """
+    Find the top k integers that occur most frequently from given lists of sorted and distinct integers.
+
+    Args:
+    nums (list): A list of sorted and distinct integers.
+    k (int): The number of top integers to return.
+
+    Returns:
+    list: A list of the top k integers that occur most frequently.
+    """
+    # Step 1: Create a max heap to store the frequency of each number
+    max_heap = []
+    for num in nums:
+        # Step 2: Increment the frequency of each number in the max heap
+        freq, num = divmod(nums.count(num), len(nums))
+        heapq.heappush(max_heap, (freq, num))
+
+    # Step 3: Remove the least frequent number from the max heap k times
+    for _ in range(k):
+        freq, num = divmod(heapq.heappop(max_heap)[0], len(nums))
+        heapq.heappush(max_heap, (freq, num))
+
+    # Step 4: Build a list of top k integers
+    top_k_integers = []
+    while max_heap:
+        top_k_integers.append(heapq.heappop(max_heap)[1])
+
+    return top_k_integers
+```
+
+```python
+import heapq
+import math
+
+def find_top_k(nums, k):
+    """
+    Find the top k integers that occur most frequently from given lists of sorted and distinct integers.
+
+    Args:
+    nums (list): A list of sorted and distinct integers.
+    k (int): The number of top integers to return.
+
+    Returns:
+    list: A list of the top k integers that occur most frequently.
+    """
+    # Step 1: Create a max heap to store the frequency of each number
+    max_heap = []
+    for num in nums:
+        # Step 2: Increment the frequency of each number in the max heap
+        freq, num = divmod(nums.count(num), len(nums))
+        heapq.heappush(max_heap, (freq, num))
+
+    # Step 3: Remove the least frequent number from the max heap k times
+    for _ in range(k):
+        freq, num = divmod(heapq.heappop(max_heap)[0], len(nums))
+        heapq.heappush(max_heap, (freq, num))
+
+    # Step 4: Build a list of top k integers
+    top_k_integers = []
+    while max_heap:
+        top_k_integers.append(heapq.heappop(max_heap)[1])
+
+    return top_k_integers
+``````
+```python
+import heapq
+import math
+
+def find_top_k(nums, k):
+    """
+    Find the top k integers that occur most frequently from given lists of sorted and distinct integers.
+
+    Args:
+    nums (list): A list of sorted and distinct integers.
+    k (int): The number of top integers to return.
+
+    Returns:
+    list: A list of

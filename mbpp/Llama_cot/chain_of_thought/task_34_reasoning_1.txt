@@ -1,0 +1,189 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the missing number in a sorted array.
+Required function signature:
+def find_missing(ar,N):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I don't want any extra text.
+
+```python
+def find_missing(ar,N):
+```
+
+```python
+# Edge case: When N is 0 or 1, the function should return 0 or 1 respectively.
+if N == 0 or N == 1:
+    return 0
+```
+
+```python
+# Edge case: When the array has only 1 element, the function should return the missing number.
+if N == 1:
+    return ar[0]
+```
+
+```python
+# Sort the array
+ar.sort()
+```
+
+```python
+# Initialize two pointers, one at the start and one at the end of the array
+left = 0
+right = N - 1
+```
+
+```python
+# Loop until the two pointers meet
+while left < right:
+    # Calculate the sum of the elements at the two pointers
+    total = ar[left] + ar[right]
+    # If the sum is equal to N, the missing number is N - 1
+    if total == N:
+        return N - 1
+    # If the sum is less than N, move the left pointer to the right
+    elif total < N:
+        left += 1
+    # If the sum is greater than N, move the right pointer to the left
+    else:
+        right -= 1
+```
+
+```python
+def find_missing(ar, N):
+```
+
+```python
+# Sort the array
+ar.sort()
+
+# Initialize two pointers, one at the start and one at the end of the array
+left = 0
+right = N - 1
+
+# Loop until the two pointers meet
+while left < right:
+    # Calculate the sum of the elements at the two pointers
+    total = ar[left] + ar[right]
+    # If the sum is equal to N, the missing number is N - 1
+    if total == N:
+        return N - 1
+    # If the sum is less than N, move the left pointer to the right
+    elif total < N:
+        left += 1
+    # If the sum is greater than N, move the right pointer to the left
+    else:
+        right -= 1
+```
+
+
+```python
+def find_missing(ar, N):
+```
+
+```python
+# Sort the array
+ar.sort()
+
+# Initialize two pointers, one at the start and one at the end of the array
+left = 0
+right = N - 1
+
+# Loop until the two pointers meet
+while left < right:
+    # Calculate the sum of the elements at the two pointers
+    total = ar[left] + ar[right]
+    # If the sum is equal to N, the missing number is N - 1
+    if total == N:
+        return N - 1
+    # If the sum is less than N, move the left pointer to the right
+    elif total < N:
+        left += 1
+    # If the sum is greater than N, move the right pointer to the left
+    else:
+        right -= 1
+```
+
+
+```python
+def find_missing(ar, N):
+```
+
+```python
+# Sort the array
+ar.sort()
+
+# Initialize two pointers, one at the start and one at the end of the array
+left = 0
+right = N - 1
+
+# Loop until the two pointers meet
+while left < right:
+    # Calculate the sum of the elements at the two pointers
+    total = ar[left] + ar[right]
+    # If the sum is equal to N, the missing number is N - 1
+    if total == N:
+        return N - 1
+    # If the sum is less than N, move the left pointer to the right
+    elif total < N:
+        left += 1
+    # If the sum is greater than N, move the right pointer to the left
+    else:
+        right -= 1
+```
+
+
+```python
+def find_missing(ar, N):
+```
+
+```python
+# Sort the array
+ar.sort()
+
+# Initialize two pointers, one at the start and one at the end of the array
+left = 0
+right = N - 1
+
+# Loop until the two pointers meet
+while left < right:
+    # Calculate the sum of the elements at the two pointers
+    total = ar[left] + ar[right]
+    # If the sum is equal to N, the missing number is N - 1
+    if total == N:
+        return N - 1
+    # If the sum is less than N, move the left pointer to the right
+    elif total < N:
+        left += 1
+    # If the sum is greater than N, move the right pointer to the left
+    else:
+        right -= 1
+```
+
+
+```python
+def find_missing(ar, N):
+```
+
+```python
+# Sort the array
+ar.sort()
+
+#

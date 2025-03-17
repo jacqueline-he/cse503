@@ -1,0 +1,49 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the largest prime factor of a given number.
+Required function signature:
+def max_Prime_Factors(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def max_Prime_Factors(n):
+    # Step 1: Define a helper function to check if a number is prime
+    def is_prime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    # Step 2: Initialize an empty list to store prime factors
+    prime_factors = []
+
+    # Step 3: Iterate through numbers from 2 to n (inclusive)
+    for i in range(2, n + 1):
+        # Step 4: Check if i is a prime number
+        if is_prime(i):
+            # Step 5: If i is prime, add it to the list of prime factors
+            prime_factors.append(i)
+
+    # Step 6: Find the largest prime factor
+    max_prime_factor = max(prime_factors)
+
+    return max_prime_factor
+```�  The function `max_Prime_Factors` takes a number `n` as input and returns the largest prime factor of that number.

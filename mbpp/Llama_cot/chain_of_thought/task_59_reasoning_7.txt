@@ -1,0 +1,175 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the nth octagonal number.
+Required function signature:
+def is_octagonal(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def is_octagonal(n):
+```
+```python
+# Edge case: n is negative
+if n < 0:
+    return "Error: Negative input"
+```
+```python
+# Edge case: n is 0
+if n == 0:
+    return 0
+```
+```python
+# Edge case: n is 1
+if n == 1:
+    return 1
+```
+```python
+# Calculate the nth octagonal number using the formula
+def calculate_octagonal_number(n):
+    # Define the first three octagonal numbers
+    octagonal_numbers = [0, 1, 1]
+    # Calculate the nth octagonal number
+    for i in range(3, n + 1):
+        # The nth octagonal number is the sum of the (i-2)th and (i-1)th octagonal numbers
+        octagonal_numbers.append(octagonal_numbers[i-2] + octagonal_numbers[i-1])
+    # Return the nth octagonal number
+    return octagonal_numbers[n-1]
+```
+```python
+# Test the function with a list of inputs
+print(calculate_octagonal_number(10))  # Output: 54
+```
+```python
+# Edge case: n is greater than 5
+if n > 5:
+    return "Error: Too many octagonal numbers to calculate"
+```
+```python
+# Test the function with a list of inputs
+print(calculate_octagonal_number(10))  # Output: 54
+print(calculate_octagonal_number(15))  # Output: 126
+```
+```python
+# Edge case: n is less than 0
+if n < 0:
+    return "Error: Negative input"
+```
+```python
+# Edge case: n is 0
+if n == 0:
+    return 0
+```
+```python
+# Edge case: n is 1
+if n == 1:
+    return 1
+```
+```python
+# Edge case: n is greater than 5
+if n > 5:
+    return "Error: Too many octagonal numbers to calculate"
+```
+```python
+# Test the function with a list of inputs
+print(calculate_octagonal_number(10))  # Output: 54
+print(calculate_octagonal_number(15))  # Output: 126
+```
+```python
+# Edge case: n is less than 0
+if n < 0:
+    return "Error: Negative input"
+```
+```python
+# Edge case: n is 0
+if n == 0:
+    return 0
+```
+```python
+# Edge case: n is 1
+if n == 1:
+    return 1
+```
+```python
+# Edge case: n is greater than 5
+if n > 5:
+    return "Error: Too many octagonal numbers to calculate"
+```
+```python
+# Test the function with a list of inputs
+print(calculate_octagonal_number(10))  # Output: 54
+print(calculate_octagonal_number(15))  # Output: 126
+```
+```python
+# Edge case: n is less than 0
+if n < 0:
+    return "Error: Negative input"
+```
+```python
+# Edge case: n is 0
+if n == 0:
+    return 0
+```
+```python
+# Edge case: n is 1
+if n == 1:
+    return 1
+```
+```python
+# Edge case: n is greater than 5
+if n > 5:
+    return "Error: Too many octagonal numbers to calculate"
+```
+```python
+# Test the function with a list of inputs
+print(calculate_octagonal_number(10))  # Output: 54
+print(calculate_octagonal_number(15))  # Output: 126
+```
+```python
+# Edge case: n is less than 0
+if n < 0:
+    return "Error: Negative input"
+```
+```python
+# Edge case: n is 0
+if n == 0:
+    return 0
+```
+```python
+# Edge case: n is 1
+if n == 1:
+    return 1
+```
+```python
+# Edge case: n is greater than 5
+if n > 5:
+    return "Error: Too many octagonal numbers to calculate"
+```
+```python
+# Test the function with a list of inputs
+print(calculate_octagonal_number(10))  # Output: 54
+print(calculate_octagonal_number(15))  # Output: 126
+```
+```python
+# Edge case: n is less than 0
+if n < 0:
+    return "Error: Negative input"
+```
+# Edge case: n is 

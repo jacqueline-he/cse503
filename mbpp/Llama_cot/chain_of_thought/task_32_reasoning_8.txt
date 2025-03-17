@@ -1,0 +1,179 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the largest prime factor of a given number.
+Required function signature:
+def max_Prime_Factors(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please ensure the solution is correct and handles all test cases and edge cases.
+
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            return i
+        i += 1
+    return n
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = max(factors)
+    if max_factor == 1:
+        return None
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    max_factor = 1
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+            max_factor = max(max_factor, i)
+        i += 1
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for j in range(2, int(n**0.5) + 1):
+        if n % j == 0:
+            factors.append(j)
+            max_factor = max(max_factor, j)
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for k in range(2, int(n**0.5) + 1):
+        if n % k == 0:
+            factors.append(k)
+            max_factor = max(max_factor, k)
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for m in range(2, int(n**0.5) + 1):
+        if n % m == 0:
+            factors.append(m)
+            max_factor = max(max_factor, m)
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for p in range(2, int(n**0.5) + 1):
+        if n % p == 0:
+            factors.append(p)
+            max_factor = max(max_factor, p)
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for q in range(2, int(n**0.5) + 1):
+        if n % q == 0:
+            factors.append(q)
+            max_factor = max(max_factor, q)
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for r in range(2, int(n**0.5) + 1):
+        if n % r == 0:
+            factors.append(r)
+            max_factor = max(max_factor, r)
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n <= 1:
+        return None
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+        i += 1
+    max_factor = 1
+    for s in range(2,

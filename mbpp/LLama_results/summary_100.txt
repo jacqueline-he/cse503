@@ -1,0 +1,7 @@
+=== Metrics Summary ===
+Pass@1: 0.12
+Pass@5: 0.31
+Pass@10: 0.42
+Average Test Pass Rate (ATPR): 0.52
+Throughput (tokens/sec): 444.38
+Memory Overhead (bytes): 55808

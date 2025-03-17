@@ -1,0 +1,148 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the sum of repeated elements in a given array.
+Required function signature:
+def find_Sum(arr,n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def find_Sum(arr,n):
+```
+
+```python
+# Step 1: Initialize sum variable to 0
+sum = 0
+
+# Step 2: Iterate through each element in the array
+for i in range(n):
+    # Step 3: Check if the current element is repeated
+    if arr[i] == arr[i + 1]:
+        # Step 4: Calculate the sum of repeated elements
+        sum += arr[i]
+    # Step 5: If the current element is not repeated, break the loop
+    else:
+        break
+# Step 6: Return the sum of repeated elements
+return sum
+```
+
+```python
+# Test the function
+arr = [1, 2, 3, 2, 4, 5, 6, 2, 8]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 18
+```
+
+
+```python
+# Edge case: empty array
+arr = []
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+
+# Edge case: array with single element
+arr = [5]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 5
+
+# Edge case: array with duplicate elements
+arr = [1, 2, 3, 2, 4, 5, 6, 2, 8]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 18
+````
+
+```python
+# Edge case: array with negative numbers
+arr = [-1, -2, -3, -4, -5, -6, -2, -8]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+````
+
+```python
+# Edge case: array with zero
+arr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+````
+
+```python
+# Edge case: array with a single zero
+arr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+`````
+```python
+# Edge case: array with all zeros
+arr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+````
+```python
+# Edge case: array with all negative numbers
+arr = [-1, -2, -3, -4, -5, -6, -2, -8]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+````
+```python
+# Edge case: array with all positive numbers
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 45
+````
+```python
+# Edge case: array with no repeated elements
+arr = [1, 2, 3, 4, 5]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 15
+````
+```python
+# Edge case: array with no repeated elements and a single element
+arr = [5]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 5
+````
+```python
+# Edge case: array with no repeated elements and a single element
+arr = [1, 2, 3, 4, 5]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 15
+````
+```python
+# Edge case: array with no repeated elements
+arr = []
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 0
+````
+```python
+# Edge case: array with no repeated elements
+arr = [1, 2, 3, 4, 5]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 15
+````
+```python
+# Edge case: array with no repeated elements
+arr = [5]
+n = len(arr)
+print(find_Sum(arr, n))  # Expected output: 5
+````
+```python
+# Edge case: array with no repeated elements
+arr = [1, 2, 3, 4,

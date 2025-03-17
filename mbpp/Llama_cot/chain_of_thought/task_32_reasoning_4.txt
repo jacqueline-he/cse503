@@ -1,0 +1,62 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the largest prime factor of a given number.
+Required function signature:
+def max_Prime_Factors(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Since there's no input, we will assume n = 1000.
+```python
+def max_Prime_Factors(n):
+```
+
+```python
+def max_Prime_Factors(n):
+    """
+    Finds the largest prime factor of a given number.
+
+    Parameters:
+    n (int): The number for which to find the largest prime factor.
+
+    Returns:
+    int: The largest prime factor of n.
+    """
+    # Step 1: Initialize a list to store prime factors
+    prime_factors = [2]
+    # Step 2: Iterate from 3 to sqrt(n) and check for divisibility
+    for i in range(3, int(n ** 0.5) + 1):
+        # Step 3: Check if i is a factor of n
+        if n % i == 0:
+            # Step 4: If i is a factor, check if it's prime
+            while n % i == 0:
+                # Step 5: If i is prime, add it to the list of prime factors
+                prime_factors.append(i)
+            # Step 6: Divide n by i
+            n //= i
+    # Step 7: If n is a prime number greater than 2
+    if n > 2:
+        # Step 8: Add n to the list of prime factors
+        prime_factors.append(n)
+    # Step 9: Return the largest prime factor
+    return max(prime_factors)
+
+# Test the function
+print(max_Prime_Factors(1000))
+```
+Please go through the solution step-by-step. I will verify the code and provide feedback before I proceed with the next step.

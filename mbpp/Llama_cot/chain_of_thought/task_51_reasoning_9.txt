@@ -1,0 +1,160 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to print check if the triangle is equilateral or not.
+Required function signature:
+def check_equilateral(x,y,z):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def check_equilateral(x, y, z):
+    return (x == y == z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x + y + z) == 3 * (x / 2)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x - y) ** 2 + (y - z) ** 2 + (z - x) ** 2 == 2 * (x + y + z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x ** 2 + y ** 2 + z ** 2) == 2 * (x + y + z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return x == y == z == 0
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x * y * z == 0)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return x!= y and x!= z and y!= z
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x == y or x == z or y == z) and (x!= y and x!= z and y!= z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x**2 + y**2 + z**2 == 2*(x + y + z)) or (x**2 + y**2 + z**2 == 2*(x*y + y*z + z*x))
+```
+
+```python
+def check_equilateral(x, y, z):
+    return (x**2 + y**2 + z**2) == 2 * (x + y + z)
+```
+
+```python
+import math
+def check_equilateral(x, y, z):
+    if x == y == z:
+        return True
+    else:
+        return False
+```
+
+```python
+import math
+def check_equilateral(x, y, z):
+    return math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2) == x + y + z
+```
+
+```python
+import math
+def check_equilateral(x, y, z):
+    if x == y == z:
+        return True
+    else:
+        return False
+```
+
+```python
+def check_equilateral(x, y, z):
+    return math.isclose(math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2), x + y + z)
+```
+
+```python
+import math
+def check_equilateral(x, y, z):
+    if x == y == z:
+        return True
+    else:
+        return False
+```
+
+```python
+def check_equilateral(x, y, z):
+    return math.isclose(math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2), x + y + z)
+```
+
+```python
+import math
+def check_equilateral(x, y, z):
+    return math.isclose(math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2), x + y + z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return math.isclose(math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2), x + y + z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    return math.isclose(math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2), x + y + z)
+``` 
+
+```python
+import math
+def check_equilateral(x, y, z):
+    def check(x, y, z):
+        return math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2) == x + y + z
+    return check(x, y, z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    def check(a, b, c):
+        return (a**2 + b**2 + c**2) == 2 * (a + b + c)
+    return check(x, y, z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    def check(a, b, c):
+        return (a**2 + b**2 + c**2) == 2 * (a + b + c)
+    return check(x, y, z)
+```
+
+```python
+def check_equilateral(x, y, z):
+    def check(a, b, c):
+        return math.isclose(math.sqrt((a - b)**2 + (b - c

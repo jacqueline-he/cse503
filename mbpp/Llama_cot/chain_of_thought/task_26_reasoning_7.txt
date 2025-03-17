@@ -1,0 +1,68 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the given tuple list has all k elements.
+Required function signature:
+def check_k_elements(test_list, K):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide test cases.
+
+```python
+def check_k_elements(test_list, K):
+```
+
+```python
+def check_k_elements(test_list, K):
+    # Step 1: Define a helper function to check if a list has all k elements
+    def has_k_elements(lst, k):
+        return len(lst) == k
+
+    # Step 2: Check if the input is valid
+    if not isinstance(test_list, list) or not all(isinstance(x, tuple) for x in test_list):
+        raise ValueError("Invalid input type")
+    if not isinstance(K, int):
+        raise ValueError("Invalid input type")
+
+    # Step 3: Iterate over the input list and check if each element has k elements
+    for element in test_list:
+        if not has_k_elements(element, K):
+            return False
+
+    # Step 4: If all elements have k elements, return True
+    return True
+```
+
+```python
+# Test cases
+print(check_k_elements([(1, 2, 3), (4, 5, 6)], 2))  # Expected output: True
+print(check_k_elements([(1, 2, 3), (4, 5, 6)], 3))  # Expected output: False
+print(check_k_elements([(1, 2, 3), (4, 5, 6)], 1))  # Expected output: False
+print(check_k_elements([(1, 2, 3), (4, 5, 6)], 0))  # Expected output: False
+````
+
+```python
+# Edge cases
+print(check_k_elements([], 2))  # Expected output: True
+print(check_k_elements([1, 2, 3], 0))  # Expected output: False
+````
+
+```python
+# Edge cases
+print(check_k_elements([(1, 2, 3), (4, 5, 6)], 0))  # Expected output: False
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````

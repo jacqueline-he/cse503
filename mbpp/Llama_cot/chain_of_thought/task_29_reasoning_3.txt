@@ -1,0 +1,88 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the element occurring odd number of times.
+Required function signature:
+def get_Odd_Occurrence(arr,arr_size):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please ensure the function signature matches the required signature.
+
+```python
+def get_Odd_Occurrence(arr, arr_size):
+```
+
+```python
+def get_Odd_Occurrence(arr, arr_size):
+```
+
+```python
+def get_Odd_Occurrence(arr, arr_size):
+```
+
+```python
+def get_Odd_Occurrence(arr, arr_size):
+```
+
+Step 1: Understand the problem
+This problem asks for a function to find the element occurring an odd number of times in an array. This means we need to count the occurrences of each element and return the one that has an odd count.
+
+Step 2: Identify key steps or algorithms needed
+To solve this problem, we can use a hash map (dictionary) to store the frequency of each element in the array. We can then iterate through the hash map to find the element with an odd count.
+
+Step 3: Identify edge cases
+We need to consider the case where the input array is empty, as this would not make sense to find an odd occurrence in an empty array. We also need to consider the case where the input array has only one element, as this would only have one occurrence of that element.
+
+Step 4: Implement the complete solution
+```python
+def get_Odd_Occurrence(arr, arr_size):
+    """
+    This function finds the element occurring an odd number of times in an array.
+
+    Parameters:
+    arr (list): The input array.
+    arr_size (int): The size of the array.
+
+    Returns:
+    int: The element occurring an odd number of times.
+    """
+    
+    # Check if the array is empty
+    if not arr:
+        raise ValueError("Array cannot be empty")
+
+    # Initialize an empty dictionary to store the frequency of each element
+    freq_dict = {}
+
+    # Iterate through the array to count the occurrences of each element
+    for elem in arr:
+        if elem in freq_dict:
+            freq_dict[elem] += 1
+        else:
+            freq_dict[elem] = 1
+
+    # Iterate through the dictionary to find the element with an odd count
+    for elem, count in freq_dict.items():
+        if count % 2!= 0:
+            return elem
+
+# Example usage
+arr = [1, 2, 2, 3, 3, 3]
+arr_size = len(arr)
+print(get_Odd_Occurrence(arr, arr_size))  # Output: 3
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````

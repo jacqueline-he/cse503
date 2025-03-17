@@ -1,0 +1,186 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to convert the given binary number to its decimal equivalent.
+Required function signature:
+def binary_to_decimal(binary):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def binary_to_decimal(binary):
+```
+
+```python
+def binary_to_decimal(binary):
+    """
+    This function converts a binary number to its decimal equivalent.
+
+    Parameters:
+    binary (str): The binary number to be converted.
+
+    Returns:
+    int: The decimal equivalent of the binary number.
+
+    """
+    # Initialize the decimal number to 0
+    decimal = 0
+    # Initialize the base to 2 (binary)
+    base = 2
+    # Iterate over the binary string from right to left
+    for i, bit in enumerate(reversed(binary)):
+        # If the current bit is 1, add the corresponding power of 2 to the decimal
+        if bit == '1':
+            decimal += base ** i
+    # Return the decimal equivalent
+    return decimal
+```
+
+```python
+# Test cases
+print(binary_to_decimal('1011'))  # Expected output: 11
+print(binary_to_decimal('1001'))  # Expected output: 9
+```
+
+```python
+# Edge cases
+def binary_to_decimal(binary):
+    """
+    This function converts a binary number to its decimal equivalent.
+
+    Parameters:
+    binary (str): The binary number to be converted.
+
+    Returns:
+    int: The decimal equivalent of the binary number.
+
+    """
+    # Initialize the decimal number to 0
+    decimal = 0
+    # Initialize the base to 2 (binary)
+    base = 2
+    # Iterate over the binary string from right to left
+    for i, bit in enumerate(reversed(binary)):
+        # If the current bit is 1, add the corresponding power of 2 to the decimal
+        if bit == '1':
+            decimal += base ** i
+    # Return the decimal equivalent
+    return decimal
+``````
+
+Now, let's implement the exact solution in a single code block marked with triple backticks. 
+
+```python
+def binary_to_decimal(binary):
+    """
+    This function converts a binary number to its decimal equivalent.
+
+    Parameters:
+    binary (str): The binary number to be converted.
+
+    Returns:
+    int: The decimal equivalent of the binary number.
+
+    """
+    # Initialize the decimal number to 0
+    decimal = 0
+    # Initialize the base to 2 (binary)
+    base = 2
+    # Iterate over the binary string from right to left
+    for i, bit in enumerate(reversed(binary)):
+        # If the current bit is 1, add the corresponding power of 2 to the decimal
+        if bit == '1':
+            decimal += base ** i
+    # Return the decimal equivalent
+    return decimal
+``````
+
+```python
+def binary_to_decimal(binary):
+    """
+    This function converts a binary number to its decimal equivalent.
+
+    Parameters:
+    binary (str): The binary number to be converted.
+
+    Returns:
+    int: The decimal equivalent of the binary number.
+
+    """
+    # Initialize the decimal number to 0
+    decimal = 0
+    # Initialize the base to 2 (binary)
+    base = 2
+    # Iterate over the binary string from right to left
+    for i, bit in enumerate(reversed(binary)):
+        # If the current bit is 1, add the corresponding power of 2 to the decimal
+        if bit == '1':
+            decimal += base ** i
+    # Return the decimal equivalent
+    return decimal
+``````
+
+```python
+def binary_to_decimal(binary):
+    """
+    This function converts a binary number to its decimal equivalent.
+
+    Parameters:
+    binary (str): The binary number to be converted.
+
+    Returns:
+    int: The decimal equivalent of the binary number.
+
+    """
+    # Initialize the decimal number to 0
+    decimal = 0
+    # Initialize the base to 2 (binary)
+    base = 2
+    # Iterate over the binary string from right to left
+    for i, bit in enumerate(reversed(binary)):
+        # If the current bit is 1, add the corresponding power of 2 to the decimal
+        if bit == '1':
+            decimal += base ** i
+    # Return the decimal equivalent
+    return decimal
+``````
+
+```python
+def binary_to_decimal(binary):
+    """
+    This function converts a binary number to its decimal equivalent.
+
+    Parameters:
+    binary (str): The binary number to be converted.
+
+    Returns:
+    int: The decimal equivalent of the binary number.
+
+    """
+    # Initialize the decimal number to 0
+    decimal = 0
+    # Initialize the base to 2 (binary)
+    base = 2
+    # Iterate over the binary string from right to left
+    for i, bit in enumerate(reversed(binary)):
+        # If the current bit is 1, add the corresponding power of 2 to the decimal
+        if bit == '1':
+            decimal += base ** i
+    # Return the decimal equivalent
+   

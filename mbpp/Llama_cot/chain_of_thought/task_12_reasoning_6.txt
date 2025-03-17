@@ -1,0 +1,133 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort a given matrix in ascending order according to the sum of its rows.
+Required function signature:
+def sort_matrix(M):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    # Calculate the total sum of all rows
+    # This is a crucial step to understand the problem better
+    # Calculate the sum of each row
+    row_sums = [sum(row) for row in M]
+    # Combine the total sum and row sums into a list of tuples
+    # This will help us to easily iterate over the rows and columns
+    rows_cols = list(zip(row_sums, range(n)))
+    # Sort the rows and columns based on their sums
+    # This is the key step to sort the matrix in ascending order
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    # Separate the sorted rows from the sorted columns
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    # Combine the sorted rows and columns back into a matrix
+    sorted_matrix = [x for pair in sorted_rows_cols for x in pair]
+    return sorted_matrix
+```
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = [x for pair in sorted_rows_cols for x in pair]
+    return sorted_matrix
+```
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = [x for pair in sorted_rows_cols for x in pair]
+    return sorted_matrix
+``````
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = sorted(rows_cols, key=lambda x: x[0])
+    return sorted_matrix
+```
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = [x for pair in sorted_rows_cols for x in pair]
+    return sorted_matrix
+``````
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = [x for pair in sorted_rows_cols for x in pair]
+    return sorted_matrix
+``````
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = sorted(rows_cols, key=lambda x: x[0])
+    return sorted_matrix
+``````
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum(row) for row in M)
+    row_sums = [sum(row) for row in M]
+    rows_cols = list(zip(row_sums, range(n)))
+    sorted_rows_cols = sorted(rows_cols, key=lambda x: x[0])
+    sorted_rows = [x[1] for x in sorted_rows_cols]
+    sorted_matrix = sorted(rows_cols, key=lambda x: x[0])
+    return sorted_matrix
+``````
+
+```python
+def sort_matrix(M):
+    n = len(M)
+    total_sum = sum(sum

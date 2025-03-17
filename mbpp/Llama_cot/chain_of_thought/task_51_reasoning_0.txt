@@ -1,0 +1,104 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to print check if the triangle is equilateral or not.
+Required function signature:
+def check_equilateral(x,y,z):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def check_equilateral(x,y,z):
+```
+```python
+# Check if the triangle is equilateral
+# We can use the formula for the side length of an equilateral triangle
+# which is sqrt(3)/2 * side
+# We can calculate the side length of the triangle using the distance formula
+import math
+side_length = math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2)
+```
+```python
+# Check if the side length is equal to sqrt(3)/2 * side
+# We can use the formula for the side length of an equilateral triangle
+# which is sqrt(3)/2 * side
+# We can calculate the side length of the triangle using the distance formula
+side_length = math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2)
+
+# Check if the side length is equal to sqrt(3)/2 * side
+if math.isclose(side_length, math.sqrt(3)/2 * side):
+    return True
+else:
+    return False
+```
+```python
+# Check if the triangle is equilateral
+if check_equilateral(x,y,z):
+    print("The triangle is equilateral.")
+else:
+    print("The triangle is not equilateral.")
+```
+```python
+# Check if the triangle is equilateral
+def check_equilateral(x,y,z):
+```
+```python
+import math
+```
+```python
+def check_equilateral(x, y, z):
+    # Check if the triangle is equilateral
+    # We can use the formula for the side length of an equilateral triangle
+    # which is sqrt(3)/2 * side
+    # We can calculate the side length of the triangle using the distance formula
+    side_length = math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2)
+    # Check if the side length is equal to sqrt(3)/2 * side
+    # We can use the formula for the side length of an equilateral triangle
+    # which is sqrt(3)/2 * side
+    # We can calculate the side length of the triangle using the distance formula
+    side_length = math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2)
+    # Check if the side length is equal to sqrt(3)/2 * side
+    if math.isclose(side_length, math.sqrt(3)/2 * side):
+        return True
+    else:
+        return False
+```
+Now let's implement the complete solution inside triple backticks:
+
+```python
+import math
+
+def check_equilateral(x, y, z):
+    # Check if the triangle is equilateral
+    # We can use the formula for the side length of an equilateral triangle
+    # which is sqrt(3)/2 * side
+    # We can calculate the side length of the triangle using the distance formula
+    side_length = math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2)
+    # Check if the side length is equal to sqrt(3)/2 * side
+    # We can use the formula for the side length of an equilateral triangle
+    # which is sqrt(3)/2 * side
+    # We can calculate the side length of the triangle using the distance formula
+    side_length = math.sqrt((x - y)**2 + (y - z)**2 + (z - x)**2)
+    # Check if the side length is equal to sqrt(3)/2 * side
+    if math.isclose(side_length, math.sqrt(3)/2 * side):
+        return True
+    else:
+        return False
+```
+Note that the `math.isclose()` function is used to compare floating point numbers, as the equality check may not be exact due to the limitations of floating point arithmetic.

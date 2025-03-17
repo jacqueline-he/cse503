@@ -1,0 +1,64 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the given tuple list has all k elements.
+Required function signature:
+def check_k_elements(test_list, K):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Don't forget to include docstrings to explain the purpose and behavior of the function.
+
+```python
+def check_k_elements(test_list, K):
+    return all(test_list[k] == test_list[k+1] for k in range(K-1)) and all(test_list[k] == test_list[k+1] for k in range(K-1, len(test_list)-1))
+```
+### Step 1: Understanding the problem
+The function should check if a given tuple list has all k elements. It means we need to find out if the list has exactly k elements or not.
+
+### Step 2: Identifying key steps or algorithms
+We can use the mathematical concept of consecutive elements in a list to solve this problem. We need to check if the k-th element is equal to the (k+1)-th element.
+
+### Step 3: Considering edge cases
+We need to consider edge cases such as the list being empty or having less than k elements.
+
+### Step 4: Implementing the solution
+We can use a list comprehension to iterate over the list and check if all elements are equal. We can also use the built-in `all()` function to check if all elements are equal.
+
+```python
+def check_k_elements(test_list, K):
+    """
+    Checks if a given tuple list has all k elements.
+
+    Args:
+        test_list (list): The input tuple list.
+        K (int): The number of elements to check.
+
+    Returns:
+        bool: True if the list has all k elements, False otherwise.
+    """
+    return all(test_list[k] == test_list[k+1] for k in range(K-1)) and all(test_list[k] == test_list[k+1] for k in range(K-1, len(test_list)-1))
+
+# Example usage:
+test_list = [(1, 2, 3), (4, 5, 6), (1, 2, 3)]
+K = 2
+print(check_k_elements(test_list, K))  # Output: True
+
+test_list = [(1, 2, 3), (4, 5, 6), (1, 2, 3, 4)]
+K = 3
+print(check_k_elements(test_list, K))  # Output: False
+```

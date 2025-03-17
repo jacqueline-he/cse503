@@ -1,0 +1,58 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to print check if the triangle is equilateral or not.
+Required function signature:
+def check_equilateral(x,y,z):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide the test cases once I have it.
+
+## Step 1: Understand the problem
+The task is to write a function that checks if a given triangle with sides of lengths x, y, and z is equilateral.
+
+## Step 2: Key steps and algorithms
+To determine if a triangle is equilateral, we need to check if the lengths of all sides are equal. If they are, then the triangle is equilateral.
+
+## Step 3: Edge cases to consider
+We should consider what happens when x = y = z. In this case, the triangle is actually equilateral, so we should return True.
+
+## Step 4: Implement the solution
+```python
+def check_equilateral(x, y, z):
+    # Check if x = y = z
+    if x == y == z:
+        return True
+    # Check if the triangle is equilateral by checking the lengths of all sides
+    elif x + y > z and x + z > y and y + z > x:
+        return True
+    else:
+        return False
+```
+
+The final answer is: ```python
+def check_equilateral(x, y, z):
+    # Check if x = y = z
+    if x == y == z:
+        return True
+    # Check if the triangle is equilateral by checking the lengths of all sides
+    elif x + y > z and x + z > y and y + z > x:
+        return True
+    else:
+        return False
+```

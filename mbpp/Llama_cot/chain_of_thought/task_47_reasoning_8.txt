@@ -1,0 +1,142 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the last digit when factorial of a divides factorial of b.
+Required function signature:
+def compute_Last_Digit(A,B):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def compute_Last_Digit(A,B):
+    # Edge case: If A is 0 or B is 0, factorial is 1
+    if A == 0 or B == 0:
+        return 0
+    
+    # Initialize variables for the results
+    last_digit_A = 0
+    last_digit_B = 0
+    
+    # Loop through the possible last digits (0-9)
+    for i in range(10):
+        # Compute the factorial of A and B
+        A_fact = A * (A-1) *... * (A-i)
+        B_fact = B * (B-1) *... * (B-i)
+        
+        # Check if A_fact is divisible by B_fact
+        if A_fact % B_fact == 0:
+            # Update the last digit of A
+            last_digit_A = i
+            break
+    
+    # Return the last digit of A
+    return last_digit_A
+```
+
+### Step-by-Step Explanation:
+
+- We start by checking for edge cases where either A or B is 0.
+- We initialize two variables, `last_digit_A` and `last_digit_B`, to store the last digits of the factorials of A and B respectively.
+- We then loop through all possible last digits (0-9) using a for loop.
+- For each last digit `i`, we compute the factorial of A and B by multiplying their respective numbers from 1 to `i`.
+- We then check if the factorial of A is divisible by the factorial of B by using the modulus operator (`%`). If the remainder is 0, we update the last digit of A to `i` and break out of the loop.
+- Finally, we return the last digit of A as the result.
+
+### Key Steps and Algorithms:
+
+- We use the properties of factorials to compute the factorials of A and B.
+- We check for divisibility using the modulus operator.
+- We update the last digit of A based on the divisibility condition.
+
+### Edge Cases:
+
+- We check for edge cases where A or B is 0.
+- We return 0 as the result for these edge cases.
+
+### Complete Solution:
+
+```python
+def compute_Last_Digit(A,B):
+    # Edge case: If A is 0 or B is 0, factorial is 1
+    if A == 0 or B == 0:
+        return 0
+    
+    # Initialize variables for the results
+    last_digit_A = 0
+    last_digit_B = 0
+    
+    # Loop through the possible last digits (0-9)
+    for i in range(10):
+        # Compute the factorial of A and B
+        A_fact = A * (A-1) *... * (A-i)
+        B_fact = B * (B-1) *... * (B-i)
+        
+        # Check if A_fact is divisible by B_fact
+        if A_fact % B_fact == 0:
+            # Update the last digit of A
+            last_digit_A = i
+            break
+    
+    # Return the last digit of A
+    return last_digit_A
+```
+```python
+def compute_Last_Digit(A,B):
+    # Edge case: If A is 0 or B is 0, factorial is 1
+    if A == 0 or B == 0:
+        return 0
+    
+    # Initialize variables for the results
+    last_digit_A = 0
+    last_digit_B = 0
+    
+    # Loop through the possible last digits (0-9)
+    for i in range(10):
+        # Compute the factorial of A and B
+        A_fact = A * (A-1) *... * (A-i)
+        B_fact = B * (B-1) *... * (B-i)
+        
+        # Check if A_fact is divisible by B_fact
+        if A_fact % B_fact == 0:
+            # Update the last digit of A
+            last_digit_A = i
+            break
+    
+    # Return the last digit of A
+    return last_digit_A
+```assistant
+
+def compute_Last_Digit(A,B):
+    # Edge case: If A is 0 or B is 0, factorial is 1
+    if A == 0 or B == 0:
+        return 0
+    
+    # Initialize variables for the results
+    last_digit_A = 0
+    last_digit_B = 0
+    
+    # Loop through the possible last digits (0-9)
+    for i in range(10):
+        # Compute the factorial of A and B
+        A_fact = A * (A-1) *... * (A-i)
+        B_fact = B * (B-1) *... * (B-i)
+        
+        # Check if A_fact is divisible by B_fact
+        if A_fact % B_fact == 0:
+            # Update the last

@@ -1,0 +1,163 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def remove_Occ(s, ch):
+    i = 0
+    while i < len(s):
+        if s[i] == ch:
+            i += 1
+        else:
+            s = s[:i] + s[i+1:]
+    return s
+```
+Step 1: Define the problem clearly
+The problem is asking to remove the first and last occurrence of a given character from a string.
+
+Step 2: Identify the key steps or algorithms needed
+The key steps are:
+- Find the first occurrence of the character.
+- Find the last occurrence of the character.
+- Remove the first and last occurrences.
+
+Step 3: Identify any edge cases to consider
+- If the character is not found, the function should not raise an error but return the original string.
+- If the string is empty, the function should return the original string.
+
+Step 4: Implement the solution
+```python
+def remove_Occ(s, ch):
+    """
+    Removes the first and last occurrence of a given character from a string.
+
+    Args:
+        s (str): The input string.
+        ch (str): The character to remove.
+
+    Returns:
+        str: The modified string with the first and last occurrences removed.
+    """
+    if not s or not ch:  # edge case: empty string
+        return s
+
+    first_occurrence_index = s.find(ch)  # find the first occurrence
+    last_occurrence_index = s.rfind(ch)  # find the last occurrence
+
+    if first_occurrence_index == -1 or last_occurrence_index == -1:  # edge case: character not found
+        return s
+
+    # remove the first and last occurrences
+    s = s[:first_occurrence_index] + s[last_occurrence_index + 1:]
+    return s
+````
+Step 5: Write the complete solution inside triple backticks. 
+```python
+"""
+This is a Python code generator that reasons step-by-step.
+
+Problem: Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Step 1: Define the problem clearly
+The problem is asking to remove the first and last occurrence of a given character from a string.
+
+Step 2: Identify the key steps or algorithms needed
+The key steps are:
+- Find the first occurrence of the character.
+- Find the last occurrence of the character.
+- Remove the first and last occurrences.
+
+Step 3: Identify any edge cases to consider
+- If the character is not found, the function should not raise an error but return the original string.
+- If the string is empty, the function should return the original string.
+
+Step 4: Implement the solution
+"""
+
+def remove_Occ(s, ch):
+    """
+    Removes the first and last occurrence of a given character from a string.
+
+    Args:
+        s (str): The input string.
+        ch (str): The character to remove.
+
+    Returns:
+        str: The modified string with the first and last occurrences removed.
+    """
+    if not s or not ch:  # edge case: empty string
+        return s
+
+    first_occurrence_index = s.find(ch)  # find the first occurrence
+    last_occurrence_index = s.rfind(ch)  # find the last occurrence
+
+    if first_occurrence_index == -1 or last_occurrence_index == -1:  # edge case: character not found
+        return s
+
+    # remove the first and last occurrences
+    s = s[:first_occurrence_index] + s[last_occurrence_index + 1:]
+    return s
+````
+The final answer is: 
+```python
+"""
+This is a Python code generator that reasons step-by-step.
+
+Problem: Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Step 1: Define the problem clearly
+The problem is asking to remove the first and last occurrence of a given character from a string.
+
+Step 2: Identify the key steps or algorithms needed
+The key steps are:
+- Find the first occurrence of the character.
+- Find the last occurrence of the character.
+- Remove the first and last occurrences.
+
+Step 3: Identify any edge cases to consider
+- If the character is not found, the function should not raise an error but return the original string.
+- If the string is empty, the function should return the original string.
+
+Step 4: Implement the solution
+"""
+
+def remove_Occ(s, ch):
+    """
+    Removes the first and last occurrence of a given character from a string.
+
+    Args:
+        s (str): The input string.
+        ch (str): The character to remove.
+
+    Returns:
+        str: The modified string with the first and last occurrences removed.
+    """
+    if not s or not ch:  # edge case: empty string
+        return s
+
+    first_occurrence_index =

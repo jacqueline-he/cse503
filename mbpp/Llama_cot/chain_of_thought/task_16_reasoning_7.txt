@@ -1,0 +1,93 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find sequences of lowercase letters joined with an underscore.
+Required function signature:
+def text_lowercase_underscore(text):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I'll do the testing later.
+
+Here's my attempt so far:
+```python
+def text_lowercase_underscore(text):
+    result = ""
+    for i in range(len(text)):
+        if text[i] == " ":
+            result += "_"
+        else:
+            result += text[i]
+    return result
+```
+This solution seems to work but let's analyze it:
+1. It iterates over each character in the text. If it encounters a space, it adds an underscore to the result. Otherwise, it adds the character to the result. This approach seems correct, but we need to consider the edge case where the input text is an empty string.
+2. The algorithm seems to be correct, but we need to handle the edge case where the input text is empty.
+3. The algorithm seems to be correct, but we need to add a check for the case where the input text is a string of only underscores.
+
+Now, let's think step-by-step:
+1. What is this problem asking for?
+We need to find sequences of lowercase letters joined with an underscore.
+
+2. What are the key steps or algorithms needed?
+We need to iterate over the text, find sequences of lowercase letters, and add them to the result.
+
+3. Are there any edge cases to consider?
+We need to consider the case where the input text is empty, the case where the input text is a string of only underscores, and the case where the input text is a string of non-alphabetical characters.
+
+4. Implement your complete solution inside triple backticks.
+```python
+def text_lowercase_underscore(text):
+    """
+    Find sequences of lowercase letters joined with an underscore.
+
+    Args:
+        text (str): The input text.
+
+    Returns:
+        str: The result string.
+    """
+    # Edge case: empty string
+    if not text:
+        return ""
+
+    # Initialize result and current sequence
+    result = ""
+    current_sequence = ""
+
+    # Iterate over the text
+    for char in text:
+        # If the character is a lowercase letter and current_sequence is not empty
+        if char.islower() and current_sequence:
+            # Add the character to the current sequence
+            current_sequence += char
+        # If the character is not a lowercase letter or current_sequence is empty
+        else:
+            # Add the current sequence to the result
+            if current_sequence:
+                result += current_sequence + "_"
+            # Reset the current sequence
+            current_sequence = char
+
+    # Add the last sequence to the result
+    if current_sequence:
+        result += current_sequence + "_"
+
+    return result
+````
+
+I hope my reasoning is correct. Let me know if I made any mistakes.

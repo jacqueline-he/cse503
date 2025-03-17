@@ -1,0 +1,52 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the given number is woodball or not.
+Required function signature:
+def is_woodall(x):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please ensure it is correct and handles all test cases.
+
+```python
+def is_woodall(x):
+    return 'woodball' if x % 3 == 0 else 'not woodball'
+```
+
+## Step 1: Analyzing the problem
+This problem is asking for a function that determines whether a given number is "woodball" or not. To solve this, we need to understand the properties of a woodball.
+
+## Step 2: Key steps and algorithms
+1. We can use the modulo operator (%) to check if a number is divisible by 3. If the remainder is 0, the number is divisible by 3.
+2. We can use a simple if-else statement to return "woodball" if the number is divisible by 3 and "not woodball" otherwise.
+
+## Step 3: Edge cases to consider
+1. What if the input is a negative number? Should it return "woodball" or "not woodball"? We can add a check to handle this case.
+2. What if the input is 0? Should it return "woodball" or "not woodball"? We can add another check to handle this case.
+
+## Step 4: Implementing the solution
+Here's the complete solution inside triple backticks:
+```python
+def is_woodall(x):
+    if x < 0:
+        return 'not woodball'
+    elif x == 0:
+        return 'woodball'
+    else:
+        return 'woodball' if x % 3 == 0 else 'not woodball'
+```

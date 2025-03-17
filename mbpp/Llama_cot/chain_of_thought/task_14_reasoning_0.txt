@@ -1,0 +1,80 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the volume of a triangular prism.
+Required function signature:
+
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I don’t know how to write a function to find the volume of a triangular prism, I am assuming you will guide me through the process.
+
+## Step 1: Understanding the Problem
+A triangular prism is a three-dimensional solid object with two triangular bases connected by three rectangular sides. The volume of a triangular prism is the sum of the volumes of the two triangular bases and the volume of the rectangular prism that is formed by the three rectangular sides.
+
+## Step 2: Breaking Down the Problem
+To find the volume of the triangular prism, we need to follow these steps:
+1. Calculate the area of the two triangular bases.
+2. Calculate the length and width of the rectangular prism.
+3. Calculate the volume of the rectangular prism.
+4. Add the volumes of the two triangular bases and the rectangular prism to get the total volume.
+
+## Step 3: Algorithmic Thinking
+We can use the following mathematical formulas to solve this problem:
+- Area of a triangle: A = (1/2) * base * height
+- Volume of a rectangular prism: V = length * width * height
+
+## Step 4: Key Steps
+1. Define the function to calculate the area of a triangle.
+2. Define the function to calculate the volume of a rectangular prism.
+3. Define the function to calculate the volume of the triangular prism.
+
+## Step 5: Edge Cases
+We need to consider the following edge cases:
+- If the base is a point (i.e., the triangle is degenerate), the volume is 0.
+- If the rectangular prism has zero height, the volume is 0.
+
+## Step 6: Implementation
+```python
+import math
+
+def calculate_area_of_triangle(base, height):
+    return (1/2) * base * height
+
+def calculate_volume_of_rectangular_prism(length, width, height):
+    return length * width * height
+
+def calculate_volume_of_triangular_prism(base1, base2, height):
+    # Calculate the area of the two triangular bases
+    area1 = calculate_area_of_triangle(base1, height)
+    area2 = calculate_area_of_triangle(base2, height)
+    
+    # Calculate the volume of the rectangular prism
+    volume = length * width * height
+    
+    # Add the volumes of the two triangular bases and the rectangular prism
+    total_volume = area1 + area2 + volume
+    
+    return total_volume
+
+# Test the function
+base1 = 5
+base2 = 3
+height = 4
+print(calculate_volume_of_triangular_prism(base1, base2, height))
+```
+Note: This is just one possible solution, and there may be other ways to solve this problem.

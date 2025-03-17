@@ -1,0 +1,176 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to caluclate area of a parallelogram.
+Required function signature:
+def parallelogram_area(b,h):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I'll provide the inputs and expected outputs.
+
+```python
+def parallelogram_area(b,h):
+```
+
+```python
+# Step 1: Define the variables and calculate the area
+# Since we are given the base (b) and height (h) directly, we can directly use them in our formula
+area = b * h
+```
+
+```python
+# Step 2: Return the calculated area
+return area
+```
+
+```python
+# Step 3: Test the function with some inputs and verify the output
+print(parallelogram_area(4, 5))  # Expected output: 20
+```
+
+```python
+# Step 4: Consider edge cases
+# If the base is 0 or the height is 0, the function should raise an error
+try:
+    print(parallelogram_area(0, 5))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 5: Consider an invalid input
+try:
+    print(parallelogram_area(4, 0))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 6: Test the function with negative inputs
+try:
+    print(parallelogram_area(-4, 5))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 7: Test the function with an invalid input
+try:
+    print(parallelogram_area(4, -5))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 8: Test the function with a non-numeric input
+try:
+    print(parallelogram_area(4, 5.5))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 9: Test the function with a non-positive input
+try:
+    print(parallelogram_area(4, 0))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 10: Test the function with a non-numeric height
+try:
+    print(parallelogram_area(4, '5'))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 11: Test the function with a non-positive base
+try:
+    print(parallelogram_area(0, 5))
+except ValueError as e:
+    print(f"Error: {e}")
+```
+
+```python
+# Step 12: Test the function with a non-numeric base
+try:
+    print(parallelogram_area(4, 5))
+except ValueError as e:
+    print(f"Error: {e}")
+```assistant**
+
+```python
+def parallelogram_area(b, h):
+    # Step 1: Define the variables and calculate the area
+    # Since we are given the base (b) and height (h) directly, we can directly use them in our formula
+    area = b * h
+
+    # Step 2: Return the calculated area
+    return area
+
+# Step 3: Test the function with some inputs and verify the output
+print(parallelogram_area(4, 5))  # Expected output: 20
+
+# Step 4: Consider edge cases
+# If the base is 0 or the height is 0, the function should raise an error
+try:
+    print(parallelogram_area(0, 5))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 5: Consider an invalid input
+try:
+    print(parallelogram_area(4, 0))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 6: Test the function with negative inputs
+try:
+    print(parallelogram_area(-4, 5))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 7: Test the function with an invalid input
+try:
+    print(parallelogram_area(4, -5))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 8: Test the function with a non-numeric input
+try:
+    print(parallelogram_area(4, 5.5))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 9: Test the function with a non-positive input
+try:
+    print(parallelogram_area(4, 0))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 10: Test the function with a non-numeric height
+try:
+    print(parallelogram_area(4, '5'))
+except ValueError as e:
+    print(f"Error: {e}")
+
+# Step 11: Test the function with a non-positive base
+try:
+    print(par

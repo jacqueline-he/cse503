@@ -1,0 +1,77 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to convert the given binary number to its decimal equivalent.
+Required function signature:
+def binary_to_decimal(binary):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def binary_to_decimal(binary):
+    decimal = 0
+    power = 0
+    for i in range(len(binary)):
+        if binary[i] == '1':
+            decimal += 2 ** power
+        power += 1
+    return decimal
+```
+However, the code does not correctly handle the case when the input string is empty (i.e., `binary` is an empty string). We need to add a check for this and return `0` in this case.
+
+## Step 1: Understand the problem and identify the key steps.
+We need to convert a binary number to its decimal equivalent. We will use a loop to iterate over the binary digits, add or subtract the appropriate power of 2 to the decimal number, and update the power variable accordingly.
+
+## Step 2: Add a check for an empty input string.
+We need to add a check to handle the case when the input string is empty. In this case, we should return 0.
+
+## Step 3: Outline the key steps in the algorithm.
+1. Initialize the decimal number to 0.
+2. Initialize the power variable to 0.
+3. Iterate over the binary digits from left to right.
+4. For each binary digit, check if it is '1'. If it is, add the appropriate power of 2 to the decimal number.
+5. Update the power variable accordingly.
+6. Return the decimal number.
+
+## Step 4: Implement the solution using a loop and conditional statements.
+```python
+def binary_to_decimal(binary):
+    if not binary:  # Check if the input string is empty
+        return 0
+    decimal = 0
+    power = 0
+    for i in range(len(binary)):
+        if binary[i] == '1':
+            decimal += 2 ** power
+        power += 1
+    return decimal
+```
+The final answer is: 
+```python
+def binary_to_decimal(binary):
+    if not binary:  # Check if the input string is empty
+        return 0
+    decimal = 0
+    power = 0
+    for i in range(len(binary)):
+        if binary[i] == '1':
+            decimal += 2 ** power
+        power += 1
+    return decimal
+```

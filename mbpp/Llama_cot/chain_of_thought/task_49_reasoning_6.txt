@@ -1,0 +1,65 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to extract every first or specified element from a given two-dimensional list.
+Required function signature:
+def specified_element(nums, N):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def specified_element(nums, N):
+    for i in range(len(nums)):
+        if nums[i][0] == N:
+            return nums[i]
+    return None
+```
+
+## Step 1: Understand the problem
+This problem is asking for a function that takes a two-dimensional list `nums` and an integer `N` as input, and returns the first or specified element from the list. If no such element exists, it returns `None`.
+
+## Step 2: Identify key steps and algorithms
+To solve this problem, we need to iterate over the two-dimensional list and check if each element is equal to `N`. If we find an element that matches `N`, we can return it immediately. If we reach the end of the list without finding such an element, we return `None`.
+
+## Step 3: Consider edge cases
+We need to consider two edge cases:
+- If the input list is empty, we should return `None` immediately.
+- If `N` is not found in the list, we should return `None` immediately.
+
+## Step 4: Implement the solution
+Here is the complete implementation of the solution:
+```python
+def specified_element(nums, N):
+    """
+    Extracts the first or specified element from a given two-dimensional list.
+
+    Args:
+        nums (list): A two-dimensional list of integers.
+        N (int): The specified element.
+
+    Returns:
+        list: The first or specified element from the list, or None if not found.
+    """
+    if not nums:  # edge case: empty list
+        return None
+    for row in nums:
+        if row[0] == N:
+            return row  # edge case: already found
+    return None  # edge case: not found
+```

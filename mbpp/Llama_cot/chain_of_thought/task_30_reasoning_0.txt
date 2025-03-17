@@ -1,0 +1,89 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to count all the substrings starting and ending with same characters.
+Required function signature:
+def check_Equality(s):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def check_Equality(s):
+```
+
+```python
+def check_Equality(s):
+    n = len(s)
+    count = 0
+    for i in range(n):
+        for j in range(i, n):
+            if s[i] == s[j]:
+                count += 1
+    return count
+```
+
+```python
+def check_Equality(s):
+    n = len(s)
+    count = 0
+    for i in range(n):
+        for j in range(i, n):
+            if s[i] == s[j] and i!= j:
+                count += 1
+    return count
+```
+
+```python
+def check_Equality(s):
+    n = len(s)
+    count = 0
+    for i in range(n):
+        for j in range(i, n):
+            if s[i] == s[j] and i == j:
+                count += 1
+    return count
+```
+
+```python
+def check_Equality(s):
+    n = len(s)
+    count = 0
+    for i in range(n):
+        for j in range(i, n):
+            if s[i] == s[j] and s[i]!= s[j]:
+                count += 1
+    return count
+```assistant
+
+```python
+def check_Equality(s):
+    n = len(s)
+    count = 0
+    for i in range(n):
+        for j in range(i, n):
+            if s[i] == s[j] and i!= j:
+                count += 1
+    return count
+```
+
+This solution works by iterating over all possible substrings of the input string `s` and checking if they are equal to the current character. It uses two nested loops to generate all substrings, and a conditional statement to check if the current substring is equal to the character at the current index. If it is, it increments the count. Finally, it returns the total count of substrings that are equal to the current character.
+
+There are no edge cases to consider in this solution, as it only checks for substrings that start and end with the same character.
+
+This solution has a time complexity of O(n^2), where n is the length of the input string, because it generates all substrings and checks each one. This is because there are n choices for the first character of the substring, and n choices for the second character, resulting in n^2 combinations. The space complexity is O(1), as it only uses a constant amount of space to store the count and the input string.

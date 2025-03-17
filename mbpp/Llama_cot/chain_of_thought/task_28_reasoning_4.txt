@@ -1,0 +1,72 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find binomial co-efficient.
+Required function signature:
+def binomial_Coeff(n,k):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. This function should return a float between 0 and 1, representing the binomial coefficient.
+
+```python
+import math
+
+def binomial_Coeff(n,k):
+    if n < 0 or k < 0:
+        raise ValueError("n and k cannot be negative")
+    if n == 0:
+        return 1
+    if k > n:
+        return 0
+    return math.comb(n, k)
+```
+Analysis:
+This problem is asking to find the binomial coefficient, which is a value in the expansion of (a + b)^n. It is a mathematical concept that requires us to consider all possible combinations of elements in a set to find the coefficient. The binomial coefficient is represented by the symbol "n choose k" or "C(n, k)".
+
+
+Algorithm:
+To solve this problem, we can use the formula for the binomial coefficient:
+C(n, k) = n! / (k! * (n-k)!)
+
+We can implement this formula using Python's math library, which provides a function for calculating factorials. The formula can be broken down into three main steps:
+
+1. Calculate the factorial of n and k using the math.factorial() function.
+2. Calculate the factorial of (n-k) using the math.factorial() function.
+3. Calculate the binomial coefficient by dividing the factorial of n by the product of the factorials of k and (n-k).
+
+Implementation:
+```python
+import math
+
+def binomial_Coeff(n,k):
+    if n < 0 or k < 0:
+        raise ValueError("n and k cannot be negative")
+    if n == 0:
+        return 1
+    if k > n:
+        return 0
+    return math.comb(n, k)
+```
+
+
+Test the function with some test cases:
+```python
+print(binomial_Coeff(5, 2)) # Output: 10.0
+print(binomial_Coeff(10, 5)) # Output: 252.0
+print(binomial_Coeff(15, 10)) # Output: 3003.0
+```

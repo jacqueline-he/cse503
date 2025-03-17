@@ -1,0 +1,115 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort the given array by using counting sort.
+Required function signature:
+def counting_sort(my_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will then verify the correctness of the solution.
+
+```python
+def counting_sort(my_list):
+```
+
+```python
+def counting_sort(my_list):
+    """
+    This function sorts the given array by using counting sort.
+
+    Args:
+    my_list (list): The input list to be sorted.
+
+    Returns:
+    list: The sorted list.
+    """
+    # Step 1: Find the maximum element in the array
+    max_element = max(my_list)
+
+    # Step 2: Create a count array to store the count of individual elements
+    count_array = [0] * (max_element + 1)
+
+    # Step 3: Count the occurrences of each element in the input array
+    for num in my_list:
+        count_array[num] += 1
+
+    # Step 4: Calculate the cumulative sum to get the sorted array
+    sorted_list = []
+    for i in range(max_element + 1):
+        sorted_list.extend([i] * count_array[i])
+
+    return sorted_list
+```
+
+Let's analyze the problem carefully to ensure we understand the requirements.
+The task requires us to sort an array using the counting sort algorithm.
+The array contains integers, and we need to sort it in ascending order.
+
+Now, let's clearly explain our approach using mathematical reasoning and algorithmic thinking.
+The counting sort algorithm is a stable sorting algorithm that works by counting the occurrences of each element in the input array and then placing each element at its correct position in the output array.
+The key steps involved in this algorithm are:
+- Step 1: Find the maximum element in the array
+- Step 2: Create a count array to store the count of individual elements
+- Step 3: Count the occurrences of each element in the input array
+- Step 4: Calculate the cumulative sum to get the sorted array
+- Step 5: Return the sorted array
+
+Now, let's outline the key steps in our algorithm before writing any code.
+Step 1: Find the maximum element in the array
+Step 2: Create a count array to store the count of individual elements
+Step 3: Count the occurrences of each element in the input array
+Step 4: Calculate the cumulative sum to get the sorted array
+Step 5: Return the sorted array
+
+Now, let's implement our complete solution inside triple backticks.
+
+```python
+def counting_sort(my_list):
+    """
+    This function sorts the given array by using counting sort.
+
+    Args:
+    my_list (list): The input list to be sorted.
+
+    Returns:
+    list: The sorted list.
+    """
+    # Step 1: Find the maximum element in the array
+    max_element = max(my_list)
+
+    # Step 2: Create a count array to store the count of individual elements
+    count_array = [0] * (max_element + 1)
+
+    # Step 3: Count the occurrences of each element in the input array
+    for num in my_list:
+        count_array[num] += 1
+
+    # Step 4: Calculate the cumulative sum to get the sorted array
+    sorted_list = []
+    for i in range(max_element + 1):
+        sorted_list.extend([i] * count_array[i])
+
+    return sorted_list
+```
+
+
+# Test the function
+my_list = [4, 2, 2, 8, 3, 3, 1]
+sorted_list = counting_sort(my_list)
+print(sorted_list)  # Output: [1, 2, 2, 3, 3, 4, 8]
+```

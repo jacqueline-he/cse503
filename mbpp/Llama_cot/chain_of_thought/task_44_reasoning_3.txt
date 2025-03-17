@@ -1,0 +1,106 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function that matches a word at the beginning of a string.
+Required function signature:
+def text_match_string(text):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide the test data once you are ready.
+
+Task Explanation:
+This problem is asking for a function that checks if a word is present at the beginning of a given text. It is assumed that the input text will always be a string.
+
+Step 1: Define the function signature with the required parameters.
+```python
+def text_match_string(text):
+```
+
+Step 2: Analyze the input and required output.
+```python
+text = input("Enter a text: ")
+word = input("Enter a word to match: ")
+```
+
+Step 3: Implement the solution.
+```python
+def text_match_string(text):
+    # Step 4: Remove leading whitespace from the input text
+    text = text.strip()
+    
+    # Step 5: Check if the word is present at the beginning of the text
+    if text.startswith(word):
+        # Step 6: Return True if the word is found, False otherwise
+        return True
+    else:
+        # Step 7: Return False if the word is not found
+        return False
+```
+
+Step 8: Test the function with sample inputs and edge cases.
+```python
+# Test cases
+print(text_match_string("   Hello World!   "))  # Expected output: True
+print(text_match_string("Hello World!"))  # Expected output: False
+print(text_match_string(""))  # Expected output: False
+print(text_match_string("   "))  # Expected output: False
+print(text_match_string("   Hello"))  # Expected output: False
+```
+Step 9: Provide the complete solution.
+```python
+def text_match_string(text):
+    text = text.strip()
+    if text.startswith(word):
+        return True
+    else:
+        return False
+```
+
+Test Data:
+Enter a text:   Hello World!  , Enter a word to match:   Hello
+Expected output: True
+Enter a text:   Hello World!  , Enter a word to match:   World
+Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:   World
+Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match:  , Expected output: False
+Enter a text:   Hello World!  , Enter a word to match

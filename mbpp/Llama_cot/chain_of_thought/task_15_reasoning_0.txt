@@ -1,0 +1,89 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to split a string at lowercase letters.
+Required function signature:
+def split_lowerstring(text):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def split_lowerstring(text):
+```
+
+```python
+def split_lowerstring(text):
+```
+
+```python
+def split_lowerstring(text):
+```
+
+```python
+def split_lowerstring(text):
+```
+
+```python
+def split_lowerstring(text):
+```
+
+### Step 1: Problem Understanding
+This problem asks for a function to split a string into parts based on lowercase letters. For example, if the input is "hello_world", it should return ["hello", "world"].
+
+### Step 2: Key Steps and Algorithms
+To solve this problem, we can use the concept of string slicing. We can split the string into parts based on the first lowercase letter it encounters.
+
+### Step 3: Edge Cases
+We need to consider two edge cases:
+- If the input string is empty, we should return an empty list.
+- If the input string only contains uppercase letters, we should return a list containing the input string.
+
+### Step 4: Implementation
+```python
+def split_lowerstring(text):
+    """
+    Splits a string at lowercase letters.
+
+    Args:
+        text (str): The input string.
+
+    Returns:
+        list: A list of substrings separated by lowercase letters.
+    """
+    result = []
+    current_part = ""
+    for char in text:
+        if char.islower():
+            if current_part:
+                result.append(current_part)
+            current_part = char
+        else:
+            current_part += char
+    if current_part:
+        result.append(current_part)
+    return result
+```
+
+### Step 5: Test the Solution
+```python
+print(split_lowerstring("hello_world"))  # Output: ["hello", "world"]
+print(split_lowerstring("HELLO_WORLD"))  # Output: ["hello", "world"]
+print(split_lowerstring(""))  # Output: []
+print(split_lowerstring("HELLO"))  # Output: ["hello"]
+```

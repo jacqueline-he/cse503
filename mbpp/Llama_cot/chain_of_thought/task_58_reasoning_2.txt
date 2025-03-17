@@ -1,0 +1,89 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to check whether the given two integers have opposite sign or not.
+Required function signature:
+def opposite_Signs(x,y):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please ensure your solution correctly handles all test cases and edge cases.
+
+```python
+def opposite_Signs(x, y):
+    return x!= y and (x < 0 or y < 0)
+```
+
+## Step 1: Understanding the Problem
+The problem requires a function that checks whether two given integers have opposite signs. This means we need to determine if the signs of the two numbers are the same or different.
+
+## Step 2: Key Steps and Algorithms
+To solve this problem, we can use the following approach:
+
+- First, we check if the signs of the two numbers are the same (i.e., both are positive or both are negative).
+- If the signs are the same, we return False.
+- If the signs are different, we return True.
+
+## Step 3: Edge Cases
+We should consider the following edge cases:
+
+- If both numbers are 0, they have the same sign.
+- If one number is positive and the other is negative, they have opposite signs.
+
+## Step 4: Implementing the Solution
+Here is the complete implementation of the function in Python:
+
+```python
+def opposite_Signs(x, y):
+    """
+    Checks whether two integers have opposite signs.
+
+    Args:
+        x (int): The first integer.
+        y (int): The second integer.
+
+    Returns:
+        bool: True if the signs of the two numbers are opposite, False otherwise.
+    """
+    # Check if both numbers are 0
+    if x == 0 and y == 0:
+        return False
+    
+    # Check if one number is positive and the other is negative
+    return (x > 0 and y < 0) or (x < 0 and y > 0)
+```
+
+The final answer is: 
+```python
+def opposite_Signs(x, y):
+    """
+    Checks whether two integers have opposite signs.
+
+    Args:
+        x (int): The first integer.
+        y (int): The second integer.
+
+    Returns:
+        bool: True if the signs of the two numbers are opposite, False otherwise.
+    """
+    # Check if both numbers are 0
+    if x == 0 and y == 0:
+        return False
+    
+    # Check if one number is positive and the other is negative
+    return (x > 0 and y < 0) or (x < 0 and y > 0)
+```assistant

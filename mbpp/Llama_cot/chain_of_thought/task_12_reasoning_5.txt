@@ -1,0 +1,78 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort a given matrix in ascending order according to the sum of its rows.
+Required function signature:
+def sort_matrix(M):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I assume the input matrix is a list of lists where each element is an integer.
+```python
+def sort_matrix(M):
+```
+```python
+import itertools
+```
+```python
+def sort_matrix(M):
+    # Step 1: Calculate the sum of each row
+    row_sums = [sum(row) for row in M]
+    
+    # Step 2: Sort the rows based on their sums
+    sorted_rows = sorted(zip(row_sums, M), key=lambda x: x[0])
+    
+    # Step 3: Combine the sorted rows back into a matrix
+    sorted_matrix = list(itertools.chain(*sorted_rows))
+    
+    return sorted_matrix
+```
+```python
+# Test the function
+matrix = [[3, 6, 9], [1, 2, 4], [5, 10, 15]]
+sorted_matrix = sort_matrix(matrix)
+print(sorted_matrix)
+```
+```python
+# Edge case: Matrix is empty
+matrix = []
+sorted_matrix = sort_matrix(matrix)
+print(sorted_matrix)
+
+# Edge case: Matrix contains only one element
+matrix = [[1]]
+sorted_matrix = sort_matrix(matrix)
+print(sorted_matrix)
+```
+```python
+# Edge case: Matrix contains duplicate elements
+matrix = [[1, 2, 2], [2, 2, 2]]
+sorted_matrix = sort_matrix(matrix)
+print(sorted_matrix)
+```
+```python
+# Edge case: Matrix contains negative numbers
+matrix = [[-1, 0, 1], [-2, -3, -4]]
+sorted_matrix = sort_matrix(matrix)
+print(sorted_matrix)
+```
+```python
+# Test the function with a matrix of different sizes
+matrix = [[1, 2, 3, 4], [5, 6, 7, 8]]
+sorted_matrix = sort_matrix(matrix)
+print(sorted_matrix)
+``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````

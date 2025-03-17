@@ -1,0 +1,65 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to determine whether all the numbers are different from each other are not.
+Required function signature:
+def test_distinct(data):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def test_distinct(data):
+```
+
+```python
+# Define the function test_distinct
+def test_distinct(data):
+    # Step 1: Check if the input data is a list or a single value
+    if not isinstance(data, list):
+        # If it's not a list, convert it to a list
+        data = [data]
+    
+    # Step 2: Iterate through the list to check for duplicates
+    for i in range(len(data)):
+        for j in range(i + 1, len(data)):
+            # Step 3: Check if the current pair of elements are equal
+            if data[i] == data[j]:
+                # If they are equal, return False
+                return False
+    
+    # Step 4: If no duplicates are found, return True
+    return True
+```
+
+```python
+# Test the function
+print(test_distinct([1, 2, 3, 4, 5]))  # Expected output: True
+print(test_distinct([1, 1, 2, 2, 3, 3]))  # Expected output: False
+```
+
+```python
+# Test the function with edge cases
+print(test_distinct([]))  # Expected output: True
+print(test_distinct([1]))  # Expected output: False
+```
+
+```python
+# Test the function with a single element
+print(test_distinct(1))  # Expected output: True
+```

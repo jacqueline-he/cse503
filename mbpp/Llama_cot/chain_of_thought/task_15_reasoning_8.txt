@@ -1,0 +1,66 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to split a string at lowercase letters.
+Required function signature:
+def split_lowerstring(text):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I'll provide the test cases.
+
+```python
+def split_lowerstring(text):
+```
+```python
+# Step 1: Initialize an empty string to store the result
+result = ""
+
+# Step 2: Iterate over each character in the input string
+for char in text:
+    # Step 3: If the character is a lowercase letter, append it to the result string
+    if char.islower():
+        result += char
+```
+```python
+# Step 4: Return the result string
+return result
+```
+Let's analyze the problem carefully to ensure we understand the requirements.
+
+This problem is asking for a function that takes a string as input and returns a new string that contains only the lowercase letters from the original input string.
+
+The function should ignore any uppercase letters, numbers, and special characters.
+
+To solve this problem, we can use a simple algorithm that iterates over each character in the input string and checks if it is a lowercase letter. If it is, we append it to the result string.
+
+Here is the complete solution inside triple backticks:
+
+```python
+def split_lowerstring(text):
+    # Step 1: Initialize an empty string to store the result
+    result = ""
+
+    # Step 2: Iterate over each character in the input string
+    for char in text:
+        # Step 3: If the character is a lowercase letter, append it to the result string
+        if char.islower():
+            result += char
+
+    # Step 4: Return the result string
+    return result
+```

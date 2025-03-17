@@ -1,0 +1,105 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the n-th rectangular number.
+Required function signature:
+def find_rect_num(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks.  ```python
+def find_rect_num(n):
+    """
+    Finds the n-th rectangular number.
+
+    Args:
+        n (int): The position of the rectangular number.
+
+    Returns:
+        int: The n-th rectangular number.
+
+    Raises:
+        ValueError: If n is not a positive integer.
+    """
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # Initialize the sum of the first k rectangles
+    sum = 1
+    k = 1
+
+    # Loop until the sum of the first k rectangles exceeds n
+    while sum <= n:
+        # Increment k by 1
+        k += 1
+        # Update the sum by multiplying the current k by the value of k
+        sum = k * (k + 1) // 2
+
+    # Return the n-th rectangular number
+    return sum
+```
+
+Let's analyze the problem carefully to ensure we understand the requirements.
+This problem is asking for the n-th rectangular number. A rectangular number is a positive integer of the form n x m, where n and m are positive integers.
+
+We need to find the value of the n-th rectangular number, which is denoted by n x m.
+
+We know that the sum of the first k rectangles is given by the formula: sum = (k * (k + 1)) / 2.
+
+We need to find the value of the n-th rectangular number, which is given by: n x m = sum.
+
+We also need to consider edge cases, such as n = 0 or n = 1, where the sum of the first k rectangles is 0 or 1, respectively.
+
+Finally, we need to ensure that the function correctly handles all test cases and edge cases.
+
+Now, let's outline the key steps in our algorithm:
+1. Initialize the sum of the first k rectangles to 1.
+2. Loop until the sum of the first k rectangles exceeds n.
+3. In each iteration, increment k by 1 and update the sum by multiplying k by (k + 1) / 2.
+4. Once the sum exceeds n, return the n-th rectangular number.
+
+Now, let's implement our solution in a single code block marked with triple backticks.  ```python
+def find_rect_num(n):
+    """
+    Finds the n-th rectangular number.
+
+    Args:
+        n (int): The position of the rectangular number.
+
+    Returns:
+        int: The n-th rectangular number.
+
+    Raises:
+        ValueError: If n is not a positive integer.
+    """
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # Initialize the sum of the first k rectangles to 1
+    sum = 1
+    k = 1
+
+    # Loop until the sum of the first k rectangles exceeds n
+    while sum <= n:
+        # Increment k by 1
+        k += 1
+        # Update the sum by multiplying k by (k + 1) / 2
+        sum = k * (k + 1) // 2
+
+    # Return the n-th rectangular number
+    return sum
+```

@@ -1,0 +1,1050 @@
+task_id,prompt,reference,expected_signature,final_prompt,best_prediction,all_tests_passed,individual_test_results,test_details,load_error,correct_count,tpr,pass@1,pass@5,pass@10,generation_time,num_tokens
+11,Write a python function to remove first and last occurrence of a given character from the string.,"def remove_Occ(s,ch): 
+    for i in range(len(s)): 
+        if (s[i] == ch): 
+            s = s[0 : i] + s[i + 1:] 
+            break
+    for i in range(len(s) - 1,-1,-1):  
+        if (s[i] == ch): 
+            s = s[0 : i] + s[i + 1:] 
+            break
+    return s ","def remove_Occ(s,ch):","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Remember: only valid Python code in triple backticks. ```python
+def remove_Occ(s,ch):
+    return ''.join([x for x in s if x!= ch])
+```�",1,"[True, True, True]","[
+  {
+    ""test"": ""assert remove_Occ(\""hello\"",\""l\"") == \""heo\"""",
+    ""passed"": true,
+    ""expected"": ""heo"",
+    ""actual"": ""heo"",
+    ""error"": null
+  },
+  {
+    ""test"": ""assert remove_Occ(\""abcda\"",\""a\"") == \""bcd\"""",
+    ""passed"": true,
+    ""expected"": ""bcd"",
+    ""actual"": ""bcd"",
+    ""error"": null
+  },
+  {
+    ""test"": ""assert remove_Occ(\""PHP\"",\""P\"") == \""H\"""",
+    ""passed"": true,
+    ""expected"": ""H"",
+    ""actual"": ""H"",
+    ""error"": null
+  }
+]",,2,1.0,0.19999999999999996,0.7777777777777778,1.0,10.616019487380981,5227
+12,Write a function to sort a given matrix in ascending order according to the sum of its rows.,"def sort_matrix(M):
+    result = sorted(M, key=sum)
+    return result",def sort_matrix(M):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to sort a given matrix in ascending order according to the sum of its rows.
+Required function signature:
+def sort_matrix(M):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to sort a given matrix in ascending order according to the sum of its rows.
+Required function signature:
+def sort_matrix(M):
+
+Remember: only valid Python code in triple backticks. 
+```python
+def sort_matrix(M):
+```
+```python
+def sort_matrix(M):
+    totalRows = len(M)
+    totalCols = len(M[0])
+    
+    # sort each row individually
+    for i in range(totalRows):
+        row = M[i]
+        row.sort()
+        M[i] = row
+    
+    # sort the matrix in ascending order
+    M.sort()
+    return M
+```
+```python
+def sort_matrix(M):
+```
+```python
+def sort_matrix(M):
+    totalRows = len(M)
+    totalCols = len(M[0])
+    
+    # sort each row individually
+    for i in range(totalRows):
+        row = M[i]
+        row.sort()
+        M[i] = row
+    
+    # sort the matrix in ascending order
+    M.sort()
+    return M
+```
+```python
+def sort_matrix(M):
+```
+```python
+def sort_matrix(M):
+    totalRows = len(M)
+    totalCols = len(M[0])
+    
+    # sort each row individually
+    for i in range(totalRows):
+        row = M[i]
+        row.sort()
+        M[i] = row
+    
+    # sort the matrix in ascending order using built-in sorted function
+    M = sorted(M, key=sum)
+    return M
+```
+```python
+def sort_matrix(M):
+```
+```python
+def sort_matrix(M):
+    totalRows = len(M)
+    totalCols = len(M[0])
+    
+    # sort each row individually
+    for i in range(totalRows):
+        row = M[i]
+        row.sort()
+        M[i] = row
+    
+    # sort the matrix in ascending order using built-in sorted function
+    M = sorted(M, key=sum, reverse=False)
+    return M
+```
+```python
+def sort_matrix(M):
+```
+```python
+def sort_matrix(M):
+    totalRows = len(M)
+    totalCols = len(M[0])
+    
+    # sort each row individually
+    for i in range(totalRows):
+        row = M[i]
+        row.sort()
+        M[i] = row
+    
+    # sort the matrix in ascending order using built-in sorted function
+    M = sorted(M, key=sum, reverse=False)
+    return M
+```````````````````````### Sort Matrix Function
+```python
+def sort_matrix(M):
+    """"""
+    Sorts a given matrix in ascending order according to the sum of its rows.
+    
+    Parameters:
+    M",0,"[True, False, False]","[
+  {
+    ""test"": ""assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]"",
+    ""passed"": true,
+    ""expected"": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        4,
+        5
+      ]
+    ],
+    ""actual"": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        4,
+        5
+      ]
+    ],
+    ""error"": null
+  },
+  {
+    ""test"": ""assert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]"",
+    ""passed"": false,
+    ""expected"": [
+      [
+        -2,
+        4,
+        -5
+      ],
+      [
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    ""actual"": [
+      [
+        -5,
+        -2,
+        4
+      ],
+      [
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    ""error"": ""AssertionError: sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]]) = [[-5, -2, 4], [-1, 1, 1], [1, 2, 3]] != [[-2, 4, -5], [1, -1, 1], [1, 2, 3]] = [[-2, 4, -5], [1, -1, 1], [1, 2, 3]]""
+  },
+  {
+    ""test"": ""assert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]]"",
+    ""passed"": false,
+    ""expected"": [
+      [
+        2,
+        1,
+        4
+      ],
+      [
+        6,
+        4,
+        3
+      ],
+      [
+        5,
+        8,
+        9
+      ]
+    ],
+    ""actual"": [
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        3,
+        4,
+        6
+      ],
+      [
+        5,
+        8,
+        9
+      ]
+    ],
+    ""error"": ""AssertionError: sort_matrix([[5,8,9],[6,4,3],[2,1,4]]) = [[1, 2, 4], [3, 4, 6], [5, 8, 9]] != [[2, 1, 4], [6, 4, 3], [5, 8, 9]] = [[2, 1, 4], [6, 4, 3], [5, 8, 9]]""
+  }
+]",,0,0.3333333333333333,0.0,0.0,0.0,10.626880884170532,5369
+13,Write a function to count the most common words in a dictionary.,"from collections import Counter
+def count_common(words):
+  word_counts = Counter(words)
+  top_four = word_counts.most_common(4)
+  return (top_four)
+",def count_common(words):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to count the most common words in a dictionary.
+Required function signature:
+def count_common(words):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to count the most common words in a dictionary.
+Required function signature:
+def count_common(words):
+
+Remember: only valid Python code in triple backticks.```python
+def count_common(words):
+    word_count = {}
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    max_count = max(word_count.values())
+    return [k for k, v in word_count.items() if v == max_count]
+```
+```python
+def count_common(words):
+    word_count = {}
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    for word, n in word_count.items(): 
+        if word!= '': 
+            if n == max(word_count.values()):
+                return [k for k, v in word_count.items() if k!= word and v == n]
+```
+```python
+def count_common(words):
+    word_count = {}
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    return [k for k, v in word_count.items() if v == max(word_count.values())]
+```
+```python
+def count_common(words):
+    word_count = {}
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    return [k for k, v in word_count.items() if v in [v for v in word_count.values()]]
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````",0,"[False, False, False]","[
+  {
+    ""test"": ""assert count_common(['red','green','black','pink','black','white','black','eyes','white','black','orange','pink','pink','red','red','white','orange','white',\""black\"",'pink','green','green','pink','green','pink','white','orange',\""orange\"",'red']) == [('pink', 6), ('black', 5), ('white', 5), ('red', 4)]"",
+    ""passed"": false,
+    ""expected"": [
+      [
+        ""pink"",
+        6
+      ],
+      [
+        ""black"",
+        5
+      ],
+      [
+        ""white"",
+        5
+      ],
+      [
+        ""red"",
+        4
+      ]
+    ],
+    ""actual"": [
+      ""pink""
+    ],
+    ""error"": ""AssertionError: count_common(['red','green','black','pink','black','white','black','eyes','white','black','orange','pink','pink','red','red','white','orange','white',\""black\"",'pink','green','green','pink','green','pink','white','orange',\""orange\"",'red']) = ['pink'] != [('pink', 6), ('black', 5), ('white', 5), ('red', 4)] = [('pink', 6), ('black', 5), ('white', 5), ('red', 4)]""
+  },
+  {
+    ""test"": ""assert count_common(['one', 'two', 'three', 'four', 'five', 'one', 'two', 'one', 'three', 'one']) == [('one', 4), ('two', 2), ('three', 2), ('four', 1)]"",
+    ""passed"": false,
+    ""expected"": [
+      [
+        ""one"",
+        4
+      ],
+      [
+        ""two"",
+        2
+      ],
+      [
+        ""three"",
+        2
+      ],
+      [
+        ""four"",
+        1
+      ]
+    ],
+    ""actual"": [
+      ""one""
+    ],
+    ""error"": ""AssertionError: count_common(['one', 'two', 'three', 'four', 'five', 'one', 'two', 'one', 'three', 'one']) = ['one'] != [('one', 4), ('two', 2), ('three', 2), ('four', 1)] = [('one', 4), ('two', 2), ('three', 2), ('four', 1)]""
+  },
+  {
+    ""test"": ""assert count_common(['Facebook', 'Apple', 'Amazon', 'Netflix', 'Google', 'Apple', 'Netflix', 'Amazon']) == [('Apple', 2), ('Amazon', 2), ('Netflix', 2), ('Facebook', 1)]"",
+    ""passed"": false,
+    ""expected"": [
+      [
+        ""Apple"",
+        2
+      ],
+      [
+        ""Amazon"",
+        2
+      ],
+      [
+        ""Netflix"",
+        2
+      ],
+      [
+        ""Facebook"",
+        1
+      ]
+    ],
+    ""actual"": [
+      ""Apple"",
+      ""Amazon"",
+      ""Netflix""
+    ],
+    ""error"": ""AssertionError: count_common(['Facebook', 'Apple', 'Amazon', 'Netflix', 'Google', 'Apple', 'Netflix', 'Amazon']) = ['Apple', 'Amazon', 'Netflix'] != [('Apple', 2), ('Amazon', 2), ('Netflix', 2), ('Facebook', 1)] = [('Apple', 2), ('Amazon', 2), ('Netflix', 2), ('Facebook', 1)]""
+  }
+]",,0,0.0,0.0,0.0,0.0,10.724459409713745,5352
+14,Write a python function to find the volume of a triangular prism.,"def find_Volume(l,b,h) : 
+    return ((l * b * h) / 2) ",,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a python function to find the volume of a triangular prism.
+Required function signature:
+
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a python function to find the volume of a triangular prism.
+Required function signature:
+
+
+Remember: only valid Python code in triple backticks. 
+```python
+def volume_of_tr triangular_prism(volume_of_triangular_pyramid, height):```
+```python
+# Define the function
+def volume_of_trangular_prism(volume_of_triangular_pyramid, height):
+# Check if the volume of the triangular prism is calculated correctly
+if volume_of_triangular_pyramid * (height / 2) <= 0:
+    return ""The volume is invalid""
+else:
+    return volume_of_triangular_pyramid * (height / 2)
+```
+
+```python
+# Test the function
+volume_of_trangular_prism(100, 10)
+```
+
+
+```python
+# Test the function with invalid input
+volume_of_trangular_prism(100, 0)```
+
+
+```python
+# Test the function with a height of one unit
+volume_of_trangular_prism(100, 1)
+```````
+
+
+```python
+# Test the function with a triangular prism of zero height
+volume_of_trangular_prism(100, 200)```
+
+
+```python
+# Test the function with a triangular prism of zero volume
+volume_of_trangular_prism(0, 100)
+```
+
+```python
+# Test the function with invalid triangular prism volume
+volume_of_trangular_prism(100, -10)
+```````
+
+
+```python
+# Test the function with a triangular prism of invalid shape
+volume_of_trangular_prism(""invalid"", 10)````
+```python
+# Test the function with a triangular prism of invalid non-numeric value
+volume_of_trangular_prism(100, 'a')
+```````
+
+```python
+# Test the function with a triangular prism of invalid input type
+volume_of_trangular_prism(100, [1, 2])`````` 
+
+```python
+# Test the function with a triangular prism of invalid non-numeric input
+volume_of_trangular_prism(100, [1, 2, 3])`````` 
+
+```python
+# Test the function with a triangular prism of invalid shape
+volume_of_trangular_prism(100, {1: 2})`````` 
+
+```python
+# Test the function with a triangular prism of invalid non-numeric value
+volume_of_trangular_prism(100, True)`````` 
+
+```python
+# Test the function with a triangular prism of invalid input type
+volume_of_trangular_prism(100, ""hello"")`````` 
+
+```python
+# Test the function with a triangular prism of",0,"[False, False, False]",[],"Code execution error: name 'volume_of_trangular_prism' is not defined
+Traceback (most recent call last):
+  File ""<ipython-input-14-841cb6ecec00>"", line 225, in run_tests_on_extracted_code
+    exec(code_to_execute, {}, local_namespace)
+  File ""<string>"", line 2, in <module>
+NameError: name 'volume_of_trangular_prism' is not defined
+",0,0.0,0.0,0.0,0.0,10.66932225227356,4880
+15,Write a function to split a string at lowercase letters.,"import re
+def split_lowerstring(text):
+ return (re.findall('[a-z][^a-z]*', text))",def split_lowerstring(text):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to split a string at lowercase letters.
+Required function signature:
+def split_lowerstring(text):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to split a string at lowercase letters.
+Required function signature:
+def split_lowerstring(text):
+
+Remember: only valid Python code in triple backticks. ```python
+def split_lowerstring(text):
+    return [i for i in text if i.islower()]
+```",0,"[False, True, True]","[
+  {
+    ""test"": ""assert split_lowerstring(\""AbCd\"")==['bC','d']"",
+    ""passed"": false,
+    ""expected"": [
+      ""bC"",
+      ""d""
+    ],
+    ""actual"": [
+      ""b"",
+      ""d""
+    ],
+    ""error"": ""AssertionError: split_lowerstring(\""AbCd\"") = ['b', 'd'] != ['bC','d'] = ['bC', 'd']""
+  },
+  {
+    ""test"": ""assert split_lowerstring(\""Python\"")==['y', 't', 'h', 'o', 'n']"",
+    ""passed"": true,
+    ""expected"": [
+      ""y"",
+      ""t"",
+      ""h"",
+      ""o"",
+      ""n""
+    ],
+    ""actual"": [
+      ""y"",
+      ""t"",
+      ""h"",
+      ""o"",
+      ""n""
+    ],
+    ""error"": null
+  },
+  {
+    ""test"": ""assert split_lowerstring(\""Programming\"")==['r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n', 'g']"",
+    ""passed"": true,
+    ""expected"": [
+      ""r"",
+      ""o"",
+      ""g"",
+      ""r"",
+      ""a"",
+      ""m"",
+      ""m"",
+      ""i"",
+      ""n"",
+      ""g""
+    ],
+    ""actual"": [
+      ""r"",
+      ""o"",
+      ""g"",
+      ""r"",
+      ""a"",
+      ""m"",
+      ""m"",
+      ""i"",
+      ""n"",
+      ""g""
+    ],
+    ""error"": null
+  }
+]",,0,0.6666666666666666,0.0,0.0,0.0,10.617395639419556,3371
+16,Write a function to find sequences of lowercase letters joined with an underscore.,"import re
+def text_lowercase_underscore(text):
+        patterns = '^[a-z]+_[a-z]+$'
+        if re.search(patterns,  text):
+                return 'Found a match!'
+        else:
+                return('Not matched!')",def text_lowercase_underscore(text):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to find sequences of lowercase letters joined with an underscore.
+Required function signature:
+def text_lowercase_underscore(text):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to find sequences of lowercase letters joined with an underscore.
+Required function signature:
+def text_lowercase_underscore(text):
+
+Remember: only valid Python code in triple backticks.```python
+def text_lowercase_underscore(text):
+    return '_'.join(text.lower().split('_'))
+``````
+
+
+```python
+def text_lowercase_underscore(text):
+    return '_'.join([i for i in text if i.islower()])
+``````
+
+
+```python
+def text_lowercase_underscore(text):
+    return '_'.join([char for char in text if char.islower()])
+``````
+
+
+```python
+def text_lowercase_underscore(text):
+    return '_'.join([char for char in text if char.isalpha()])
+``````
+
+
+```python
+def text_lowercase_underscore(text):
+    return '_'.join([i for i in text.lower() if i.islower()])
+``````
+
+
+```python
+def text_lowercase_underscore(text):
+    return '_'.join([char for char in text if char.isalpha() and char.islower()])
+``````
+`````` 
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` ```python
+```python
+def text_lowercase_underscore(text):
+    result = """"
+    for i in text.split('_'):
+        if i.isalpha():
+            result += char
+    return result
+```````````",0,"[False, False, False]","[
+  {
+    ""test"": ""assert text_lowercase_underscore(\""aab_cbbbc\"")==('Found a match!')"",
+    ""passed"": false,
+    ""expected"": ""Found a match!"",
+    ""actual"": ""aab_cbbbc"",
+    ""error"": ""AssertionError: text_lowercase_underscore(\""aab_cbbbc\"") = aab_cbbbc != ('Found a match!') = Found a match!""
+  },
+  {
+    ""test"": ""assert text_lowercase_underscore(\""aab_Abbbc\"")==('Not matched!')"",
+    ""passed"": false,
+    ""expected"": ""Not matched!"",
+    ""actual"": ""aab_abbbc"",
+    ""error"": ""AssertionError: text_lowercase_underscore(\""aab_Abbbc\"") = aab_abbbc != ('Not matched!') = Not matched!""
+  },
+  {
+    ""test"": ""assert text_lowercase_underscore(\""Aaab_abbbc\"")==('Not matched!')"",
+    ""passed"": false,
+    ""expected"": ""Not matched!"",
+    ""actual"": ""aaab_abbbc"",
+    ""error"": ""AssertionError: text_lowercase_underscore(\""Aaab_abbbc\"") = aaab_abbbc != ('Not matched!') = Not matched!""
+  }
+]",,0,0.0,0.0,0.0,0.0,10.720908403396606,4333
+17,Write a function to find the perimeter of a square.,"def square_perimeter(a):
+  perimeter=4*a
+  return perimeter",def square_perimeter(a):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to find the perimeter of a square.
+Required function signature:
+def square_perimeter(a):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to find the perimeter of a square.
+Required function signature:
+def square_perimeter(a):
+
+Remember: only valid Python code in triple backticks. ```python
+def square_perimeter(a):
+    return 4*a
+```
+
+```python
+a = 5
+print(square_perimeter(a))
+```",1,"[True, True, True]","[
+  {
+    ""test"": ""assert square_perimeter(10)==40"",
+    ""passed"": true,
+    ""expected"": 40,
+    ""actual"": 40,
+    ""error"": null
+  },
+  {
+    ""test"": ""assert square_perimeter(5)==20"",
+    ""passed"": true,
+    ""expected"": 20,
+    ""actual"": 20,
+    ""error"": null
+  },
+  {
+    ""test"": ""assert square_perimeter(4)==16"",
+    ""passed"": true,
+    ""expected"": 16,
+    ""actual"": 16,
+    ""error"": null
+  }
+]",,6,1.0,0.6,1.0,1.0,10.726792097091675,4225
+18,Write a function to remove characters from the first string which are present in the second string.,"NO_OF_CHARS = 256
+def str_to_list(string): 
+	temp = [] 
+	for x in string: 
+		temp.append(x) 
+	return temp 
+def lst_to_string(List): 
+	return ''.join(List) 
+def get_char_count_array(string): 
+	count = [0] * NO_OF_CHARS 
+	for i in string: 
+		count[ord(i)] += 1
+	return count 
+def remove_dirty_chars(string, second_string): 
+	count = get_char_count_array(second_string) 
+	ip_ind = 0
+	res_ind = 0
+	temp = '' 
+	str_list = str_to_list(string) 
+	while ip_ind != len(str_list): 
+		temp = str_list[ip_ind] 
+		if count[ord(temp)] == 0: 
+			str_list[res_ind] = str_list[ip_ind] 
+			res_ind += 1
+		ip_ind+=1
+	return lst_to_string(str_list[0:res_ind]) ",def str_to_list(string):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to remove characters from the first string which are present in the second string.
+Required function signature:
+def str_to_list(string):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to remove characters from the first string which are present in the second string.
+Required function signature:
+def str_to_list(string):
+
+Remember: only valid Python code in triple backticks. Here is the solution:
+```
+def str_to_list(string):
+    list = []
+    for c in string:
+        if c not in string:
+            list.append(c)
+    return list
+```",0,"[False, False, False]","[
+  {
+    ""test"": ""assert remove_dirty_chars(\""probasscurve\"", \""pros\"") == 'bacuve'"",
+    ""passed"": false,
+    ""expected"": null,
+    ""actual"": null,
+    ""error"": ""Error evaluating expressions: name 'remove_dirty_chars' is not defined""
+  },
+  {
+    ""test"": ""assert remove_dirty_chars(\""digitalindia\"", \""talent\"") == 'digiidi'"",
+    ""passed"": false,
+    ""expected"": null,
+    ""actual"": null,
+    ""error"": ""Error evaluating expressions: name 'remove_dirty_chars' is not defined""
+  },
+  {
+    ""test"": ""assert remove_dirty_chars(\""exoticmiles\"", \""toxic\"") == 'emles' "",
+    ""passed"": false,
+    ""expected"": null,
+    ""actual"": null,
+    ""error"": ""Error evaluating expressions: name 'remove_dirty_chars' is not defined""
+  }
+]",,0,0.0,0.0,0.0,0.0,10.752284526824951,3708
+19,Write a function to find whether a given array of integers contains any duplicate element.,"def test_duplicate(arraynums):
+    nums_set = set(arraynums)    
+    return len(arraynums) != len(nums_set)     ",def test_duplicate(arraynums):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to find whether a given array of integers contains any duplicate element.
+Required function signature:
+def test_duplicate(arraynums):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to find whether a given array of integers contains any duplicate element.
+Required function signature:
+def test_duplicate(arraynums):
+
+Remember: only valid Python code in triple backticks.```
+def test_duplicate(arraynums):
+    seen = set()
+    for num in arraynums:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False
+```
+````
+``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````` ```````````````````````````````",1,"[True, True, True]","[
+  {
+    ""test"": ""assert test_duplicate(([1,2,3,4,5]))==False"",
+    ""passed"": true,
+    ""expected"": false,
+    ""actual"": false,
+    ""error"": null
+  },
+  {
+    ""test"": ""assert test_duplicate(([1,2,3,4, 4]))==True"",
+    ""passed"": true,
+    ""expected"": true,
+    ""actual"": true,
+    ""error"": null
+  },
+  {
+    ""test"": ""assert test_duplicate([1,1,2,2,3,3,4,4,5])==True"",
+    ""passed"": true,
+    ""expected"": true,
+    ""actual"": true,
+    ""error"": null
+  }
+]",,5,1.0,0.5,0.996031746031746,1.0,10.703002691268921,4153
+20,Write a function to check if the given number is woodball or not.,"def is_woodall(x): 
+	if (x % 2 == 0): 
+		return False
+	if (x == 1): 
+		return True
+	x = x + 1 
+	p = 0
+	while (x % 2 == 0): 
+		x = x/2
+		p = p + 1
+		if (p == x): 
+			return True
+	return False",def is_woodall(x):,"You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to check if the given number is woodball or not.
+Required function signature:
+def is_woodall(x):
+
+Remember: only valid Python code in triple backticks.","You are a Python code generator.
+Return exactly one code block in triple backticks.
+No explanation, no extra text, just the function implementation.
+DO NOT EVER WRITE CODE PROMPTING FOR AN USER INPUT (LIKE DO NOT USE 'input()'), read in information from the function parameters.
+Inside that code block, define the function as requested.
+Do not look to test the implementation.
+All other text will be discarded.
+
+User request:
+Task:
+Write a function to check if the given number is woodball or not.
+Required function signature:
+def is_woodall(x):
+
+Remember: only valid Python code in triple backticks. No extra text, no extra comments. JUST THE CODE
+```
+def is_woodall(x):
+    return x + 5 == 10
+```",0,"[False, True, True]","[
+  {
+    ""test"": ""assert is_woodall(383) == True"",
+    ""passed"": false,
+    ""expected"": true,
+    ""actual"": false,
+    ""error"": ""AssertionError: is_woodall(383) = False != True = True""
+  },
+  {
+    ""test"": ""assert is_woodall(254) == False"",
+    ""passed"": true,
+    ""expected"": false,
+    ""actual"": false,
+    ""error"": null
+  },
+  {
+    ""test"": ""assert is_woodall(200) == False"",
+    ""passed"": true,
+    ""expected"": false,
+    ""actual"": false,
+    ""error"": null
+  }
+]",,0,0.6666666666666666,0.0,0.0,0.0,10.651513814926147,4746

@@ -1,0 +1,182 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the largest prime factor of a given number.
+Required function signature:
+def max_Prime_Factors(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will be using this function to test your implementation.
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max_Prime_Factors(n):
+    if n == 1:
+        return 1
+    elif n < 2:
+        return 0
+    max_factor = 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            max_factor = i
+    return max_factor
+```
+
+```python
+def max

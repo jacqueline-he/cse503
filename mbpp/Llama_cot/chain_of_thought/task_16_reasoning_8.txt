@@ -1,0 +1,90 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find sequences of lowercase letters joined with an underscore.
+Required function signature:
+def text_lowercase_underscore(text):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def text_lowercase_underscore(text):
+    return ''.join([c for c in text if c.islower()])
+```
+
+```python
+def text_lowercase_underscore(text):
+    return '_'.join([c for c in text if c.islower()])
+```
+
+```python
+def text_lowercase_underscore(text):
+    return ''.join(c for c in text if c.islower())
+```
+
+```python
+def text_lowercase_underscore(text):
+    return ''.join([c if c.islower() else '_' for c in text])
+```
+
+```python
+def text_lowercase_underscore(text):
+    return ''.join(c if c.islower() else '_' for c in text)
+```
+
+
+```python
+def text_lowercase_underscore(text):
+    return ''.join([c if c.islower() else '_' for c in text])
+```
+
+## Step 1: Understand the problem
+The problem asks for a function that takes a string `text` as input and returns a string with sequences of lowercase letters joined by an underscore.
+
+## Step 2: Identify key steps and algorithms
+To solve this problem, we can use a simple algorithm that iterates over the input string, checks each character, and appends it to the output string if it is lowercase. We can also use a list comprehension to make the code more concise.
+
+## Step 3: Consider edge cases
+We should consider edge cases such as empty strings, strings with only uppercase letters, and strings with non-ASCII characters.
+
+## Step 4: Implement the solution
+Here is a Python function that implements the algorithm:
+```python
+def text_lowercase_underscore(text):
+    result = ''
+    for c in text:
+        if c.islower():
+            result += c
+        else:
+            result += '_'
+    return result
+```
+This function iterates over the input string, checking each character using the `islower()` method. If the character is lowercase, it is appended to the output string. If the character is not lowercase, an underscore is appended instead. The function finally returns the resulting string.
+
+The final answer is:
+```python
+def text_lowercase_underscore(text):
+    result = ''
+    for c in text:
+        if c.islower():
+            result += c
+        else:
+            result += '_'
+    return result
+```

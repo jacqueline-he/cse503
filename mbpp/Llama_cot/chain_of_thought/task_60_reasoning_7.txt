@@ -1,0 +1,58 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find the maximum length of the subsequence with difference between adjacent elements for the given array.
+Required function signature:
+def max_len_sub( arr, n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Don't forget to use the EXACT function signature provided.
+```
+def max_len_sub( arr, n):
+```
+5. Write the final answer inside a single line, following the format specified.
+
+Here's what the prompt says:
+"Find the maximum length of the subsequence with difference between adjacent elements for the given array."
+```
+```
+def max_len_sub( arr, n):
+```
+Step 1: The problem requires finding the maximum length of a subsequence with a given difference between adjacent elements in an array.
+
+Step 2: To find this maximum length, we need to analyze the array and find the longest subsequence with the smallest possible differences between adjacent elements.
+
+Step 3: One approach to solve this problem is to use dynamic programming. We can create a table where each element in the array is the maximum length of the subsequence ending at that index.
+
+Step 4: We can fill up this table by iterating through the array and comparing each element with its previous element. If the difference between the two elements is less than the current maximum length, we update the maximum length.
+
+Step 5: After filling up the table, we can return the maximum length found.
+
+Here's the code:
+```
+def max_len_sub( arr, n):
+    dp = [0]*n
+    dp[0] = 1
+    for i in range(1, n):
+        if arr[i] - arr[i-1] < dp[i-1]:
+            dp[i] = dp[i-1] + 1
+        else:
+            dp[i] = 1
+    return max(dp)
+```
+I hope this solution meets the requirements. Let me know if I made any mistakes.

@@ -1,0 +1,7 @@
+=== Chain of Thought Metrics Summary ===
+Pass@1: 0.16
+Pass@5: 0.37
+Pass@10: 0.44
+Average Test Pass Rate (ATPR): 0.52
+Throughput (tokens/sec): 461.15
+Memory Overhead (bytes): 105472

@@ -1,0 +1,86 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to count the most common words in a dictionary.
+Required function signature:
+def count_common(words):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will use `nltk` for this task.
+
+```python
+def count_words_in_file(filename):
+    with open(filename, 'r') as f:
+        return sum(1 for line in f)
+```
+
+```python
+import collections
+from nltk.corpus import stopwords
+
+def count_common(words):
+    # Step 1: Remove stopwords and convert to lowercase
+    stop_words = set(stopwords.words('english'))
+    words = [word.lower() for word in words if word.isalpha() and word not in stop_words]
+    
+    # Step 2: Count word frequencies
+    word_freq = collections.Counter(words)
+    
+    # Step 3: Find the most common word
+    most_common_word = word_freq.most_common(1)[0]
+    
+    return most_common_word
+
+# Test the function
+words = ['apple', 'banana', 'cherry', 'banana', 'apple', 'orange', 'banana']
+print(count_common(words))
+```
+
+```python
+def count_words_in_file(filename):
+    with open(filename, 'r') as f:
+        return sum(1 for line in f)
+```
+
+```python
+import collections
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+def count_common(words):
+    # Step 1: Remove stopwords and convert to lowercase
+    lemmatizer = WordNetLemmatizer()
+    stop_words = set(stopwords.words('english'))
+    words = [lemmatizer.lemmatize(word.lower()) for word in words if word.isalpha() and word not in stop_words]
+    
+    # Step 2: Count word frequencies
+    word_freq = collections.Counter(words)
+    
+    # Step 3: Find the most common word
+    most_common_word = word_freq.most_common(1)[0]
+    
+    return most_common_word
+
+# Test the function
+words = ['apple', 'banana', 'cherry', 'banana', 'apple', 'orange', 'banana']
+print(count_common(words))
+```

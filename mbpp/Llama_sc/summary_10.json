@@ -1,0 +1,10 @@
+{
+  "pass@1": 0.19,
+  "pass@5": 0.376984126984127,
+  "pass@10": 0.4,
+  "atpr": 0.5333333333333333,
+  "throughput": 58.330998839867796,
+  "memory_overhead": 0,
+  "total_generation_time": 812.3639392852783,
+  "total_tokens": 47386
+}

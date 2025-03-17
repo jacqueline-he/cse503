@@ -1,0 +1,137 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the given tuple list has all k elements.
+Required function signature:
+def check_k_elements(test_list, K):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Here is the solution:
+
+
+```python
+def check_k_elements(test_list, K):
+    """
+    Checks if the given tuple list has all k elements.
+
+    Args:
+        test_list (list): A list of tuples.
+        K (int): The number of elements to check.
+
+    Returns:
+        bool: True if the list has all k elements, False otherwise.
+    """
+    # Step 1: Get the length of the test list
+    test_len = len(test_list)
+
+    # Step 2: Iterate over the range from 0 to K-1
+    for i in range(K):
+        # Step 3: Check if the i-th element exists in the test list
+        if i not in test_list:
+            # Step 4: If the i-th element does not exist, return False
+            return False
+
+    # Step 5: If we have checked all elements and haven't returned False, return True
+    return True
+
+# Test cases
+test_list1 = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(check_k_elements(test_list1, 3))  # Expected output: True
+
+test_list2 = [(1, 2, 3), (4, 5, 6), (7, 8, 9, 10)]
+print(check_k_elements(test_list2, 3))  # Expected output: False
+
+test_list3 = [(1, 2, 3), (4, 5, 6), (7, 8, 9, 10, 11)]
+print(check_k_elements(test_list3, 3))  # Expected output: True
+```
+
+
+```python
+def check_k_elements(test_list, K):
+    """
+    Checks if the given tuple list has all k elements.
+
+    Args:
+        test_list (list): A list of tuples.
+        K (int): The number of elements to check.
+
+    Returns:
+        bool: True if the list has all k elements, False otherwise.
+    """
+    # Step 1: Get the length of the test list
+    test_len = len(test_list)
+
+    # Step 2: Check if the length of the test list is equal to K
+    if test_len!= K:
+        # Step 3: If not, return False
+        return False
+
+    # Step 4: Iterate over the range from 0 to K-1
+    for i in range(K):
+        # Step 5: Check if the i-th element exists in the test list
+        if i not in test_list:
+            # Step 6: If the i-th element does not exist, return False
+            return False
+
+    # Step 7: If we have checked all elements and haven't returned False, return True
+    return True
+
+# Test cases
+test_list1 = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(check_k_elements(test_list1, 3))  # Expected output: True
+
+test_list2 = [(1, 2, 3), (4, 5, 6), (7, 8, 9, 10)]
+print(check_k_elements(test_list2, 3))  # Expected output: False
+
+test_list3 = [(1, 2, 3), (4, 5, 6), (7, 8, 9, 10, 11)]
+print(check_k_elements(test_list3, 3))  # Expected output: True
+```
+
+
+```python
+def check_k_elements(test_list, K):
+    """
+    Checks if the given tuple list has all k elements.
+
+    Args:
+        test_list (list): A list of tuples.
+        K (int): The number of elements to check.
+
+    Returns:
+        bool: True if the list has all k elements, False otherwise.
+    """
+    # Step 1: Get the length of the test list
+    test_len = len(test_list)
+
+    # Step 2: Check if the length of the test list is equal to K
+    if test_len!= K:
+        # Step 3: If not, return False
+        return False
+
+    # Step 4: Iterate over the range from 0 to K-1
+    for i in range(K):
+        # Step 5: Check if the i-th element exists in the test list
+        if i not in test_list:
+            # Step 6: If the i-th element does not exist, return False
+            return False
+
+    # Step 7: If we have checked all elements and haven't returned False, return True
+    return True
+
+# Test cases
+test_list1 = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]

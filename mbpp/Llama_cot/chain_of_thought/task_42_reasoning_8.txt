@@ -1,0 +1,130 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the sum of repeated elements in a given array.
+Required function signature:
+def find_Sum(arr,n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will test it with your solution.
+
+
+```python
+def find_Sum(arr,n):
+    sum = 0
+    for i in range(n):
+        if arr[i] not in sum:
+            sum += arr[i]
+    return sum
+```
+### Test Case 1:
+Input: arr = [1, 2, 3, 4, 2], n = 4
+Output: Expected output: 8
+### Test Case 2:
+Input: arr = [1, 2, 2, 3, 4, 4], n = 6
+Output: Expected output: 15
+### Test Case 3:
+Input: arr = [1, 2, 3, 4, 5], n = 5
+Output: Expected output: 15
+### Test Case 4:
+Input: arr = [1, 1, 2, 2, 3], n = 4
+Output: Expected output: 6
+### Test Case 5:
+Input: arr = [1, 2, 3, 4, 4, 4, 4], n = 8
+Output: Expected output: 24
+### Test Case 6:
+Input: arr = [1, 2, 3, 4, 5, 5, 5, 5], n = 9
+Output: Expected output: 35
+### Test Case 7:
+Input: arr = [1, 2, 3, 4, 5, 6, 7, 8, 9], n = 9
+Output: Expected output: 45
+### Test Case 8:
+Input: arr = [1, 2, 3, 4, 5, 6, 7, 8, 9], n = 10
+Output: Expected output: 55
+
+```python
+def find_Sum(arr,n):
+    sum = 0
+    seen = set()
+    for i in range(n):
+        if arr[i] not in seen:
+            sum += arr[i]
+            seen.add(arr[i])
+    return sum
+```
+
+
+### Test Cases with Edge Cases
+Test Case 1:
+Input: arr = [1, 2, 3, 4, 2], n = 4
+Expected output: 8
+Edge Case: What if the input array contains duplicate elements? Should the function return the sum of all elements or just the unique elements?
+### Test Case 2:
+Input: arr = [1, 2, 2, 3, 4, 4], n = 6
+Expected output: 15
+Edge Case: What if the input array contains duplicate elements? Should the function return the sum of all elements or just the unique elements?
+
+```python
+def find_Sum(arr,n):
+    sum = 0
+    seen = set()
+    for i in range(n):
+        if arr[i] not in seen:
+            sum += arr[i]
+            seen.add(arr[i])
+    return sum
+
+# Test Case 1
+arr = [1, 2, 3, 4, 2]
+n = 4
+print(find_Sum(arr,n))  # Expected output: 8
+
+# Test Case 2
+arr = [1, 2, 2, 3, 4, 4]
+n = 6
+print(find_Sum(arr,n))  # Expected output: 15
+
+# Test Case 3
+arr = [1, 2, 3, 4, 5]
+n = 5
+print(find_Sum(arr,n))  # Expected output: 15
+
+# Test Case 4
+arr = [1, 1, 2, 2, 3]
+n = 4
+print(find_Sum(arr,n))  # Expected output: 6
+
+# Test Case 5
+arr = [1, 2, 3, 4, 4, 4, 4]
+n = 8
+print(find_Sum(arr,n))  # Expected output: 24
+
+# Test Case 6
+arr = [1, 2, 3, 4, 5, 5, 5, 5]
+n = 9
+print(find_Sum(arr,n))  # Expected output: 35
+
+# Test Case 7
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+n = 9
+print(find_Sum(arr,n))  # Expected output: 45
+
+# Test Case 8
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+n = 10
+print(find_Sum(arr,n))  # Expected output:

@@ -1,0 +1,110 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort a given mixed list of integers and strings.
+Required function signature:
+def sort_mixed_list(mixed_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def sort_mixed_list(mixed_list):
+```
+```python
+# Step 1: Separate integers from strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort integers
+    sorted_int_list = sorted(int_list)
+
+    # Step 3: Sort strings
+    sorted_str_list = sorted(str_list)
+
+    # Step 4: Combine sorted lists
+    result = []
+    while len(sorted_int_list) > 0 and len(sorted_str_list) > 0:
+        result.append(sorted_int_list.pop(0))
+        result.append(sorted_str_list.pop(0))
+
+    # Step 5: Append any remaining strings
+    result.extend(sorted_str_list)
+
+    return result
+```
+```python
+# Step 6: Return the sorted mixed list
+return result
+```
+```python
+# Test the function with different inputs
+mixed_list1 = [5, 'a', 2, 9, 1, 'b', 7]
+mixed_list2 = ['c', 6, 'd', 3, 8, 'e', 4]
+mixed_list3 = [10, 'f', 11, 12, 'g', 13]
+```
+```python
+mixed_list4 = [5, 2, 1, 9, 7, 6, 3, 8, 4, 10, 12, 11, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+```
+```python
+mixed_list5 = [5, 2, 1, 9, 7, 6, 3, 8, 4, 10, 12, 11, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 0, 'j']
+``````
+
+```python
+# Test the function with mixed list containing duplicate values
+mixed_list6 = [5, 2, 1, 9, 7, 6, 3, 8, 4, 10, 12, 11, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 0, 0]
+``````
+
+```python
+# Test the function with an empty list
+mixed_list7 = []
+``````
+
+```python
+# Test the function with a list containing only integers
+mixed_list8 = [5, 2, 1, 9, 7, 6, 3, 8, 4, 10, 12, 11]
+``````
+
+```python
+# Test the function with a list containing only strings
+mixed_list9 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+``````
+
+```python
+# Test the function with a list containing a mix of integers and strings
+mixed_list10 = [5, 2, 1, 9, 7, 6, 3, 8, 4, 10, 12, 11, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 0, 0]
+``````
+
+```python
+# Test the function with a list containing only negative integers
+mixed_list11 = [-5, -2, -1, -9, -7, -6, -3, -8, -4, -10, -12, -11, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+``````
+
+```python
+# Test the function with a list containing only positive integers
+mixed_list12 = [5, 2, 1, 9, 7, 6, 3, 8, 4, 10, 12, 11]
+``````
+
+```python
+# Test the function with a list containing only non-numeric values
+mixed_list13 = [5, 2, 'a', 9, 1, 'b', 7, 6, 3, 8, 4, 10, 12, 11]
+``````
+
+```python
+# Test the function with a list containing a mix of non-numeric values and integers
+mixed_list14 = [5, 2, 'a', 9, 1, 7, 6, 3, 8, 4, 10, 12, 11, 0, 'b', 'c', 'd

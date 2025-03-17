@@ -1,0 +1,187 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to convert the given binary number to its decimal equivalent.
+Required function signature:
+def binary_to_decimal(binary):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.
+    """
+    # Convert binary string to decimal integer using the built-in int() function
+    decimal = int(binary, 2)
+    return decimal
+```
+
+
+### Step 1: Analyze the Problem
+The problem requires converting a binary number to its decimal equivalent. A binary number is a number that uses only two digits: 0 and 1.
+
+### Step 2: Identify Key Steps or Algorithms
+To convert a binary number to decimal, we need to understand the binary number system and how to convert it to decimal.
+
+### Step 3: Consider Edge Cases
+We should consider the edge cases for binary numbers, such as 0 and 1. These are the most basic binary numbers and will always have a decimal equivalent.
+
+### Step 4: Implement the Solution
+We will use the built-in int() function to convert the binary string to decimal integer.
+
+```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.
+    """
+    # Convert binary string to decimal integer using the built-in int() function
+    decimal = int(binary, 2)
+    return decimal
+
+# Test the function
+binary = "1010"
+decimal = binary_to_decimal(binary)
+print(decimal)  # Output: 10
+```
+
+
+### Step 5: Implement the Complete Solution
+```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.
+    """
+    # Convert binary string to decimal integer using the built-in int() function
+    decimal = int(binary, 2)
+    return decimal
+
+# Test the function
+binary = "1010"
+decimal = binary_to_decimal(binary)
+print(decimal)  # Output: 10
+```
+
+
+### Step 6: Test the Function
+We can test the function with different binary numbers to ensure it works correctly. For example, we can convert the binary number "1111" to decimal and print the result.
+
+```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.
+    """
+    # Convert binary string to decimal integer using the built-in int() function
+    decimal = int(binary, 2)
+    return decimal
+
+# Test the function
+binary = "1111"
+decimal = binary_to_decimal(binary)
+print(decimal)  # Output: 15
+```
+
+
+### Step 7: Handle Edge Cases
+We should handle edge cases such as 0 and 1. These are the most basic binary numbers and will always have a decimal equivalent.
+
+### Step 8: Implement the Complete Solution
+```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.
+    """
+    # Convert binary string to decimal integer using the built-in int() function
+    decimal = int(binary, 2)
+    return decimal
+
+# Test the function
+binary = "1010"
+decimal = binary_to_decimal(binary)
+print(decimal)  # Output: 10
+```
+
+
+### Step 9: Test the Function
+We can test the function with different binary numbers to ensure it works correctly. For example, we can convert the binary number "1111" to decimal and print the result.
+
+```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.
+    """
+    # Convert binary string to decimal integer using the built-in int() function
+    decimal = int(binary, 2)
+    return decimal
+
+# Test the function
+binary = "1111"
+decimal = binary_to_decimal(binary)
+print(decimal)  # Output: 15
+```
+
+
+### Step 10: Handle Edge Cases
+We should handle edge cases such as 0 and 1. These are the most basic binary numbers and will always have a decimal equivalent.
+
+### Step 11: Implement the Complete Solution
+```python
+def binary_to_decimal(binary):
+    """
+    Converts a binary number to its decimal equivalent.
+
+    Args:
+        binary (str): A binary number as a string.
+
+    Returns:
+        int: The decimal equivalent of the binary number.

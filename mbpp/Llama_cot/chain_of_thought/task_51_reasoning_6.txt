@@ -1,0 +1,135 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to print check if the triangle is equilateral or not.
+Required function signature:
+def check_equilateral(x,y,z):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def check_equilateral(x,y,z):
+```
+
+```python
+def check_equilateral(x, y, z):
+    # Step 1: Define the condition for an equilateral triangle
+    # A triangle is equilateral if all sides have the same length
+    if x == y == z:
+        return True
+    else:
+        return False
+```
+
+```python
+def check_equilateral(x, y, z):
+    # Step 2: Check if the triangle is equilateral
+    # We can use the distance formula to calculate the lengths of the sides
+    # We'll use the Euclidean distance formula: sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)
+    a = math.sqrt((x - y) ** 2)
+    b = math.sqrt((x - z) ** 2)
+    c = math.sqrt((y - z) ** 2)
+    # Step 3: Calculate the semi-perimeter
+    s = (a + b + c) / 2
+    # Step 4: Check if the semi-perimeter is equal to the side length
+    # This is the condition for an equilateral triangle
+    if s == a:
+        return True
+    else:
+        return False
+```
+
+```python
+import math
+```
+
+```python
+def check_equilateral(x, y, z):
+    # Step 5: Print the result
+    if check_equilateral(x, y, z):
+        print("The triangle is equilateral.")
+    else:
+        print("The triangle is not equilateral.")
+```
+
+Now, let's analyze the problem carefully to ensure we understand the requirements.
+The problem is asking us to write a function that takes three side lengths of a triangle as input and returns True if the triangle is equilateral, False otherwise.
+
+Next, we need to clearly explain our approach using mathematical reasoning and algorithmic thinking.
+To solve this problem, we can use the concept of the distance formula to calculate the lengths of the sides of the triangle. We'll then use the semi-perimeter of the triangle to check if it's equal to the side length, which is the condition for an equilateral triangle.
+
+Finally, we need to outline the key steps in our algorithm before writing any code.
+The key steps in our algorithm are:
+
+1. Define the condition for an equilateral triangle
+2. Calculate the lengths of the sides using the distance formula
+3. Calculate the semi-perimeter
+4. Check if the semi-perimeter is equal to the side length
+
+Next, we'll implement our complete solution inside triple backticks.
+
+```python
+import math
+
+def check_equilateral(x, y, z):
+    # Step 5: Print the result
+    if check_equilateral(x, y, z):
+        print("The triangle is equilateral.")
+    else:
+        print("The triangle is not equilateral.")
+
+# Test the function
+check_equilateral(3, 4, 5)
+```
+
+```python
+def check_equilateral(x, y, z):
+    # Step 1: Define the condition for an equilateral triangle
+    # A triangle is equilateral if all sides have the same length
+    if x == y == z:
+        return True
+    else:
+        return False
+
+def check_equilateral(x, y, z):
+    # Step 2: Calculate the lengths of the sides using the distance formula
+    a = math.sqrt((x - y) ** 2)
+    b = math.sqrt((x - z) ** 2)
+    c = math.sqrt((y - z) ** 2)
+    
+    # Step 3: Calculate the semi-perimeter
+    s = (a + b + c) / 2
+    
+    # Step 4: Check if the semi-perimeter is equal to the side length
+    # This is the condition for an equilateral triangle
+    if s == a:
+        return True
+    else:
+        return False
+
+def check_equilateral(x, y, z):
+    # Step 5: Print the result
+    if check_equilateral(x, y, z):
+        print("The triangle is equilateral.")
+    else:
+        print("The triangle is not equilateral.")
+
+# Test the function
+check_equilateral(3, 4, 5)
+```

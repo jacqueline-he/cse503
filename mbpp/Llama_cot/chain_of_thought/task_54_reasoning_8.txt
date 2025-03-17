@@ -1,0 +1,113 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort the given array by using counting sort.
+Required function signature:
+def counting_sort(my_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please ensure the function name starts with `counting_sort`.
+
+```python
+def counting_sort(my_list):
+    max_val = max(my_list)
+    min_val = min(my_list)
+    count = [0] * (max_val - min_val + 1)
+    for num in my_list:
+        count[num - min_val] += 1
+    sorted_list = []
+    for i, cnt in enumerate(count):
+        sorted_list.extend([i + min_val] * cnt)
+    return sorted_list
+```
+
+```python
+def counting_sort(my_list):
+```
+
+Step 1: Understand the problem
+The problem is to sort an array using counting sort. This method works by first finding the range of the input array, then repeatedly counting the number of occurrences of each value in the range and using this information to construct the sorted array.
+
+```python
+def counting_sort(my_list):
+```
+
+Step 2: Find the range of the input array
+The range of the input array is the difference between the maximum and minimum values in the array.
+
+```python
+max_val = max(my_list)
+min_val = min(my_list)
+```
+
+Step 3: Initialize the count array
+The count array is initialized with zeros, where the index represents the value in the range.
+
+```python
+count = [0] * (max_val - min_val + 1)
+```
+
+Step 4: Count the occurrences of each value
+The count array is iterated over to count the occurrences of each value in the range.
+
+```python
+for num in my_list:
+    count[num - min_val] += 1
+```
+
+Step 5: Construct the sorted array
+The sorted array is constructed by iterating over the count array and using the value and count to construct the sorted array.
+
+```python
+sorted_list = []
+for i, cnt in enumerate(count):
+    sorted_list.extend([i + min_val] * cnt)
+```
+
+Step 6: Return the sorted array
+The sorted array is returned.
+
+```python
+return sorted_list
+```
+
+Step 7: Handle edge cases
+The function should handle the case where the input array is empty.
+
+```python
+if not my_list:
+    return []
+```
+
+Step 8: Implement the complete solution
+
+```python
+def counting_sort(my_list):
+    if not my_list:
+        return []
+
+    max_val = max(my_list)
+    min_val = min(my_list)
+    count = [0] * (max_val - min_val + 1)
+    for num in my_list:
+        count[num - min_val] += 1
+    sorted_list = []
+    for i, cnt in enumerate(count):
+        sorted_list.extend([i + min_val] * cnt)
+    return sorted_list
+```

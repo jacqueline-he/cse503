@@ -1,0 +1,69 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to check if the given tuple list has all k elements.
+Required function signature:
+def check_k_elements(test_list, K):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. 
+
+```python
+def check_k_elements(test_list, K):
+    """
+    This function checks if a given list has all k elements.
+
+    Args:
+    test_list (list): A list of elements to be checked.
+    K (int): The number of elements to be checked.
+
+    Returns:
+    bool: True if all k elements are present, False otherwise.
+    """
+```
+
+Step 1: Analyzing the problem
+The problem is asking to check if a given tuple list has all k elements. This means we need to check if all k elements in the list are present.
+
+Step 2: Key steps or algorithms needed
+To solve this problem, we can use the concept of sets. We can convert each tuple in the list to a set and then check if the length of the set is equal to k.
+
+Step 3: Edge cases to consider
+We need to consider the case where the list is empty and the case where k is greater than the number of elements in the list.
+
+Step 4: Implementing the solution
+```python
+def check_k_elements(test_list, K):
+    """
+    This function checks if a given list has all k elements.
+
+    Args:
+    test_list (list): A list of elements to be checked.
+    K (int): The number of elements to be checked.
+
+    Returns:
+    bool: True if all k elements are present, False otherwise.
+    """
+    # Check if the list is empty
+    if not test_list:
+        return False
+
+    # Convert each tuple to a set and check if the length is equal to K
+    return len(set(tuple(x) for x in test_list)) == K
+```
+Note: We use tuple(x) to convert each element in the tuple to a set because sets automatically eliminate duplicates. We also use a generator expression to convert each tuple to a set, which is more efficient than creating a list of sets.

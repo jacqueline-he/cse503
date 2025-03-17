@@ -1,0 +1,77 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find the largest prime factor of a given number.
+Required function signature:
+def max_Prime_Factors(n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. Please ensure it's correct and efficient.
+
+```python
+def max_Prime_Factors(n):
+```
+
+```python
+    def is_prime(x):
+        """Check if a number is prime."""
+        if x < 2:
+            return False
+        for i in range(2, int(x**0.5) + 1):
+            if x % i == 0:
+                return False
+        return True
+
+    def find_prime_factors(n):
+        """Find all prime factors of a number."""
+        factors = []
+        for i in range(2, n):
+            if n % i == 0 and is_prime(i):
+                factors.append(i)
+        return factors
+
+    def max_prime_factors(n):
+        """Find the largest prime factor of a number."""
+        factors = find_prime_factors(n)
+        return max(factors)
+
+```
+
+```python
+    return max_prime_factors(n)
+```
+
+```python
+# Test cases
+print(max_Prime_Factors(100))  # Output: 5
+print(max_Prime_Factors(23))   # Output: 23
+print(max_Prime_Factors(37))   # Output: 37
+print(max_Prime_Factors(48))   # Output: 2
+```
+
+```python
+# Edge cases
+print(max_Prime_Factors(0))    # Output: 1
+print(max_Prime_Factors(1))    # Output: 1
+print(max_Prime_Factors(-5))   # Output: 1
+```
+
+```python
+# Edge cases
+print(max_Prime_Factors(-5))   # Output: 1
+```

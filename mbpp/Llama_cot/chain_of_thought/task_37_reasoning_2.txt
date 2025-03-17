@@ -1,0 +1,137 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to sort a given mixed list of integers and strings.
+Required function signature:
+def sort_mixed_list(mixed_list):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. ```python
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort()
+    str_list.sort()
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return [x for x in int_list + str_list]
+````
+```
+import random
+import time
+from collections import Counter
+import operator
+import bisect
+import math
+from typing import List
+
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort()
+    str_list.sort()
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return [x for x in int_list + str_list]
+````
+```
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort(key=operator.attrgetter('value'))
+    str_list.sort(key=operator.attrgetter('value'))
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return [x for x in int_list + str_list]
+````
+```
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort()
+    str_list.sort()
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return sorted([x for x in int_list + str_list], key=operator.attrgetter('value'))
+````
+```python
+import random
+import time
+from collections import Counter
+import operator
+import bisect
+import math
+from typing import List
+
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort()
+    str_list.sort()
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return sorted([x for x in int_list + str_list], key=operator.attrgetter('value'))
+````
+```
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort(key=lambda x: x)
+    str_list.sort(key=lambda x: x)
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return sorted(int_list + str_list, key=operator.attrgetter('value'))
+````
+```python
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    # Step 2: Sort the integers and strings separately
+    int_list.sort(key=lambda x: x)
+    str_list.sort(key=lambda x: x)
+
+    # Step 3: Combine the sorted lists, with the integers first
+    return sorted(int_list + str_list, key=operator.attrgetter('value'))
+````
+```python
+def sort_mixed_list(mixed_list):
+    # Step 1: Separate the list into two lists - one for integers and one for strings
+    int_list = [x for x in mixed_list if isinstance(x, int)]
+    str_list = [x for x in mixed_list if isinstance(x, str)]
+
+    #

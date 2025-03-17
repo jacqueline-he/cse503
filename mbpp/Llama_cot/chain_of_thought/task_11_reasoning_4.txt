@@ -1,0 +1,107 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to remove first and last occurrence of a given character from the string.
+Required function signature:
+def remove_Occ(s,ch):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. DO NOT include any additional text.
+
+```python
+def remove_Occ(s,ch):
+    return s.replace(ch, '', 1) + s.replace(ch, '', -1)
+```
+
+```python
+def remove_Occ(s,ch):
+    if len(s) <= 1:
+        return s
+    return s.replace(ch, '', 1) + s.replace(ch, '', -1)
+```
+
+```python
+def remove_Occ(s,ch):
+    if s == '':
+        return s
+    if s[0] == ch:
+        return s[1:]
+    if s[-1] == ch:
+        return s[:-1]
+    return s
+```
+
+```python
+def remove_Occ(s,ch):
+    i = 0
+    while i < len(s):
+        if s[i] == ch:
+            j = i
+            while j > 0 and s[j-1] == ch:
+                j -= 1
+            return s[i+1:j]
+        i += 1
+    return s
+```
+
+```python
+def remove_Occ(s,ch):
+    stack = []
+    i = 0
+    while i < len(s):
+        if s[i] == ch:
+            if stack:
+                stack.pop()
+            i += 1
+        else:
+            stack.append(s[i])
+            i += 1
+    return ''.join(stack)
+```assistant
+
+Think step-by-step:
+1. What is this problem asking for?
+The problem is to remove the first and last occurrence of a given character from a string.
+
+2. What are the key steps or algorithms needed?
+To solve this problem, we need to find all occurrences of the given character in the string, and then remove them. We can use two pointers, one at the start and one at the end of the string, to find the first and last occurrences.
+
+3. Are there any edge cases to consider?
+There are two edge cases to consider:
+   - If the input string is empty, we should return the original string.
+   - If the input string contains only one character, we should return the original string.
+
+4. Implement your complete solution inside triple backticks. DO NOT include any additional text.
+
+```python
+def remove_Occ(s,ch):
+    if len(s) <= 1:
+        return s
+    i = 0
+    while i < len(s):
+        if s[i] == ch:
+            j = i
+            while j > 0 and s[j-1] == ch:
+                j -= 1
+            if i!= j:
+                return s[:i] + s[i+1:j]
+            else:
+                return s[:i]
+        i += 1
+    return s
+```

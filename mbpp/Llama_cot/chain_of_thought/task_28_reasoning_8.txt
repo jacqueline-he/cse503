@@ -1,0 +1,61 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a python function to find binomial co-efficient.
+Required function signature:
+def binomial_Coeff(n,k):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will provide the test cases to verify your solution.
+
+```python
+def binomial_Coeff(n,k):
+    if k > n - k:
+        return 0
+    result = 1
+    for i in range(k):
+        result = result * (n - i) / (i + 1)
+    return result
+```
+
+## Step 1: Analyze the problem
+The problem asks for the binomial coefficient, which is calculated as `n choose k`, where `n` is the total number of items and `k` is the number of items to choose. In this case, we need to find the binomial coefficient `n choose k`.
+
+## Step 2: Outline the key steps
+To calculate the binomial coefficient, we need to:
+- Check if `k` is greater than `n - k`. If true, return 0, as the binomial coefficient is not defined for negative numbers or zero.
+- Initialize a variable `result` to 1.
+- Use a for loop to iterate from `k` down to 1, calculating the binomial coefficient using the formula `result = result * (n - i) / (i + 1)`.
+- Return the final value of `result`.
+
+## Step 3: Consider edge cases
+We should consider the following edge cases:
+- If `k` is greater than `n`, return 0, as the binomial coefficient is not defined.
+- If `k` is less than or equal to 0, return 0, as the binomial coefficient is not defined.
+
+## Step 4: Implement the solution
+Here is the complete implementation of the function `binomial_Coeff` inside triple backticks:
+```python
+def binomial_Coeff(n, k):
+    if k > n - k:
+        return 0
+    result = 1
+    for i in range(k):
+        result = result * (n - i) / (i + 1)
+    return result
+```

@@ -1,0 +1,64 @@
+You are a Python code generator who reasons step-by-step.
+First, analyze the problem carefully to ensure you understand the requirements.
+Second, clearly explain your approach using mathematical reasoning and algorithmic thinking.
+Third, outline the key steps in your algorithm before writing any code.
+Finally, implement EXACTLY ONE SOLUTION in a SINGLE code block marked with triple backticks.
+
+IMPORTANT RULES:
+1. NEVER include multiple code blocks - only provide ONE final solution inside triple backticks.
+2. ALWAYS use the EXACT function signature provided in the prompt.
+3. DO NOT use input() functions - read all data from function parameters.
+4. Ensure your solution correctly handles all test cases and edge cases.
+5. After reasoning, provide ONLY the implementation without any additional text within the code block.
+
+User request:
+Task:
+Write a function to find m number of multiples of n.
+Required function signature:
+def multiples_of_num(m,n):
+
+Think step-by-step:
+1. What is this problem asking for?
+2. What are the key steps or algorithms needed?
+3. Are there any edge cases to consider?
+4. Implement your complete solution inside triple backticks. I will give the final answer once I have tested it.
+
+Please provide a clear explanation and the solution. I am ready when you are. Go!
+
+## Step 1: Analyze the problem
+This problem is asking to find the m number of multiples of a given number n. In other words, we need to generate a list of m elements where each element is a multiple of n.
+
+## Step 2: Key steps and algorithms
+To solve this problem, we can use a simple algorithm that iterates over a range of numbers and checks if each number is a multiple of n. We can use the modulo operator (%) to check if a number is a multiple of n.
+
+## Step 3: Edge cases
+We need to consider the following edge cases:
+
+- If m is 0, we should return an empty list.
+- If n is 0, we should return an empty list.
+- If n is 1, we should return [0, 1, 2,... m * n].
+- If m is 1 and n is greater than 1, we should return [n, 2n, 3n,... (m * n) * 2].
+
+## Step 4: Implement the solution
+Here is the implementation of the solution:
+```python
+def multiples_of_num(m, n):
+    if m == 0 or n == 0:
+        return []
+    result = []
+    for i in range(1, (m * n) + 1):
+        if i % n == 0:
+            result.append(i)
+    return result
+```
+The final answer is: 
+```python
+def multiples_of_num(m, n):
+    if m == 0 or n == 0:
+        return []
+    result = []
+    for i in range(1, (m * n) + 1):
+        if i % n == 0:
+            result.append(i)
+    return result
+```
