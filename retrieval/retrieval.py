@@ -201,8 +201,9 @@ def main(args):
         output_path = os.path.join(args.output_dir, filename)
     elif args.dataset is not None:
         if args.dataset == "mbpp":
-            ds = load_dataset("jacquelinehe/mbpp_processed")
-            data = ds['train']
+            # ds = load_dataset("jacquelinehe/mbpp_processed")
+            # data = ds['train']
+            data = load_dataset('google-research-datasets/mbpp')['validation']
         else:
             ds = load_dataset("jacquelinehe/humaneval_processed")
             data = ds['train']
@@ -220,7 +221,8 @@ def main(args):
                 queries = [ex["question"] for ex in data]
         else:
             # dataset 
-            queries = [ex["context"] for ex in data] # same for humaneval and mbpp
+            #queries = [ex["context"] for ex in data] # same for humaneval and mbpp
+            queries = [ex["text"] for ex in data]  # mbpp
         
         questions_embedding = embed_queries(args, queries, model)
 
